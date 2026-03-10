@@ -39,6 +39,7 @@ Now let's dig into each one.
 ---
 
 ### 1. GoHighLevel - Best All-in-One Platform (Top Pick)
+![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
 [GoHighLevel](https://www.gohighlevel.com) - $97 to $497/month
 
@@ -69,6 +70,7 @@ Read that again. Unlimited contacts. No penalty for growing your list.
 ---
 
 ### 2. Mailchimp - Best Free Starter
+![Mailchimp logo](../images/blog/products/mailchimp-logo.png "Mailchimp")
 
 [Mailchimp](https://mailchimp.com) - Free (500 contacts) / $13 to $350/month
 
@@ -99,6 +101,7 @@ The name everyone knows. And for good reason - Mailchimp made email marketing ac
 ---
 
 ### 3. ConvertKit - Best for Creators and Coaches
+![ConvertKit logo](../images/blog/products/convertkit-logo.png "ConvertKit")
 
 [ConvertKit](https://convertkit.com) - Free (1,000 subscribers) / $25 to $50/month
 
@@ -128,6 +131,7 @@ Built specifically for creators. Bloggers, coaches, course sellers, newsletter w
 ---
 
 ### 4. ActiveCampaign - Best for Advanced Automation
+![ActiveCampaign logo](../images/blog/products/activecampaign-logo.png "ActiveCampaign")
 
 [ActiveCampaign](https://www.activecampaign.com) - $15 to $145/month
 
@@ -158,6 +162,7 @@ This is where you go when Mailchimp's automations feel like training wheels. Act
 ---
 
 ### 5. Brevo (formerly Sendinblue) - Best Budget Option with SMS
+![Brevo logo](../images/blog/products/brevo-logo.png "Brevo")
 
 [Brevo](https://www.brevo.com) - Free (300 emails/day) / $25 to $65/month
 
@@ -188,6 +193,7 @@ Brevo charges by emails sent, not contacts stored. That's a game-changer if you 
 ---
 
 ### 6. Constant Contact - Best for Events and Nonprofits
+![Constant Contact logo](../images/blog/products/constantcontact-logo.png "Constant Contact")
 
 [Constant Contact](https://www.constantcontact.com) - $12 to $80/month
 
@@ -217,6 +223,7 @@ Been around since 1995. Not flashy. Not trendy. But rock-solid for what it does 
 ---
 
 ### 7. GetResponse - Best for Webinar Marketing
+![GetResponse logo](../images/blog/products/getresponse-logo.png "GetResponse")
 
 [GetResponse](https://www.getresponse.com) - Free (500 contacts) / $13.30 to $97.58/month
 
@@ -247,6 +254,7 @@ GetResponse is the only platform on this list with built-in webinar hosting. If 
 ---
 
 ### 8. AWeber - Best for Simplicity and Deliverability
+![AWeber logo](../images/blog/products/aweber-logo.png "AWeber")
 
 [AWeber](https://www.aweber.com) - Free (500 subscribers) / $15 to $900/month
 

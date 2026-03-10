@@ -38,6 +38,7 @@ So I did it for you. These are the 9 best AI tools for small business owners - t
 ## The 9 Best AI Tools for Small Business Owners
 
 ### 1. [ChatGPT](https://openai.com/chatgpt) - Best All-Around AI Assistant
+![OpenAI logo](../images/blog/products/openai-logo.png "OpenAI")
 
 **Pricing:** Free / $20/mo Plus / $200/mo Pro
 
@@ -50,6 +51,7 @@ The free tier is solid for basic tasks. But the Plus plan at $20/mo unlocks GPT-
 **The catch:** It's a generalist. It does everything well but nothing perfectly. For specialized tasks like marketing copy or meeting notes, the dedicated tools below beat it.
 
 ### 2. [Claude](https://claude.ai) - Best for Long-Form Writing and Analysis
+![Anthropic logo](../images/blog/products/anthropic-logo.png "Anthropic")
 
 **Pricing:** Free / $20/mo Pro / $100/mo Max
 
@@ -60,6 +62,7 @@ The writing quality tends to be more natural and less "AI-sounding" than most al
 **Best for:** Analyzing long documents, writing detailed proposals, summarizing customer research, and any task where you need the AI to hold a lot of context at once.
 
 ### 3. [GoHighLevel AI](https://www.gohighlevel.com) - Best CRM + AI Combo
+![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
 **Pricing:** $97-$497/mo (AI features included)
 
@@ -70,6 +73,7 @@ The AI chatbot alone replaces a $500/mo live chat tool. It answers customer ques
 **Best for:** Service businesses that need a CRM, chatbot, and [marketing automation](/blog/what-is-marketing-automation.html) without paying for six separate subscriptions. If you're spending $300+/mo on disconnected tools, this consolidates everything.
 
 ### 4. [Jasper](https://www.jasper.ai) - Best for Marketing Copy
+![Jasper logo](../images/blog/products/jasper-logo.png "Jasper")
 
 **Pricing:** $39-$99/mo
 
@@ -80,6 +84,7 @@ The brand voice feature is what separates it from ChatGPT for marketing. Feed it
 **Best for:** Businesses running ads, email campaigns, or content marketing at scale. If you're writing more than 10 pieces of marketing content per month, Jasper pays for itself in time savings alone.
 
 ### 5. [Tidio](https://www.tidio.com) - Best AI Chatbot for Websites
+![Tidio logo](../images/blog/products/tidio-logo.png "Tidio")
 
 **Pricing:** Free / $29-$59/mo
 
@@ -90,6 +95,7 @@ The free plan gives you basic live chat. The paid plans add AI that learns from 
 **Best for:** E-commerce stores, service businesses, and anyone whose website gets traffic but doesn't have a full-time person answering questions. If you want to go deeper on this topic, check out our [AI chatbot vs live chat breakdown](/blog/ai-chatbot-vs-live-chat.html).
 
 ### 6. [Zapier](https://zapier.com) - Best for Connecting AI to Your Stack
+![Zapier logo](../images/blog/products/zapier-logo.png "Zapier")
 
 **Pricing:** Free / $19.99-$69.50/mo
 
@@ -102,6 +108,7 @@ The AI features include text analysis, content generation, and data formatting -
 **Best for:** Businesses that already use multiple tools (CRM, email, forms, spreadsheets) and want to [automate the connections between them](/blog/how-to-automate-small-business.html). Zapier is the glue that makes your whole stack smarter. For more AI automation ideas, see our [AI tools for business automation guide](/blog/ai-tools-business-automation.html).
 
 ### 7. [Grammarly](https://www.grammarly.com) - Best for Business Communication
+![Grammarly logo](../images/blog/products/grammarly-logo.png "Grammarly")
 
 **Pricing:** Free / $12-$15/mo
 
@@ -112,6 +119,7 @@ It sounds simple. But the average professional spends 28% of their workday on em
 **Best for:** Anyone who writes more than 10 business emails per day. Founders, sales teams, support teams. It lives in your browser and works everywhere - Gmail, LinkedIn, Google Docs, Slack.
 
 ### 8. [Canva AI](https://www.canva.com) - Best for AI-Powered Design
+![Canva logo](../images/blog/products/canva-logo.png "Canva")
 
 **Pricing:** Free / $13/mo Pro
 
@@ -122,6 +130,7 @@ The Pro plan at $13/mo is absurd value. You get AI image generation, brand kit m
 **Best for:** Social media graphics, presentation decks, marketing materials, and any visual content you're currently paying a freelancer $50-200 per piece to create.
 
 ### 9. [Fireflies.ai](https://fireflies.ai) - Best for AI Meeting Notes
+![Fireflies.ai logo](../images/blog/products/fireflies-logo.png "Fireflies.ai")
 
 **Pricing:** Free / $10-$29/mo
 

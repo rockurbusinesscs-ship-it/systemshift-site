@@ -34,6 +34,7 @@ Now let's break each one down.
 ---
 
 ### 1. GoHighLevel - Best All-in-One CRM for Small Business
+![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
 [GoHighLevel](https://www.gohighlevel.com)
 
@@ -70,6 +71,7 @@ If you're wondering whether a CRM is even worth it, read [what is a CRM](/blog/w
 ---
 
 ### 2. HubSpot CRM - Best Free Starter CRM
+![HubSpot logo](../images/blog/products/hubspot-logo.png "HubSpot")
 
 [HubSpot](https://www.hubspot.com)
 
@@ -99,6 +101,7 @@ The free tier does the basics. But the second you need [marketing automation](/b
 ---
 
 ### 3. Zoho CRM - Best Budget Option
+![Zoho logo](../images/blog/products/zoho-logo.png "Zoho")
 
 [Zoho CRM](https://www.zoho.com/crm)
 
@@ -129,6 +132,7 @@ Zoho also has an entire ecosystem - Zoho Books, Zoho Desk, Zoho Campaigns - so i
 ---
 
 ### 4. Salesforce - Best for Enterprise
+![Salesforce logo](../images/blog/products/salesforce-logo.png "Salesforce")
 
 [Salesforce](https://www.salesforce.com)
 
@@ -161,6 +165,7 @@ CRM returns $8.71 for every $1 spent according to Nucleus Research. But that ROI
 ---
 
 ### 5. Pipedrive - Best for Visual Pipeline Management
+![Pipedrive logo](../images/blog/products/pipedrive-logo.png "Pipedrive")
 
 [Pipedrive](https://www.pipedrive.com)
 
@@ -191,6 +196,7 @@ The tradeoff? Pipedrive is primarily a sales tool. It doesn't have built-in emai
 ---
 
 ### 6. Freshsales - Best for AI-Powered Lead Scoring
+![Freshworks logo](../images/blog/products/freshworks-logo.png "Freshworks")
 
 [Freshsales](https://www.freshworks.com/crm)
 
@@ -221,6 +227,7 @@ The Freshworks ecosystem also includes Freshdesk (support), Freshmarketer (marke
 ---
 
 ### 7. Keap (Formerly Infusionkeep) - Best for Coaches and Consultants
+![Keap logo](../images/blog/products/keap-logo.png "Keap")
 
 [Keap](https://keap.com)
 

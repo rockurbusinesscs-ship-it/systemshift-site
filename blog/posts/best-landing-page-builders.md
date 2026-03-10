@@ -34,6 +34,7 @@ Here are the 7 best landing page builders for small business, ranked by what act
 | Swipe Pages | Mobile-first | $29/mo | No (14-day trial) | Yes |
 
 ## 1. GoHighLevel - Best All-in-One Platform
+![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
 [GoHighLevel](https://www.gohighlevel.com) - $97 to $497/mo
 
@@ -62,6 +63,7 @@ No Zapier. No broken integrations. No praying that your landing page tool talks 
 **Best for:** Service businesses, agencies, and anyone who wants to stop paying for 5 separate tools. If you need a [CRM](/blog/best-crm-small-business.html) anyway, this eliminates the stack entirely.
 
 ## 2. Unbounce - Best for A/B Testing
+![Unbounce logo](../images/blog/products/unbounce-logo.png "Unbounce")
 
 [Unbounce](https://unbounce.com) - $74 to $187/mo
 
@@ -90,6 +92,7 @@ The builder itself is solid. True drag-and-drop with pixel-level control. You're
 **Best for:** Marketers and businesses running paid ads who want to squeeze every conversion out of their traffic. If you test headlines, offers, and layouts obsessively, this is your tool.
 
 ## 3. Leadpages - Best Budget Option
+![Leadpages logo](../images/blog/products/leadpages-logo.png "Leadpages")
 
 [Leadpages](https://www.leadpages.com) - $37 to $74/mo
 
@@ -117,6 +120,7 @@ The template library has 200+ designs sorted by conversion rate. Pick a high-per
 **Best for:** Solopreneurs and small businesses who need solid landing pages without spending $100+/mo. If your budget is tight but you know you need better pages than what your website builder offers, start here.
 
 ## 4. Instapage - Best for Ad Campaigns
+![Instapage logo](../images/blog/products/instapage-logo.png "Instapage")
 
 [Instapage](https://instapage.com) - $79 to $199/mo
 
@@ -144,6 +148,7 @@ The built-in heatmaps show you exactly where visitors click, scroll, and drop of
 **Best for:** PPC-heavy businesses spending real money on Google Ads or Meta Ads. If you're dropping $2,000+/mo on ads and sending traffic to generic pages, Instapage pays for itself fast. Pair it with an [automated sales funnel](/blog/automated-sales-funnel.html) and you stop leaving money on the table.
 
 ## 5. Carrd - Best Ultra-Cheap Option
+![Carrd logo](../images/blog/products/carrd-logo.png "Carrd")
 
 [Carrd](https://carrd.co) - Free / $9 to $49/yr
 
@@ -176,6 +181,7 @@ The trade-off? Limited functionality. No A/B testing. No heatmaps. No automation
 **Best for:** Side projects, simple lead capture pages, personal sites, and anyone who needs something live in 20 minutes for almost no money. Not a replacement for a real landing page builder if you're running serious campaigns.
 
 ## 6. ClickFunnels - Best for Sales Funnels
+![ClickFunnels logo](../images/blog/products/clickfunnels-logo.png "ClickFunnels")
 
 [ClickFunnels](https://www.clickfunnels.com) - $97 to $297/mo
 
@@ -204,6 +210,7 @@ If you're selling courses, coaching programs, or digital products, ClickFunnels 
 **Best for:** Course creators, coaches, consultants, and anyone selling digital products through multi-step funnels. If you just need landing pages, this is overkill. If you need a complete sales system, it's purpose-built for that.
 
 ## 7. Swipe Pages - Best for Mobile-First
+![Swipe Pages logo](../images/blog/products/swipepages-logo.png "Swipe Pages")
 
 [Swipe Pages](https://swipepages.com) - $29 to $59/mo
 
