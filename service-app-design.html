@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom App Design & Development | SystemShift HQ — High Point, NC</title>
+  <meta name="description" content="Custom app design and development for businesses that have outgrown off-the-shelf tools. Client portals, internal dashboards, mobile apps, and AI-powered tools built for your exact workflow.">
+  <meta name="keywords" content="custom app development, business app design, client portal development, internal dashboard, custom software, High Point NC, Greensboro, Winston-Salem, Triad NC">
+  <meta name="geo.region" content="US-NC">
+  <meta name="geo.placename" content="High Point, North Carolina">
+  <link rel="canonical" href="https://systemshifthq.com/service-app-design.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Custom App Design & Development | SystemShift HQ">
+  <meta property="og:description" content="Your business has outgrown templates and off-the-shelf tools. We design and build custom apps that fit your exact workflow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://systemshifthq.com/service-app-design.html">
+  <meta property="og:image" content="https://systemshifthq.com/images/app-design-hero.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom App Design & Development",
+    "provider": {
+      "@type": "Organization",
+      "name": "SystemShift HQ",
+      "url": "https://systemshifthq.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3980 Premier Dr",
+        "addressLocality": "High Point",
+        "addressRegion": "NC",
+        "postalCode": "27265",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "High Point"},
+        {"@type": "City", "name": "Greensboro"},
+        {"@type": "City", "name": "Winston-Salem"},
+        {"@type": "State", "name": "North Carolina"}
+      ]
+    },
+    "description": "Custom app design and development for businesses that have outgrown off-the-shelf tools. Client portals, dashboards, mobile apps, and AI-powered business tools.",
+    "serviceType": "Custom Software Development"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a custom business app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most custom apps are designed, built, and deployed within 4-8 weeks depending on complexity. Simple client portals can launch in as little as 2 weeks. We use an agile approach so you see progress from week one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a custom app or can I use an off-the-shelf tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you're spending more time working around your tools than working in them, it's time for a custom build. Signs include: duct-taping multiple tools together, paying for features you don't use, or your team avoiding the tool entirely because it doesn't fit their workflow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technologies do you use to build custom apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We use modern web technologies including React, Next.js, Node.js, Python, and cloud platforms like AWS and Google Cloud. For mobile, we build cross-platform apps with React Native. Every app includes API integrations with your existing tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a custom business app cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom app projects start at different price points based on scope. We walk through pricing, timeline, and exactly what you'll get on a free strategy call. No surprises — you'll know the full investment before we start."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       SERVICE — APP DESIGN
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .appdesign-hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .appdesign-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/app-design-hero.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+    }
+
+    .appdesign-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.95) 25%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 75%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .appdesign-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .appdesign-hero .section-title {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .appdesign-hero .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Feature Image Frame ── */
+    .feature-image-frame {
+      border-radius: 16px;
+      border: 1px solid rgba(15,223,216,0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    .feature-image-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Problem Section ── */
+    .problem-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .problem-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .problem-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .problem-list li:last-child {
+      border-bottom: none;
+    }
+
+    .problem-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255,107,107,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── App Types Section ── */
+    .apptypes-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .apptypes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .apptype-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .apptype-card:hover {
+      border-color: rgba(15,223,216,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .apptype-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .apptype-content {
+      padding: 28px 24px;
+    }
+
+    .apptype-content h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .apptype-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .apptype-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .apptype-features span {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-dark);
+    }
+
+    @media (max-width: 900px) {
+      .apptypes-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .apptypes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Why Custom Section ── */
+    .why-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      transition: all 0.3s ease;
+    }
+
+    .why-card:hover {
+      border-color: rgba(15,223,216,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .why-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Process Section ── */
+    .process-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--turquoise), var(--turquoise-dim), var(--turquoise));
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .process-number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--turquoise);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--turquoise);
+      position: relative;
+      z-index: 2;
+    }
+
+    .process-step h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .process-timeline {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .process-timeline::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Showcase ── */
+    .showcase-section {
+      padding: 80px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .showcase-item {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .showcase-item:hover {
+      border-color: rgba(15,223,216,0.3);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .showcase-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .faq-question {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--turquoise);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      padding-top: 16px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .appdesign-cta {
+      padding: 120px 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .appdesign-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--turquoise-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .appdesign-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Integrator Services</a>
+            <a href="service-app-design.html">App Design</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+
+    <!-- ── HERO ── -->
+    <section class="appdesign-hero">
+      <div class="container">
+        <span class="section-eyebrow fade-up">App Design &amp; Development</span>
+        <h1 class="section-title fade-up">Your Business Deserves Its Own App</h1>
+        <p class="section-subtitle fade-up">Off-the-shelf tools weren't built for your workflow. We design and develop custom apps that fit your business like a glove — client portals, internal dashboards, mobile apps, and AI-powered tools that give you an unfair advantage.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Strategy Call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE PROBLEM ── -->
+    <section class="problem-section">
+      <div class="container">
+        <div class="problem-grid fade-up">
+          <div>
+            <span class="section-eyebrow">The Breaking Point</span>
+            <h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem);">You've Outgrown Your Tools</h2>
+            <p class="section-subtitle">Every growing business hits a ceiling. The tools that got you here can't take you where you're going. You're duct-taping Zapier to spreadsheets to apps that almost do what you need — but not quite.</p>
+          </div>
+          <div>
+            <ul class="problem-list">
+              <li>
+                <span class="problem-icon">&#10060;</span>
+                <span>Paying for 5 different tools that each do 20% of what you need</span>
+              </li>
+              <li>
+                <span class="problem-icon">&#10060;</span>
+                <span>Team avoids the system because it's clunky and doesn't match their workflow</span>
+              </li>
+              <li>
+                <span class="problem-icon">&#10060;</span>
+                <span>Client experience feels generic — same portal as every competitor</span>
+              </li>
+              <li>
+                <span class="problem-icon">&#10060;</span>
+                <span>Critical data scattered across disconnected tools with no single view</span>
+              </li>
+              <li>
+                <span class="problem-icon">&#10060;</span>
+                <span>You've hit the limit of what templates, plugins, and workarounds can do</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── APP TYPES ── -->
+    <section class="apptypes-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">What We Build</span>
+          <h2 class="section-title mx-auto" style="max-width: 700px;">Custom Apps for Every Business Need</h2>
+          <p class="section-subtitle mx-auto">From internal tools your team uses daily to client-facing apps that set you apart. Each one built around your actual process.</p>
+        </div>
+        <div class="apptypes-grid">
+
+          <div class="apptype-card fade-up">
+            <img src="images/app-design-portal.png" alt="Client Portal App Design" class="apptype-image" loading="lazy">
+            <div class="apptype-content">
+              <h3>Client Portals</h3>
+              <p>Give your clients a branded space to track projects, access documents, book appointments, and communicate with your team. No more email chains and shared folders.</p>
+              <div class="apptype-features">
+                <span>Project Tracking</span>
+                <span>Document Sharing</span>
+                <span>Scheduling</span>
+                <span>Messaging</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="apptype-card fade-up">
+            <img src="images/app-design-hero.png" alt="Internal Dashboard App" class="apptype-image" loading="lazy">
+            <div class="apptype-content">
+              <h3>Internal Dashboards</h3>
+              <p>Real-time business intelligence at a glance. KPIs, pipeline health, team performance, and revenue metrics — all in one screen your leadership team actually checks.</p>
+              <div class="apptype-features">
+                <span>Live KPIs</span>
+                <span>Revenue Tracking</span>
+                <span>Team Analytics</span>
+                <span>Custom Reports</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="apptype-card fade-up">
+            <img src="images/app-design-mobile.png" alt="Mobile Business App" class="apptype-image" loading="lazy">
+            <div class="apptype-content">
+              <h3>Mobile Apps</h3>
+              <p>Put your business in your team's pocket. Field service apps, mobile CRMs, on-the-go approvals, and client-facing mobile experiences that work offline.</p>
+              <div class="apptype-features">
+                <span>Cross-Platform</span>
+                <span>Offline Mode</span>
+                <span>Push Notifications</span>
+                <span>GPS Tracking</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="apptype-card fade-up">
+            <img src="images/app-design-inventory.png" alt="Inventory Management App" class="apptype-image" loading="lazy">
+            <div class="apptype-content">
+              <h3>Operations &amp; Inventory</h3>
+              <p>Custom inventory tracking, order management, shipping logistics, and supply chain tools built for how your warehouse or fulfillment center actually runs.</p>
+              <div class="apptype-features">
+                <span>Stock Tracking</span>
+                <span>Barcode Scanning</span>
+                <span>Order Management</span>
+                <span>Shipping Integration</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="apptype-card fade-up">
+            <img src="images/app-design-ai.png" alt="AI-Powered Business App" class="apptype-image" loading="lazy">
+            <div class="apptype-content">
+              <h3>AI-Powered Tools</h3>
+              <p>Custom AI assistants, automated document processors, smart recommendation engines, and predictive analytics apps that give your team superpowers.</p>
+              <div class="apptype-features">
+                <span>AI Chat Assistants</span>
+                <span>Document AI</span>
+                <span>Smart Routing</span>
+                <span>Predictions</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="apptype-card fade-up">
+            <div class="apptype-image" style="height: 200px; background: linear-gradient(135deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 3rem;">&#128161;</span>
+            </div>
+            <div class="apptype-content">
+              <h3>Booking &amp; Scheduling</h3>
+              <p>Custom booking flows that handle your specific rules — multi-location, team calendars, service packages, deposits, and automatic follow-ups. Not a generic Calendly embed.</p>
+              <div class="apptype-features">
+                <span>Multi-Location</span>
+                <span>Team Calendars</span>
+                <span>Payment Collection</span>
+                <span>Auto Follow-up</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY CUSTOM ── -->
+    <section class="why-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">Why Custom</span>
+          <h2 class="section-title mx-auto" style="max-width: 700px;">The Advantage of Building Your Own</h2>
+          <p class="section-subtitle mx-auto">Off-the-shelf tools force you to adapt to their limitations. A custom app adapts to you.</p>
+        </div>
+        <div class="why-grid">
+
+          <div class="why-card fade-up">
+            <div class="why-icon">&#9889;</div>
+            <h3>Built for Your Exact Workflow</h3>
+            <p>No more bending your process to fit a tool's constraints. Every screen, button, and automation maps directly to how your team already works.</p>
+          </div>
+
+          <div class="why-card fade-up">
+            <div class="why-icon">&#128274;</div>
+            <h3>You Own It</h3>
+            <p>No monthly per-seat pricing that scales against you. No feature gates. No vendor lock-in. Your app, your data, your rules — forever.</p>
+          </div>
+
+          <div class="why-card fade-up">
+            <div class="why-icon">&#128640;</div>
+            <h3>Competitive Moat</h3>
+            <p>Your competitors use the same off-the-shelf tools everyone else does. A custom app gives you capabilities they simply can't replicate by signing up for another SaaS.</p>
+          </div>
+
+          <div class="why-card fade-up">
+            <div class="why-icon">&#128200;</div>
+            <h3>Scales With You</h3>
+            <p>As your business grows, your app grows with it. New features, new integrations, new workflows — added on your timeline, not a product roadmap you don't control.</p>
+          </div>
+
+          <div class="why-card fade-up">
+            <div class="why-icon">&#127919;</div>
+            <h3>Better Client Experience</h3>
+            <p>Give your clients a branded, seamless experience that feels premium. Your portal, your app, your brand — not a white-labeled generic platform.</p>
+          </div>
+
+          <div class="why-card fade-up">
+            <div class="why-icon">&#128736;</div>
+            <h3>Eliminate Tool Sprawl</h3>
+            <p>Replace 5-10 disconnected subscriptions with one unified system that does exactly what you need. Less cost, less complexity, less training.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SHOWCASE ── -->
+    <section class="showcase-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 48px;">
+          <span class="section-eyebrow">Our Work</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Apps We've Designed &amp; Built</h2>
+        </div>
+        <div class="showcase-grid fade-up">
+          <div class="showcase-item">
+            <img src="images/app-design-hero.png" alt="Business Analytics Dashboard" loading="lazy">
+          </div>
+          <div class="showcase-item">
+            <img src="images/app-design-portal.png" alt="Client Portal Interface" loading="lazy">
+          </div>
+          <div class="showcase-item">
+            <img src="images/app-design-inventory.png" alt="Inventory Management System" loading="lazy">
+          </div>
+          <div class="showcase-item">
+            <img src="images/app-design-ai.png" alt="AI-Powered Business Tool" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROCESS ── -->
+    <section class="process-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">Our Process</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">From Idea to Launch in 4 Steps</h2>
+          <p class="section-subtitle mx-auto">No surprises. No scope creep. A proven process that gets your app from concept to production fast.</p>
+        </div>
+        <div class="process-timeline">
+          <div class="process-step fade-up">
+            <div class="process-number">1</div>
+            <h3>Discovery</h3>
+            <p>We map your current workflow, pain points, and goals. You walk us through your day — we find where a custom app creates the most impact.</p>
+          </div>
+          <div class="process-step fade-up">
+            <div class="process-number">2</div>
+            <h3>Design</h3>
+            <p>Interactive wireframes and clickable prototypes. You see and feel the app before a single line of code is written. Revisions are fast and free at this stage.</p>
+          </div>
+          <div class="process-step fade-up">
+            <div class="process-number">3</div>
+            <h3>Build</h3>
+            <p>Agile development with weekly demos. You see progress every week and can steer the ship. Integrations with your existing tools are baked in from day one.</p>
+          </div>
+          <div class="process-step fade-up">
+            <div class="process-number">4</div>
+            <h3>Launch</h3>
+            <p>Deployment, team training, and 30 days of hands-on support. We don't disappear after launch — we make sure your team is fully adopted and running.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Common Questions</h2>
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+              How long does it take to build a custom business app?
+            </button>
+            <div class="faq-answer">
+              <p>Most custom apps are designed, built, and deployed within 4-8 weeks depending on complexity. Simple client portals can launch in as little as 2 weeks. We use an agile approach so you see progress from week one.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+              Do I need a custom app or can I use an off-the-shelf tool?
+            </button>
+            <div class="faq-answer">
+              <p>If you're spending more time working around your tools than working in them, it's time for a custom build. Signs include: duct-taping multiple tools together, paying for features you don't use, or your team avoiding the tool entirely because it doesn't fit their workflow.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+              What technologies do you use?
+            </button>
+            <div class="faq-answer">
+              <p>We use modern web technologies including React, Next.js, Node.js, Python, and cloud platforms like AWS and Google Cloud. For mobile, we build cross-platform apps with React Native. Every app includes API integrations with your existing tools.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+              How much does a custom business app cost?
+            </button>
+            <div class="faq-answer">
+              <p>Custom app projects vary based on scope and complexity. We walk through pricing, timeline, and exactly what you'll get on a free strategy call. No surprises — you'll know the full investment before we start.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+              Can you integrate with our existing tools?
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Every app we build connects to your existing stack — CRM, email, payment processor, calendar, inventory system, whatever you're already using. The app becomes the central hub, not another silo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-up">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+              Do you provide ongoing support after launch?
+            </button>
+            <div class="faq-answer">
+              <p>Every project includes 30 days of hands-on support after launch. After that, we offer maintenance plans for updates, new features, and priority support. Your app stays current and running smoothly.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="appdesign-cta">
+      <div class="container">
+        <span class="section-eyebrow fade-up">Get Started</span>
+        <h2 class="section-title fade-up" style="max-width: 600px; margin-left: auto; margin-right: auto;">Ready to Build Your Custom App?</h2>
+        <p class="section-subtitle mx-auto fade-up">Stop settling for tools that almost work. Let's build the app your business actually needs.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Strategy Call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
