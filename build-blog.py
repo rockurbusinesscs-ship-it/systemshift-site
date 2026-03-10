@@ -890,6 +890,7 @@ def build_post_html(meta, body_html, read_time):
         <div class="footer-col"><h4>Pages</h4><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../blog.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact Us</a></div>
         <div class="footer-col"><h4>Resources</h4><a href="../blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../case-studies.html">Case Studies</a><a href="../contact.html">Book a Call</a></div>
         <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
+        <div class="footer-col"><h4>Service Areas</h4><a href="../greensboro-automation.html">Greensboro, NC</a><a href="../high-point-automation.html">High Point, NC</a><a href="../winston-salem-automation.html">Winston-Salem, NC</a><a href="../nc-automation.html">NC Triad Area</a></div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
@@ -1285,6 +1286,7 @@ def build_index_html(posts, page=1, total_pages=1):
         <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
         <div class="footer-col"><h4>Resources</h4><a href="blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
         <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+        <div class="footer-col"><h4>Service Areas</h4><a href="greensboro-automation.html">Greensboro, NC</a><a href="high-point-automation.html">High Point, NC</a><a href="winston-salem-automation.html">Winston-Salem, NC</a><a href="nc-automation.html">NC Triad Area</a></div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
@@ -1516,6 +1518,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
         <div class="footer-col"><h4>Pages</h4><a href="../../index.html">Home</a><a href="../../services.html">Services</a><a href="../../blog.html">Blog</a><a href="../../about.html">About</a><a href="../../contact.html">Contact Us</a></div>
         <div class="footer-col"><h4>Resources</h4><a href="../../blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../../case-studies.html">Case Studies</a><a href="../../contact.html">Book a Call</a></div>
         <div class="footer-col"><h4>Legal</h4><a href="../../privacy-policy.html">Privacy Policy</a><a href="../../terms.html">Terms of Service</a></div>
+        <div class="footer-col"><h4>Service Areas</h4><a href="../../greensboro-automation.html">Greensboro, NC</a><a href="../../high-point-automation.html">High Point, NC</a><a href="../../winston-salem-automation.html">Winston-Salem, NC</a><a href="../../nc-automation.html">NC Triad Area</a></div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>

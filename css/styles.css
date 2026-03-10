@@ -411,8 +411,8 @@ a:hover { color: #0cc; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.4fr 1fr 1fr 0.8fr 1fr;
+  gap: 32px;
   margin-bottom: 48px;
 }
 
