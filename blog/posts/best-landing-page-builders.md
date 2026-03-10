@@ -41,7 +41,7 @@ Here are the 7 best landing page builders for small business, ranked by what act
 ## 1. GoHighLevel - Best All-in-One Platform
 ![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
-[GoHighLevel](https://www.gohighlevel.com) - $97 to $497/mo
+[GoHighLevel](https://www.gohighlevel.com/?fp_ref=rock-your-automations63) - $97 to $497/mo
 
 If you're tired of duct-taping 6 different tools together, this is the one. GoHighLevel isn't just a landing page builder. It's your CRM, your funnel builder, your email and SMS automation, your booking system, and your landing pages - all in one platform.
 

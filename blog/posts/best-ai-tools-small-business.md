@@ -66,7 +66,7 @@ The writing quality tends to be more natural and less "AI-sounding" than most al
 
 **Best for:** Analyzing long documents, writing detailed proposals, summarizing customer research, and any task where you need the AI to hold a lot of context at once.
 
-### 3. [GoHighLevel AI](https://www.gohighlevel.com) - Best CRM + AI Combo
+### 3. [GoHighLevel AI](https://www.gohighlevel.com/?fp_ref=rock-your-automations63) - Best CRM + AI Combo
 ![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
 **Pricing:** $97-$497/mo (AI features included)

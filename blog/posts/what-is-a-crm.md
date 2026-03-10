@@ -138,7 +138,7 @@ If you can't check your pipeline from your phone, the CRM is broken. Service bus
 
 There are hundreds of CRMs on the market. HubSpot, Salesforce, Zoho, Pipedrive - they all do the basics. But most of them make you stitch together separate tools for email, texting, funnels, scheduling, and automation.
 
-That's where [GoHighLevel](https://www.gohighlevel.com) stands apart.
+That's where [GoHighLevel](https://www.gohighlevel.com/?fp_ref=rock-your-automations63) stands apart.
 
 GoHighLevel is an all-in-one CRM built specifically for small businesses and service companies. CRM, funnels, email marketing, SMS, phone system, appointment scheduling, invoicing, reputation management, and AI - all under one roof. Starting at $97/month.
 
@@ -167,7 +167,7 @@ A CRM only works if you set it up to match how your business actually operates. 
 
 Here's the play if you don't have a CRM yet:
 
-**Step 1.** Pick a platform. If you're a small service business, start with [GoHighLevel](https://www.gohighlevel.com). If you just want to test the waters with zero budget, HubSpot's free tier works for basic contact management.
+**Step 1.** Pick a platform. If you're a small service business, start with [GoHighLevel](https://www.gohighlevel.com/?fp_ref=rock-your-automations63). If you just want to test the waters with zero budget, HubSpot's free tier works for basic contact management.
 
 **Step 2.** Import your contacts. Every lead, customer, and prospect you have - get them in the system. Export from your spreadsheet, your email, your phone. All of it goes in.
 

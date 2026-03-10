@@ -46,7 +46,7 @@ Now let's dig into each one.
 ### 1. GoHighLevel - Best All-in-One Platform (Top Pick)
 ![GoHighLevel logo](../images/blog/products/gohighlevel-logo.png "GoHighLevel")
 
-[GoHighLevel](https://www.gohighlevel.com) - $97 to $497/month
+[GoHighLevel](https://www.gohighlevel.com/?fp_ref=rock-your-automations63) - $97 to $497/month
 
 This is the one that replaces everything else. Email, SMS, CRM, funnels, landing pages, automation, appointment booking, reputation management - all in one dashboard. Unlimited contacts and unlimited emails on every plan.
 
