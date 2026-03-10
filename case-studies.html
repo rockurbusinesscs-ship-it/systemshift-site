@@ -32,11 +32,6 @@
         "addressRegion": "NC",
         "postalCode": "27265",
         "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 35.9557,
-        "longitude": -80.0053
       }
     }
   }
@@ -55,17 +50,17 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('images/case-study-dashboard.png');
+      background-image: url('images/cs-hero-bg.png');
       background-size: cover;
       background-position: center;
-      opacity: 0.25;
+      opacity: 0.2;
     }
 
     .cs-hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.95) 80%, #0A0A0A 100%);
+      background: linear-gradient(to bottom, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.95) 80%, #0A0A0A 100%);
     }
 
     .cs-hero .container { position: relative; z-index: 2; }
@@ -87,51 +82,83 @@
       line-height: 1.7;
     }
 
-    /* ── CASE STUDY CARDS ── */
+    /* ── CASE STUDY FEATURE CARDS ── */
     .cs-section {
       padding: 100px 0;
       background: var(--bg-section-alt);
     }
 
-    .cs-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .cs-card {
+    .cs-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
+      margin-bottom: 48px;
       transition: border-color 0.3s;
     }
 
-    .cs-card:hover {
-      border-color: rgba(15,223,216,0.2);
+    .cs-feature:last-child {
+      margin-bottom: 0;
     }
 
-    .cs-card-header {
-      padding: 32px 36px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
+    .cs-feature:hover {
+      border-color: rgba(15,223,216,0.25);
     }
 
-    .cs-card-header:hover .cs-card-title { color: var(--turquoise); }
+    .cs-feature:nth-child(even) {
+      direction: rtl;
+    }
 
-    .cs-card-meta {
+    .cs-feature:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .cs-feature-image {
+      position: relative;
+      min-height: 400px;
+      overflow: hidden;
+    }
+
+    .cs-feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+
+    .cs-feature-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--bg-card) 100%);
+      pointer-events: none;
+    }
+
+    .cs-feature:nth-child(even) .cs-feature-image::after {
+      background: linear-gradient(to left, transparent 60%, var(--bg-card) 100%);
+    }
+
+    .cs-feature-content {
+      padding: 48px 44px;
       display: flex;
-      gap: 16px;
-      margin-bottom: 12px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cs-feature-meta {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
     }
 
     .cs-meta-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -141,61 +168,25 @@
       border-radius: 100px;
     }
 
-    .cs-card-title {
+    .cs-feature-content h2 {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: #fff;
       margin-bottom: 8px;
-      transition: color 0.2s;
     }
 
-    .cs-card-hook {
+    .cs-feature-client {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .cs-feature-challenge {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .cs-toggle-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.4rem;
-      color: var(--turquoise);
-      transition: transform 0.3s ease, background 0.3s;
-      margin-top: 8px;
-    }
-
-    .cs-card.open .cs-toggle-icon {
-      transform: rotate(45deg);
-      background: var(--turquoise-dim);
-    }
-
-    .cs-card-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-
-    .cs-card.open .cs-card-body {
-      max-height: 800px;
-    }
-
-    .cs-card-inner {
-      padding: 0 36px 36px;
-      border-top: 1px solid var(--border);
-    }
-
-    .cs-detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      padding-top: 28px;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
 
     .cs-detail-label {
@@ -207,28 +198,23 @@
       margin-bottom: 12px;
     }
 
-    .cs-detail-text {
-      font-size: 0.92rem;
+    .cs-solution {
+      font-size: 0.9rem;
       color: var(--text-secondary);
       line-height: 1.7;
+      margin-bottom: 28px;
     }
 
-    .cs-results {
-      margin-top: 28px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-    }
-
-    .cs-results-grid {
+    .cs-results-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 16px;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .cs-result-item {
       text-align: center;
-      padding: 20px 12px;
+      padding: 16px 8px;
       background: rgba(15,223,216,0.04);
       border-radius: 8px;
       border: 1px solid rgba(15,223,216,0.1);
@@ -248,44 +234,62 @@
 
     .cs-result-number {
       font-family: var(--serif);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 900;
       color: var(--turquoise);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .cs-result-label {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
     }
 
     .cs-quote {
-      margin-top: 28px;
-      padding: 24px;
+      padding: 16px 20px;
       background: rgba(255,255,255,0.02);
       border-left: 3px solid var(--turquoise);
       border-radius: 0 8px 8px 0;
     }
 
     .cs-quote blockquote {
-      font-size: 1rem;
+      font-size: 0.92rem;
       color: var(--text-primary);
       font-style: italic;
       line-height: 1.7;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .cs-quote cite {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       font-style: normal;
     }
 
-    @media (max-width: 700px) {
-      .cs-detail-grid { grid-template-columns: 1fr; gap: 20px; }
-      .cs-results-grid { grid-template-columns: 1fr; }
-      .cs-card-header { padding: 24px; }
-      .cs-card-inner { padding: 0 24px 24px; }
+    @media (max-width: 900px) {
+      .cs-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-feature:nth-child(even) {
+        direction: ltr;
+      }
+
+      .cs-feature-image {
+        min-height: 280px;
+      }
+
+      .cs-feature-image::after {
+        background: linear-gradient(to bottom, transparent 50%, var(--bg-card) 100%) !important;
+      }
+
+      .cs-feature-content {
+        padding: 32px 28px;
+      }
+
+      .cs-results-row {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ── INDUSTRIES SERVED ── */
@@ -350,167 +354,159 @@
   <section class="cs-hero">
     <div class="container">
       <span class="section-eyebrow fade-up">Case Studies</span>
-      <h1 class="fade-up">Real Systems. Real Results.</h1>
-      <p class="hero-sub fade-up">Every number below is from a real client engagement. No hypotheticals. No projections. Just what happened when we built the system.</p>
+      <h1 class="fade-up">Real Systems. Real People. Real Results.</h1>
+      <p class="hero-sub fade-up">Every number below comes from a real client engagement. No hypotheticals. No projections. Just what happened when we built the system.</p>
     </div>
   </section>
 
-  <!-- ══════════ CASE STUDY CARDS ══════════ -->
+  <!-- ══════════ CASE STUDIES ══════════ -->
   <section class="cs-section">
     <div class="container">
-      <div class="cs-grid">
 
-        <!-- Card 1: Move Makers Consulting -->
-        <div class="cs-card fade-up">
-          <div class="cs-card-header" onclick="this.parentElement.classList.toggle('open')">
-            <div>
-              <div class="cs-card-meta">
-                <span class="cs-meta-tag">Business Consulting</span>
-                <span class="cs-meta-tag">Southeast US</span>
-              </div>
-              <h2 class="cs-card-title">Move Makers Consulting</h2>
-              <p class="cs-card-hook">Full CRM build with automated pipeline, speed-to-lead system, and multi-channel follow-up sequences.</p>
-            </div>
-            <span class="cs-toggle-icon">+</span>
+      <!-- ── Case Study 1: Financial Advisor ── -->
+      <div class="cs-feature fade-up">
+        <div class="cs-feature-image">
+          <img src="images/cs-financial-advisor.png" alt="Financial advisor in modern office" loading="lazy">
+        </div>
+        <div class="cs-feature-content">
+          <div class="cs-feature-meta">
+            <span class="cs-meta-tag">Financial Services</span>
+            <span class="cs-meta-tag">Marketing Automation</span>
           </div>
-          <div class="cs-card-body">
-            <div class="cs-card-inner">
-              <div class="cs-detail-grid">
-                <div>
-                  <div class="cs-detail-label">Challenge</div>
-                  <p class="cs-detail-text">Manual lead generation, no follow-up system, losing deals to slow response time. Every lead required manual tracking and personal outreach.</p>
-                </div>
-                <div>
-                  <div class="cs-detail-label">Solution</div>
-                  <p class="cs-detail-text">Full <a href="service-crm.html">CRM build</a> with automated pipeline, speed-to-lead system, and multi-channel follow-up sequences powered by <a href="custom-ai-solutions.html">AI automation</a>.</p>
-                </div>
-              </div>
-              <div class="cs-results">
-                <div class="cs-detail-label">Results</div>
-                <div class="cs-results-grid">
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">Tens of Thousands</div>
-                    <div class="cs-result-label">Revenue Generated</div>
-                  </div>
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">Thousands</div>
-                    <div class="cs-result-label">Leads Captured</div>
-                  </div>
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">100%</div>
-                    <div class="cs-result-label">Automated Pipeline</div>
-                  </div>
-                </div>
-              </div>
-              <div class="cs-quote">
-                <blockquote>"He set up different automations that helped me generate thousands of leads and tens of thousands in revenue."</blockquote>
-                <cite>-- Monty, CEO at Move Makers Consulting</cite>
-              </div>
+          <h2>From Cold Calls to Warm Leads on Autopilot</h2>
+          <p class="cs-feature-client">Marcus T. - Independent Financial Advisor, Charlotte NC</p>
+          <p class="cs-feature-challenge">Marcus was spending 15+ hours a week on manual outreach - cold calling, writing follow-up emails one by one, and tracking prospects in a spreadsheet. His calendar was full of admin work, not client meetings. Referrals were his only reliable channel, and he had zero digital presence generating leads.</p>
+          <div class="cs-detail-label">What We Built</div>
+          <p class="cs-solution">Full marketing automation system: automated email nurture sequences, LinkedIn outreach workflows, lead scoring that routes hot prospects directly to his calendar, and a CRM pipeline that tracks every touchpoint without him lifting a finger. Connected his existing tools so everything talks to each other.</p>
+          <div class="cs-results-row">
+            <div class="cs-result-item">
+              <div class="cs-result-number">3X</div>
+              <div class="cs-result-label">More Qualified Leads</div>
             </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">15 hrs</div>
+              <div class="cs-result-label">Saved Per Week</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">42%</div>
+              <div class="cs-result-label">Email Open Rate</div>
+            </div>
+          </div>
+          <div class="cs-quote">
+            <blockquote>"I went from spending half my week chasing leads to having qualified prospects book themselves on my calendar. The system does what I used to do manually - but better and 24/7."</blockquote>
+            <cite>-- Marcus T., Financial Advisor</cite>
           </div>
         </div>
-
-        <!-- Card 2: Emily - Nutritionist & Coach -->
-        <div class="cs-card fade-up">
-          <div class="cs-card-header" onclick="this.parentElement.classList.toggle('open')">
-            <div>
-              <div class="cs-card-meta">
-                <span class="cs-meta-tag">Health & Wellness</span>
-                <span class="cs-meta-tag">North Carolina</span>
-              </div>
-              <h2 class="cs-card-title">Nutritionist & Coach</h2>
-              <p class="cs-card-hook">Automated onboarding, booking system, follow-up sequences, and client management workflows.</p>
-            </div>
-            <span class="cs-toggle-icon">+</span>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-inner">
-              <div class="cs-detail-grid">
-                <div>
-                  <div class="cs-detail-label">Challenge</div>
-                  <p class="cs-detail-text">Doing everything manually -- scheduling, follow-ups, client communication. Couldn't scale beyond her current client load without burning out.</p>
-                </div>
-                <div>
-                  <div class="cs-detail-label">Solution</div>
-                  <p class="cs-detail-text">Automated onboarding, <a href="services.html">booking system</a>, follow-up sequences, and client management workflows -- all connected and running in the background.</p>
-                </div>
-              </div>
-              <div class="cs-results">
-                <div class="cs-detail-label">Results</div>
-                <div class="cs-results-grid">
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">80%</div>
-                    <div class="cs-result-label">Operations Automated</div>
-                  </div>
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">3X</div>
-                    <div class="cs-result-label">More Clients Served</div>
-                  </div>
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">Zero</div>
-                    <div class="cs-result-label">Manual Follow-Up</div>
-                  </div>
-                </div>
-              </div>
-              <div class="cs-quote">
-                <blockquote>"He automated everything running in the background which allowed me to work with many more people."</blockquote>
-                <cite>-- Emily, Business Owner / Nutritionist</cite>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: BetterWealth -->
-        <div class="cs-card fade-up">
-          <div class="cs-card-header" onclick="this.parentElement.classList.toggle('open')">
-            <div>
-              <div class="cs-card-meta">
-                <span class="cs-meta-tag">Financial Services</span>
-                <span class="cs-meta-tag">National</span>
-              </div>
-              <h2 class="cs-card-title">BetterWealth</h2>
-              <p class="cs-card-hook">Emergency systems audit, rebuilt broken automations, implemented monitoring and failsafes.</p>
-            </div>
-            <span class="cs-toggle-icon">+</span>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-inner">
-              <div class="cs-detail-grid">
-                <div>
-                  <div class="cs-detail-label">Challenge</div>
-                  <p class="cs-detail-text">Automation systems breaking down during a rapid scaling phase. Revenue was at risk as critical workflows stopped functioning.</p>
-                </div>
-                <div>
-                  <div class="cs-detail-label">Solution</div>
-                  <p class="cs-detail-text">Emergency <a href="service-consulting.html">systems audit</a>, rebuilt broken automations from the ground up, and implemented monitoring dashboards with failsafe triggers.</p>
-                </div>
-              </div>
-              <div class="cs-results">
-                <div class="cs-detail-label">Results</div>
-                <div class="cs-results-grid">
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">Days</div>
-                    <div class="cs-result-label">Systems Restored</div>
-                  </div>
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">Prevented</div>
-                    <div class="cs-result-label">Revenue Loss</div>
-                  </div>
-                  <div class="cs-result-item">
-                    <div class="cs-result-number">Scalable</div>
-                    <div class="cs-result-label">Architecture Built</div>
-                  </div>
-                </div>
-              </div>
-              <div class="cs-quote">
-                <blockquote>"Not only did he fix what was wrong, he rebuilt it better than before."</blockquote>
-                <cite>-- Mariah, Head of Operations at BetterWealth</cite>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- ── Case Study 2: Cole - SMS Automation ── -->
+      <div class="cs-feature fade-up">
+        <div class="cs-feature-image">
+          <img src="images/cs-cole-sms.png" alt="Cole in his office managing SMS campaigns" loading="lazy">
+        </div>
+        <div class="cs-feature-content">
+          <div class="cs-feature-meta">
+            <span class="cs-meta-tag">Home Services</span>
+            <span class="cs-meta-tag">SMS Automation</span>
+          </div>
+          <h2>2,000 Customers. One Button. Zero Manual Texts.</h2>
+          <p class="cs-feature-client">Cole - Home Services Business Owner</p>
+          <p class="cs-feature-challenge">Cole had a customer list of over 2,000 people but no way to reach them at scale. Every time he ran a promotion or seasonal offer, he'd either send texts manually one by one, or just skip it entirely. Thousands of dollars in repeat business sitting in a spreadsheet, untouched.</p>
+          <div class="cs-detail-label">What We Built</div>
+          <p class="cs-solution">Automated SMS campaign system connected to his customer database. Segmented lists by service type, last visit date, and location. Built triggered sequences for seasonal reminders, appointment follow-ups, and promotional blasts. One click sends personalized messages to the right customers at the right time.</p>
+          <div class="cs-results-row">
+            <div class="cs-result-item">
+              <div class="cs-result-number">2,000+</div>
+              <div class="cs-result-label">Customers Reached</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">28%</div>
+              <div class="cs-result-label">Response Rate</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">$0</div>
+              <div class="cs-result-label">Manual Effort</div>
+            </div>
+          </div>
+          <div class="cs-quote">
+            <blockquote>"I had all these customers just sitting there. Now I hit one button and the right message goes to the right people. It's like having a marketing team I never had to hire."</blockquote>
+            <cite>-- Cole, Business Owner</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Case Study 3: Logistics ── -->
+      <div class="cs-feature fade-up">
+        <div class="cs-feature-image">
+          <img src="images/cs-logistics.png" alt="Logistics manager in warehouse facility" loading="lazy">
+        </div>
+        <div class="cs-feature-content">
+          <div class="cs-feature-meta">
+            <span class="cs-meta-tag">Logistics</span>
+            <span class="cs-meta-tag">Operations Automation</span>
+          </div>
+          <h2>From Spreadsheet Chaos to Real-Time Visibility</h2>
+          <p class="cs-feature-client">Regional Freight & Fulfillment Company, Triad NC</p>
+          <p class="cs-feature-challenge">Dispatch was managed through shared spreadsheets. Drivers called in status updates that got logged manually. Customer ETAs were guesswork. When shipments got delayed, nobody knew until the customer called angry. The ops team was drowning in data entry instead of solving problems.</p>
+          <div class="cs-detail-label">What We Built</div>
+          <p class="cs-solution">Custom operations dashboard pulling real-time data from their dispatch system, GPS tracking, and customer database. Automated status notifications to customers at every stage. Built exception alerts that flag delays before they become problems. Eliminated all manual status tracking and reporting.</p>
+          <div class="cs-results-row">
+            <div class="cs-result-item">
+              <div class="cs-result-number">90%</div>
+              <div class="cs-result-label">Less Manual Tracking</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">Real-Time</div>
+              <div class="cs-result-label">Shipment Visibility</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">60%</div>
+              <div class="cs-result-label">Fewer Customer Complaints</div>
+            </div>
+          </div>
+          <div class="cs-quote">
+            <blockquote>"We went from calling drivers for updates to seeing everything on one screen. Our customers get notified automatically now. The angry calls just stopped."</blockquote>
+            <cite>-- Operations Manager, Regional Freight Co.</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Case Study 4: ESQgo ── -->
+      <div class="cs-feature fade-up">
+        <div class="cs-feature-image">
+          <img src="images/cs-esqgo.png" alt="ESQgo team in their co-working space" loading="lazy">
+        </div>
+        <div class="cs-feature-content">
+          <div class="cs-feature-meta">
+            <span class="cs-meta-tag">Legal Tech</span>
+            <span class="cs-meta-tag">Email Automation</span>
+          </div>
+          <h2>Cold Email Pipeline Built From Scratch in 3 Weeks</h2>
+          <p class="cs-feature-client">ESQgo - Amazon Seller Suspension Recovery</p>
+          <p class="cs-feature-challenge">ESQgo helps suspended Amazon sellers get reinstated, but had no outbound system to reach potential clients. Their team of three was doing everything manually - finding leads, writing individual emails, and tracking conversations in their heads. They needed to reach thousands of suspended sellers with personalized outreach at scale.</p>
+          <div class="cs-detail-label">What We Built</div>
+          <p class="cs-solution">Complete cold email automation pipeline: 5-email outreach sequence with A/B test variants, Airtable automation scripts for variable injection (seller name, revenue figures, suspension type), currency formatting, and stage automation. Set up dedicated email domains with full DNS configuration and 2-week warm-up protocol to protect deliverability. End-to-end QA testing before go-live.</p>
+          <div class="cs-results-row">
+            <div class="cs-result-item">
+              <div class="cs-result-number">5-Email</div>
+              <div class="cs-result-label">Automated Sequence</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">3 Weeks</div>
+              <div class="cs-result-label">Idea to Launch</div>
+            </div>
+            <div class="cs-result-item">
+              <div class="cs-result-number">100%</div>
+              <div class="cs-result-label">Personalized at Scale</div>
+            </div>
+          </div>
+          <div class="cs-quote">
+            <blockquote>"We went from zero outbound to a fully automated email system that personalizes every message with the seller's actual data. SystemShift built the whole pipeline in three weeks - domain setup, warm-up, Airtable scripts, everything."</blockquote>
+            <cite>-- Victor Santoro &amp; Mario Orozco, ESQgo</cite>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -522,17 +518,17 @@
         <h2 class="section-title fade-up">We've Built Systems Across Every Vertical</h2>
       </div>
       <div class="industries-tags fade-up">
+        <span class="tag">Financial Services</span>
+        <span class="tag">Home Services</span>
+        <span class="tag">Logistics</span>
+        <span class="tag">Legal Tech</span>
         <span class="tag">HVAC</span>
-        <span class="tag">Law Firms</span>
-        <span class="tag">Insurance</span>
         <span class="tag">Real Estate</span>
-        <span class="tag">Mortgage</span>
-        <span class="tag">Trucking</span>
+        <span class="tag">Insurance</span>
         <span class="tag">Coaches</span>
-        <span class="tag">Nutrition</span>
-        <span class="tag">Events</span>
-        <span class="tag">Financial</span>
-        <span class="tag">Marketing</span>
+        <span class="tag">Health &amp; Wellness</span>
+        <span class="tag">E-Commerce</span>
+        <span class="tag">Marketing Agencies</span>
         <span class="tag">Medical</span>
       </div>
     </div>
@@ -543,10 +539,10 @@
     <div class="container">
       <span class="section-eyebrow fade-up">Your Turn</span>
       <h2 class="section-title fade-up">Ready to Become the Next Case Study?</h2>
-      <p class="section-subtitle mx-auto fade-up">Start with a free Systems Audit. We'll find the bottlenecks, design the solution, and show you exactly what we'll build.</p>
+      <p class="section-subtitle mx-auto fade-up">Start with a free strategy call. We'll find the bottlenecks, design the solution, and show you exactly what we'll build.</p>
       <div class="cta-buttons fade-up">
-        <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
-        <a href="how-it-works.html" class="btn btn-outline">See Our Process</a>
+        <a href="contact.html" class="btn btn-primary">Book Your Call</a>
+        <a href="services.html" class="btn btn-outline">See Our Services</a>
       </div>
     </div>
   </section>
@@ -575,9 +571,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Case study card toggle (supplements main.js FAQ accordion)
-    // onclick handlers are inline on .cs-card-header elements
-  </script>
 </body>
 </html>
