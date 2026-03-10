@@ -321,7 +321,7 @@ def build_post_html(meta, body_html, read_time):
   </script>
   <style>
     .blog-post-hero {{
-      padding: 140px 0 40px;
+      padding: 140px 0 24px;
       background: var(--bg-dark);
     }}
 
@@ -411,7 +411,6 @@ def build_post_html(meta, body_html, read_time):
       width: 100%;
       max-height: 480px;
       overflow: hidden;
-      margin-top: 80px;
     }}
 
     .blog-cover img {{
@@ -422,7 +421,7 @@ def build_post_html(meta, body_html, read_time):
     }}
 
     .blog-cover + .blog-post-hero {{
-      padding-top: 48px;
+      padding-top: 40px;
     }}
 
     .blog-content {{
@@ -444,6 +443,10 @@ def build_post_html(meta, body_html, read_time):
       font-weight: 700;
       color: #fff;
       margin: 48px 0 16px;
+    }}
+
+    .blog-body h2:first-child {{
+      margin-top: 0;
     }}
 
     .blog-body h3 {{
