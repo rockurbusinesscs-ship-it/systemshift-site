@@ -314,7 +314,7 @@ def build_post_html(meta, body_html, read_time):
 
     cover_html = f'''
     <div class="blog-cover">
-      <img src="https://systemshifthq.com/{cover}" alt="{title}">
+      <img src="https://systemshifthq.com/{cover}?v=2" alt="{title}" width="1200" height="630" style="width:100% !important; height:480px !important; object-fit:cover; display:block;">
     </div>''' if cover else ''
 
     schema = json.dumps({
@@ -932,7 +932,7 @@ def build_index_html(posts, page=1, total_pages=1):
         meta = p['meta']
         tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
         cover = meta.get('cover', '')
-        cover_img = f'<img src="https://systemshifthq.com/{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+        cover_img = f'<img src="https://systemshifthq.com/{cover}?v=2" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
         author_key = meta.get('author', 'Rock')
         author_data = AUTHORS.get(author_key, AUTHORS.get('Rock'))
 
@@ -1305,7 +1305,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
         meta = p['meta']
         tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
         cover = meta.get('cover', '')
-        cover_img = f'<img src="https://systemshifthq.com/{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+        cover_img = f'<img src="https://systemshifthq.com/{cover}?v=2" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
         author_key = meta.get('author', 'Rock')
         author_data = AUTHORS.get(author_key, AUTHORS.get('Rock'))
 
