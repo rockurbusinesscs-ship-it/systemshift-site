@@ -154,8 +154,9 @@ a:hover { color: #0cc; }
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(20px);
+  background: transparent;
+  backdrop-filter: none;
+  transition: background 0.3s, backdrop-filter 0.3s;
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: background 0.3s, box-shadow 0.3s;
