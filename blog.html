@@ -51,6 +51,40 @@
       line-height: 1.7;
     }
 
+    .cat-nav {
+      padding: 32px 0 0;
+      background: var(--bg-dark);
+    }
+
+    .cat-pills {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cat-pill {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .cat-pill:hover {
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }
+
+    .cat-pill-active {
+      background: var(--turquoise-dim);
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }
+
     .blog-grid-section {
       padding: 60px 0 100px;
       background: var(--bg-dark);
@@ -204,23 +238,23 @@
       </div>
     </section>
 
+    <section class="cat-nav">
+      <div class="container">
+        <div class="cat-pills">
+          <a href="blog.html" class="cat-pill cat-pill-active">All</a>
+          <a href="blog/category/automation.html" class="cat-pill">&#9889; Automation</a>
+          <a href="blog/category/ai.html" class="cat-pill">&#129302; AI</a>
+          <a href="blog/category/crm.html" class="cat-pill">&#128202; CRM</a>
+          <a href="blog/category/marketing.html" class="cat-pill">&#128640; Marketing</a>
+          <a href="blog/category/strategy.html" class="cat-pill">&#127919; Strategy</a>
+          <a href="blog/category/seo.html" class="cat-pill">&#128269; SEO</a>
+        </div>
+      </div>
+    </section>
+
     <section class="blog-grid-section">
       <div class="container">
-        <div class='blog-grid'>
-        <a href="blog/speed-to-lead-automation.html" class="blog-card fade-up">
-          <img src="images/case-study-dashboard.png" alt="Speed to Lead Is Killing Your Close Rate - Here's the Fix" class="blog-card-img" loading="lazy">
-          <div class="blog-card-content">
-            <div class="blog-card-meta">
-              <span class="blog-category">Automation</span>
-              <span class="blog-date">March 09, 2026</span>
-              <span class="blog-read-time">4 min read</span>
-            </div>
-            <h2>Speed to Lead Is Killing Your Close Rate - Here's the Fix</h2>
-            <p>47-hour average lead response time is killing your close rate. Speed to lead under 5 minutes means 100x better contact rates. Here's the system that responds in seconds.</p>
-            <div class="blog-card-tags"><span class="blog-card-tag">lead response</span><span class="blog-card-tag">CRM</span><span class="blog-card-tag">speed to lead</span><span class="blog-card-tag">automation</span><span class="blog-card-tag">close rate</span></div>
-          </div>
-        </a>
-</div>
+        {"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}
       </div>
     </section>
   </main>

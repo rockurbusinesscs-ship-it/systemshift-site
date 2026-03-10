@@ -32,7 +32,52 @@ from pathlib import Path
 SITE_DIR = os.path.dirname(os.path.abspath(__file__))
 POSTS_DIR = os.path.join(SITE_DIR, 'blog', 'posts')
 BLOG_OUTPUT_DIR = os.path.join(SITE_DIR, 'blog')
+CATEGORY_DIR = os.path.join(SITE_DIR, 'blog', 'category')
 SITE_URL = 'https://systemshifthq.com'
+
+# Category definitions with SEO descriptions
+CATEGORIES = {
+    'Automation': {
+        'slug': 'automation',
+        'description': 'Workflow automation, speed-to-lead systems, and backend integrations that eliminate manual work and scale your operations.',
+        'icon': '&#9889;',
+    },
+    'AI': {
+        'slug': 'ai',
+        'description': 'AI agents, chatbots, intelligent document processing, and practical AI tools that give your business an unfair advantage.',
+        'icon': '&#129302;',
+    },
+    'CRM': {
+        'slug': 'crm',
+        'description': 'CRM setup, pipeline management, lead tracking, and the systems that turn contacts into clients on autopilot.',
+        'icon': '&#128202;',
+    },
+    'Marketing': {
+        'slug': 'marketing',
+        'description': 'Lead generation, funnel optimization, email campaigns, and the marketing systems that bring clients to you.',
+        'icon': '&#128640;',
+    },
+    'Strategy': {
+        'slug': 'strategy',
+        'description': 'Business systems thinking, scaling operations, team efficiency, and the strategic moves that separate growing businesses from stuck ones.',
+        'icon': '&#127919;',
+    },
+    'SEO': {
+        'slug': 'seo',
+        'description': 'Search engine optimization, AI search (GEO), content strategy, and getting found by the right people at the right time.',
+        'icon': '&#128269;',
+    },
+}
+
+# Author profiles
+AUTHORS = {
+    'Rock': {
+        'name': 'Rock',
+        'title': 'Founder, SystemShift HQ',
+        'bio': 'I build AI and automation systems for businesses that are tired of doing everything manually. Based in High Point, NC.',
+        'avatar': 'images/about-founder.png',
+    },
+}
 
 # ── Minimal Markdown parser (no dependencies) ──
 
@@ -205,6 +250,26 @@ def build_post_html(meta, body_html, read_time):
         date_iso = date
 
     tags_html = ''.join(f'<span class="blog-tag">{t}</span>' for t in tags) if isinstance(tags, list) else ''
+
+    # Category link
+    cat_info = CATEGORIES.get(category, {})
+    cat_slug = cat_info.get('slug', category.lower()) if cat_info else category.lower()
+    category_link = f'<a href="../blog/category/{cat_slug}.html" class="blog-category">{category}</a>' if category else ''
+
+    # Author info
+    author_info = AUTHORS.get(author, AUTHORS.get('Rock'))
+    author_html = ''
+    if author_info:
+        avatar = f'<img src="../{author_info["avatar"]}" alt="{author_info["name"]}" class="blog-author-avatar">' if author_info.get('avatar') else ''
+        author_html = f'''
+        <div class="blog-author">
+          {avatar}
+          <div>
+            <div class="blog-author-name">{author_info['name']}</div>
+            <div class="blog-author-title">{author_info['title']}</div>
+            <p class="blog-author-bio">{author_info['bio']}</p>
+          </div>
+        </div>'''
 
     cover_html = f'''
     <div class="blog-cover">
@@ -467,10 +532,114 @@ def build_post_html(meta, body_html, read_time):
 
     .blog-back:hover {{ text-decoration: underline; }}
 
+    /* Author */
+    .blog-author {{
+      max-width: 720px;
+      margin: 48px auto 0;
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }}
+
+    .blog-author-avatar {{
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--turquoise-dim);
+    }}
+
+    .blog-author-name {{
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }}
+
+    .blog-author-title {{
+      font-size: 0.8rem;
+      color: var(--turquoise);
+      margin-bottom: 8px;
+    }}
+
+    .blog-author-bio {{
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }}
+
+    /* Comments */
+    .blog-comments {{
+      max-width: 720px;
+      margin: 48px auto 0;
+    }}
+
+    .blog-comments h3 {{
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }}
+
+    .comment-form {{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }}
+
+    .comment-row {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }}
+
+    .comment-form input,
+    .comment-form textarea {{
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }}
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {{
+      outline: none;
+      border-color: var(--turquoise);
+    }}
+
+    .comment-form textarea {{
+      min-height: 120px;
+      resize: vertical;
+    }}
+
+    .comment-form .btn {{
+      align-self: flex-start;
+    }}
+
+    .comment-note {{
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }}
+
     @media (max-width: 768px) {{
       .blog-post-hero {{ padding: 120px 0 32px; }}
       .blog-body {{ font-size: 1rem; }}
       .blog-cta {{ padding: 28px 20px; }}
+      .blog-author {{ flex-direction: column; text-align: center; padding: 24px; }}
+      .comment-row {{ grid-template-columns: 1fr; }}
     }}
   </style>
 </head>
@@ -511,7 +680,7 @@ def build_post_html(meta, body_html, read_time):
       <div class="container">
         <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
         <div class="blog-post-meta">
-          <span class="blog-category">{category}</span>
+          {category_link}
           <span class="blog-date">{date_display}</span>
           <span class="blog-read-time">{read_time} min read</span>
         </div>
@@ -531,6 +700,20 @@ def build_post_html(meta, body_html, read_time):
           <h3>Ready to Automate Your Business?</h3>
           <p>Book a free strategy call and we'll map out exactly what to build first.</p>
           <a href="../contact.html" class="btn btn-primary">Book Your Call</a>
+        </div>
+        {author_html}
+        <div class="blog-comments">
+          <h3>Join the Conversation</h3>
+          <form class="comment-form" action="https://api.leadbreeze.co/widget/form/submit" method="POST">
+            <input type="hidden" name="blog_post" value="{slug}">
+            <div class="comment-row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <textarea name="comment" placeholder="Share your thoughts..." required></textarea>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+            <p class="comment-note">Your email won't be published. Comments are reviewed before posting.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -646,6 +829,40 @@ def build_index_html(posts):
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.7;
+    }}
+
+    .cat-nav {{
+      padding: 32px 0 0;
+      background: var(--bg-dark);
+    }}
+
+    .cat-pills {{
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }}
+
+    .cat-pill {{
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+      text-decoration: none;
+    }}
+
+    .cat-pill:hover {{
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }}
+
+    .cat-pill-active {{
+      background: var(--turquoise-dim);
+      border-color: var(--turquoise);
+      color: var(--turquoise);
     }}
 
     .blog-grid-section {{
@@ -801,9 +1018,17 @@ def build_index_html(posts):
       </div>
     </section>
 
+    <section class="cat-nav">
+      <div class="container">
+        <div class="cat-pills">
+          <a href="blog.html" class="cat-pill cat-pill-active">All</a>
+''' + ''.join(f'          <a href="blog/category/{info["slug"]}.html" class="cat-pill">{info.get("icon", "")} {name}</a>\n' for name, info in CATEGORIES.items()) + f'''        </div>
+      </div>
+    </section>
+
     <section class="blog-grid-section">
       <div class="container">
-        {"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}
+        {{"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}}
       </div>
     </section>
   </main>
@@ -836,6 +1061,230 @@ def build_index_html(posts):
 </html>'''
 
 
+def build_category_html(cat_name, cat_info, cat_posts):
+    """Generate a category page with filtered posts."""
+    cards_html = ''
+    for p in cat_posts:
+        meta = p['meta']
+        tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
+        cover = meta.get('cover', '')
+        cover_img = f'<img src="../../{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+
+        try:
+            date_obj = datetime.strptime(meta.get('date', ''), '%Y-%m-%d')
+            date_display = date_obj.strftime('%B %d, %Y')
+        except (ValueError, TypeError):
+            date_display = meta.get('date', '')
+
+        cards_html += f'''
+        <a href="../{meta.get('slug', 'untitled')}.html" class="blog-card fade-up">
+          {cover_img}
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-category">{meta.get('category', '')}</span>
+              <span class="blog-date">{date_display}</span>
+              <span class="blog-read-time">{p['read_time']} min read</span>
+            </div>
+            <h2>{meta.get('title', 'Untitled')}</h2>
+            <p>{meta.get('description', '')}</p>
+            <div class="blog-card-tags">{tags_html}</div>
+          </div>
+        </a>
+'''
+
+    # Build category pills
+    cat_pills = ''
+    cat_pills += f'<a href="../../blog.html" class="cat-pill">All</a>'
+    for name, info in CATEGORIES.items():
+        active = ' cat-pill-active' if name == cat_name else ''
+        cat_pills += f'<a href="{info["slug"]}.html" class="cat-pill{active}">{info.get("icon", "")} {name}</a>'
+
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{cat_name} | SystemShift HQ Blog</title>
+  <meta name="description" content="{cat_info.get('description', '')}">
+  <link rel="canonical" href="{SITE_URL}/blog/category/{cat_info['slug']}.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <style>
+    .cat-hero {{
+      padding: 160px 0 40px;
+      background: var(--bg-dark);
+      text-align: center;
+    }}
+
+    .cat-hero h1 {{
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }}
+
+    .cat-hero p {{
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }}
+
+    .cat-nav {{
+      padding: 32px 0;
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--border);
+    }}
+
+    .cat-pills {{
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }}
+
+    .cat-pill {{
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+      text-decoration: none;
+    }}
+
+    .cat-pill:hover {{
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }}
+
+    .cat-pill-active {{
+      background: var(--turquoise-dim);
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }}
+
+    .cat-grid-section {{
+      padding: 60px 0 100px;
+      background: var(--bg-dark);
+    }}
+
+    .blog-grid {{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }}
+
+    .blog-card {{ background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; display: block; color: inherit; text-decoration: none; }}
+    .blog-card:hover {{ border-color: rgba(15,223,216,0.3); transform: translateY(-4px); box-shadow: 0 12px 48px rgba(0,0,0,0.4); }}
+    .blog-card-img {{ width: 100%; height: 220px; object-fit: cover; display: block; }}
+    .blog-card-placeholder {{ background: linear-gradient(135deg, #1a1a2e, #16213e); }}
+    .blog-card-content {{ padding: 24px 28px 28px; }}
+    .blog-card-meta {{ display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }}
+    .blog-category {{ font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--turquoise); background: var(--turquoise-dim); padding: 4px 12px; border-radius: 100px; }}
+    .blog-date, .blog-read-time {{ font-size: 0.8rem; color: var(--text-muted); }}
+    .blog-card h2 {{ font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.3; }}
+    .blog-card p {{ font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }}
+    .blog-card-tags {{ display: flex; gap: 6px; flex-wrap: wrap; }}
+    .blog-card-tag {{ font-size: 0.68rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); color: var(--text-muted); }}
+    .blog-empty {{ text-align: center; padding: 80px 0; color: var(--text-muted); font-size: 1.1rem; }}
+
+    @media (max-width: 700px) {{
+      .blog-grid {{ grid-template-columns: 1fr; }}
+    }}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="header-logo"><img src="../../images/logo-white.png" alt="SystemShift HQ"></a>
+      <nav class="header-nav">
+        <a href="../../index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="../../services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="../../service-crm.html">CRM Build + Management</a>
+            <a href="../../custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="../../service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="../../service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="../../service-social.html">Social Media Automation</a>
+            <a href="../../service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="../../service-consulting.html">AI + Automation Consulting</a>
+            <a href="../../service-apps.html">Integrator Services</a>
+            <a href="../../service-app-design.html">App Design</a>
+            <a href="../../service-cao.html">Fractional CAO</a>
+            <a href="../../service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="../../blog.html" class="active">Blog</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="../../contact.html">Contact</a>
+        <div class="header-cta"><a href="../../contact.html" class="btn btn-primary btn-sm">Book a Call</a></div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="cat-hero">
+      <div class="container">
+        <span class="section-eyebrow fade-up">{cat_info.get('icon', '')} Category</span>
+        <h1 class="fade-up">{cat_name}</h1>
+        <p class="fade-up">{cat_info.get('description', '')}</p>
+      </div>
+    </section>
+
+    <section class="cat-nav">
+      <div class="container">
+        <div class="cat-pills">
+          {cat_pills}
+        </div>
+      </div>
+    </section>
+
+    <section class="cat-grid-section">
+      <div class="container">
+        {"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>No posts in this category yet. Check back soon.</p>"}
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="header-logo"><img src="../../images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="../../index.html">Home</a><a href="../../services.html">Services</a><a href="../../blog.html">Blog</a><a href="../../about.html">About</a><a href="../../contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../../case-studies.html">Case Studies</a><a href="../../contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="../../privacy-policy.html">Privacy Policy</a><a href="../../terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="../../privacy-policy.html">Privacy</a><a href="../../terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>'''
+
+
 def build_sitemap(posts, pages):
     """Generate sitemap.xml."""
     today = datetime.now().strftime('%Y-%m-%d')
@@ -861,6 +1310,16 @@ def build_sitemap(posts, pages):
     <lastmod>{meta.get('date', today)}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+'''
+
+    # Category pages
+    for cat_name, cat_info in CATEGORIES.items():
+        entries += f'''  <url>
+    <loc>{SITE_URL}/blog/category/{cat_info['slug']}.html</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 '''
 
@@ -947,6 +1406,16 @@ def main():
     with open(os.path.join(SITE_DIR, 'blog.html'), 'w', encoding='utf-8') as f:
         f.write(index_html)
     print(f'  Built: blog.html ({len(posts)} posts)')
+
+    # Build category pages
+    os.makedirs(CATEGORY_DIR, exist_ok=True)
+    for cat_name, cat_info in CATEGORIES.items():
+        cat_posts = [p for p in posts if p['meta'].get('category', '') == cat_name]
+        cat_html = build_category_html(cat_name, cat_info, cat_posts)
+        cat_path = os.path.join(CATEGORY_DIR, f'{cat_info["slug"]}.html')
+        with open(cat_path, 'w', encoding='utf-8') as f:
+            f.write(cat_html)
+        print(f'  Built: blog/category/{cat_info["slug"]}.html ({len(cat_posts)} posts)')
 
     # Collect all static pages for sitemap
     static_pages = sorted([

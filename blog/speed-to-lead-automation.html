@@ -255,10 +255,114 @@
 
     .blog-back:hover { text-decoration: underline; }
 
+    /* Author */
+    .blog-author {
+      max-width: 720px;
+      margin: 48px auto 0;
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .blog-author-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--turquoise-dim);
+    }
+
+    .blog-author-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .blog-author-title {
+      font-size: 0.8rem;
+      color: var(--turquoise);
+      margin-bottom: 8px;
+    }
+
+    .blog-author-bio {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Comments */
+    .blog-comments {
+      max-width: 720px;
+      margin: 48px auto 0;
+    }
+
+    .blog-comments h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comment-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: var(--turquoise);
+    }
+
+    .comment-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .comment-form .btn {
+      align-self: flex-start;
+    }
+
+    .comment-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
     @media (max-width: 768px) {
       .blog-post-hero { padding: 120px 0 32px; }
       .blog-body { font-size: 1rem; }
       .blog-cta { padding: 28px 20px; }
+      .blog-author { flex-direction: column; text-align: center; padding: 24px; }
+      .comment-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -299,7 +403,7 @@
       <div class="container">
         <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
         <div class="blog-post-meta">
-          <span class="blog-category">Automation</span>
+          <a href="../blog/category/automation.html" class="blog-category">Automation</a>
           <span class="blog-date">March 09, 2026</span>
           <span class="blog-read-time">4 min read</span>
         </div>
@@ -423,6 +527,28 @@
           <h3>Ready to Automate Your Business?</h3>
           <p>Book a free strategy call and we'll map out exactly what to build first.</p>
           <a href="../contact.html" class="btn btn-primary">Book Your Call</a>
+        </div>
+        
+        <div class="blog-author">
+          <img src="../images/about-founder.png" alt="Rock" class="blog-author-avatar">
+          <div>
+            <div class="blog-author-name">Rock</div>
+            <div class="blog-author-title">Founder, SystemShift HQ</div>
+            <p class="blog-author-bio">I build AI and automation systems for businesses that are tired of doing everything manually. Based in High Point, NC.</p>
+          </div>
+        </div>
+        <div class="blog-comments">
+          <h3>Join the Conversation</h3>
+          <form class="comment-form" action="https://api.leadbreeze.co/widget/form/submit" method="POST">
+            <input type="hidden" name="blog_post" value="speed-to-lead-automation">
+            <div class="comment-row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <textarea name="comment" placeholder="Share your thoughts..." required></textarea>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+            <p class="comment-note">Your email won't be published. Comments are reviewed before posting.</p>
+          </form>
         </div>
       </div>
     </section>
