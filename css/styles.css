@@ -155,15 +155,14 @@ a:hover { color: #0cc; }
   width: 100%;
   z-index: 1000;
   background: transparent;
-  backdrop-filter: none;
-  transition: background 0.3s, backdrop-filter 0.3s;
-  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: background 0.3s, box-shadow 0.3s;
 }
 
 .site-header.scrolled {
   background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 4px 32px rgba(0,0,0,0.5);
 }
 
@@ -368,21 +367,22 @@ a:hover { color: #0cc; }
     right: 0;
     bottom: 0;
     background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 24px;
     gap: 4px;
-    transform: translateY(-120%);
+    z-index: 9999;
+    pointer-events: none;
     opacity: 0;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    border-bottom: 1px solid var(--border);
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .header-nav.open {
-    transform: translateY(0);
+    pointer-events: auto;
     opacity: 1;
+    visibility: visible;
   }
 
   .header-nav a {

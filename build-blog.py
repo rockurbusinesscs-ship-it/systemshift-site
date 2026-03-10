@@ -315,7 +315,7 @@ def build_post_html(meta, body_html, read_time):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=2">
+  <link rel="stylesheet" href="../css/styles.css?v=3">
   <script type="application/ld+json">
   {schema}
   </script>
@@ -791,7 +791,7 @@ def build_post_html(meta, body_html, read_time):
           </div>
         </div>
         <div class="footer-col"><h4>Pages</h4><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../blog.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact Us</a></div>
-        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../case-studies.html">Case Studies</a><a href="../contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="../blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../case-studies.html">Case Studies</a><a href="../contact.html">Book a Call</a></div>
         <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
       </div>
       <div class="footer-bottom">
@@ -801,7 +801,7 @@ def build_post_html(meta, body_html, read_time):
     </div>
   </footer>
 
-  <script src="../js/main.js?v=2"></script>
+  <script src="../js/main.js?v=3"></script>
 </body>
 </html>'''
 
@@ -879,7 +879,7 @@ def build_index_html(posts, page=1, total_pages=1):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
@@ -1186,7 +1186,7 @@ def build_index_html(posts, page=1, total_pages=1):
           </div>
         </div>
         <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
-        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
         <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
       </div>
       <div class="footer-bottom">
@@ -1196,7 +1196,7 @@ def build_index_html(posts, page=1, total_pages=1):
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>'''
 
@@ -1255,7 +1255,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/styles.css?v=2">
+  <link rel="stylesheet" href="../../css/styles.css?v=3">
   <style>
     .cat-hero {{
       padding: 160px 0 40px;
@@ -1417,7 +1417,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
           </div>
         </div>
         <div class="footer-col"><h4>Pages</h4><a href="../../index.html">Home</a><a href="../../services.html">Services</a><a href="../../blog.html">Blog</a><a href="../../about.html">About</a><a href="../../contact.html">Contact Us</a></div>
-        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../../case-studies.html">Case Studies</a><a href="../../contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="../../blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../../case-studies.html">Case Studies</a><a href="../../contact.html">Book a Call</a></div>
         <div class="footer-col"><h4>Legal</h4><a href="../../privacy-policy.html">Privacy Policy</a><a href="../../terms.html">Terms of Service</a></div>
       </div>
       <div class="footer-bottom">
