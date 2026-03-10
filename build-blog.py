@@ -1285,18 +1285,55 @@ def build_category_html(cat_name, cat_info, cat_posts):
 </html>'''
 
 
+def get_file_modified(filepath):
+    """Get last modified date of a file as YYYY-MM-DD."""
+    try:
+        mtime = os.path.getmtime(filepath)
+        return datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    except OSError:
+        return datetime.now().strftime('%Y-%m-%d')
+
+
+# Priority and frequency rules by page type
+PAGE_PRIORITY = {
+    'index.html': ('1.0', 'weekly'),
+    'services.html': ('0.9', 'weekly'),
+    'blog.html': ('0.9', 'daily'),
+    'contact.html': ('0.9', 'monthly'),
+    'case-studies.html': ('0.8', 'weekly'),
+    'about.html': ('0.7', 'monthly'),
+    'pricing.html': ('0.8', 'monthly'),
+    'how-it-works.html': ('0.7', 'monthly'),
+    'industries.html': ('0.7', 'monthly'),
+    'free-audit.html': ('0.8', 'monthly'),
+    'privacy-policy.html': ('0.3', 'yearly'),
+    'terms.html': ('0.3', 'yearly'),
+}
+
+
+def get_page_priority(page):
+    """Return (priority, changefreq) for a page."""
+    if page in PAGE_PRIORITY:
+        return PAGE_PRIORITY[page]
+    if page.startswith('service-') or page.startswith('custom-'):
+        return ('0.8', 'monthly')
+    if 'automation' in page:
+        return ('0.6', 'monthly')  # geo landing pages
+    return ('0.5', 'monthly')
+
+
 def build_sitemap(posts, pages):
-    """Generate sitemap.xml."""
+    """Generate comprehensive sitemap.xml with real file dates and smart priorities."""
     today = datetime.now().strftime('%Y-%m-%d')
     entries = ''
 
     # Static pages
     for page in pages:
-        priority = '1.0' if page == 'index.html' else '0.8'
-        freq = 'weekly' if page in ('index.html', 'blog.html') else 'monthly'
+        priority, freq = get_page_priority(page)
+        lastmod = get_file_modified(os.path.join(SITE_DIR, page))
         entries += f'''  <url>
     <loc>{SITE_URL}/{page}</loc>
-    <lastmod>{today}</lastmod>
+    <lastmod>{lastmod}</lastmod>
     <changefreq>{freq}</changefreq>
     <priority>{priority}</priority>
   </url>
@@ -1305,9 +1342,11 @@ def build_sitemap(posts, pages):
     # Blog posts
     for p in posts:
         meta = p['meta']
+        slug = meta.get('slug', 'untitled')
+        lastmod = meta.get('date', today)
         entries += f'''  <url>
-    <loc>{SITE_URL}/blog/{meta.get('slug', 'untitled')}.html</loc>
-    <lastmod>{meta.get('date', today)}</lastmod>
+    <loc>{SITE_URL}/blog/{slug}.html</loc>
+    <lastmod>{lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1428,7 +1467,8 @@ def main():
     sitemap = build_sitemap(posts, static_pages)
     with open(os.path.join(SITE_DIR, 'sitemap.xml'), 'w', encoding='utf-8') as f:
         f.write(sitemap)
-    print(f'  Built: sitemap.xml ({len(static_pages) + len(posts)} URLs)')
+    total_urls = len(static_pages) + len(posts) + len(CATEGORIES)
+    print(f'  Built: sitemap.xml ({total_urls} URLs: {len(static_pages)} pages + {len(posts)} posts + {len(CATEGORIES)} categories)')
 
     # Build llms.txt
     llms = build_llms_txt()
