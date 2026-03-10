@@ -129,16 +129,21 @@
     }
 
     .blog-cover {
-      margin: 40px 0;
-      border-radius: 16px;
+      width: 100%;
+      max-height: 480px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      margin-top: 80px;
     }
 
     .blog-cover img {
       width: 100%;
-      height: auto;
+      height: 480px;
+      object-fit: cover;
       display: block;
+    }
+
+    .blog-cover + .blog-post-hero {
+      padding-top: 48px;
     }
 
     .blog-content {
@@ -440,6 +445,10 @@
   </header>
 
   <main class="page-top">
+    
+    <div class="blog-cover">
+      <img src="../images/blog/speed-to-lead-cover.png" alt="Speed to Lead - Why Slow Lead Follow Up Is Costing You Thousands" loading="lazy">
+    </div>
     <section class="blog-post-hero">
       <div class="container">
         <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
@@ -460,10 +469,6 @@
 
     <section class="blog-content">
       <div class="container">
-        
-    <div class="blog-cover">
-      <img src="../images/blog/speed-to-lead-cover.png" alt="Speed to Lead - Why Slow Lead Follow Up Is Costing You Thousands" loading="lazy">
-    </div>
         <div class="blog-body">
           <h2>Speed to Lead Is the Metric You're Ignoring</h2>
 

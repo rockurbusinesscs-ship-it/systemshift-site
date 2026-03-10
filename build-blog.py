@@ -408,16 +408,21 @@ def build_post_html(meta, body_html, read_time):
     }}
 
     .blog-cover {{
-      margin: 40px 0;
-      border-radius: 16px;
+      width: 100%;
+      max-height: 480px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      margin-top: 80px;
     }}
 
     .blog-cover img {{
       width: 100%;
-      height: auto;
+      height: 480px;
+      object-fit: cover;
       display: block;
+    }}
+
+    .blog-cover + .blog-post-hero {{
+      padding-top: 48px;
     }}
 
     .blog-content {{
@@ -719,6 +724,7 @@ def build_post_html(meta, body_html, read_time):
   </header>
 
   <main class="page-top">
+    {cover_html}
     <section class="blog-post-hero">
       <div class="container">
         <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
@@ -739,7 +745,6 @@ def build_post_html(meta, body_html, read_time):
 
     <section class="blog-content">
       <div class="container">
-        {cover_html}
         <div class="blog-body">
           {body_html}
         </div>
