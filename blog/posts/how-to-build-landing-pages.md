@@ -9,6 +9,11 @@ cover: images/blog/how-to-build-landing-pages-cover.png
 author: Rock
 ---
 
+> **TLDR:** Landing pages with one CTA convert 6x better than pages with many. Here's the full framework.
+> - One page, one goal - everything else gets cut
+> - Your headline does 80% of the work - use the [Result + Timeframe + Objection] formula
+> - Social proof and a single clear CTA are what actually move the needle
+
 # How to Build Landing Pages That Convert
 
 You're sending traffic somewhere. Ads, social posts, email links. But where does that traffic land?

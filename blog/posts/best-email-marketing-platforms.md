@@ -9,6 +9,11 @@ cover: images/blog/best-email-marketing-platforms-cover.png
 author: Rock
 ---
 
+> **TLDR:** 8 email platforms compared - real pricing, real pros and cons, no fluff.
+> - GoHighLevel is the top pick if you want email, SMS, CRM, and funnels in one bill
+> - Email returns $36 for every $1 spent - but only if your tool doesn't tank deliverability
+> - Free tiers exist (Mailchimp, ConvertKit, Brevo) but they all cap you fast
+
 # 8 Best Email Marketing Platforms for Small Business
 
 You know email marketing works. Every stat says so. $36 back for every $1 spent, according to Litmus. That's a 3,600% return.

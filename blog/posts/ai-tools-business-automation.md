@@ -9,6 +9,11 @@ cover: images/blog/ai-tools-cover.png
 author: Rock
 ---
 
+> **TLDR:** Seven AI tools that save 28-47 hours per week for less than one hire costs.
+> - Chatbots, scheduling, email, docs, voice, analytics, and social media - all automatable now
+> - Pick your biggest bottleneck and start with one tool this week
+> - Stack them over 90 days and you'll run smoother than companies 3x your size
+
 ## You're Doing Too Much Manually. AI Can Fix That.
 
 Every small business owner has the same problem. Too many tasks. Not enough hours. And a growing pile of repetitive work that eats your day alive.

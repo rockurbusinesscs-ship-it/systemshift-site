@@ -9,6 +9,11 @@ cover: images/blog/speed-to-lead-cover.png
 author: Rock
 ---
 
+> **TLDR:** Slow follow-up is killing your close rate. Speed to lead is the fix.
+> - Responding in under 5 minutes means 100x better contact rates
+> - The average business waits 47 hours - that's 12+ lost clients per month
+> - A simple automation system responds in seconds and books while you sleep
+
 ## Speed to Lead Is the Metric You're Ignoring
 
 Here's a stat that should make you uncomfortable.

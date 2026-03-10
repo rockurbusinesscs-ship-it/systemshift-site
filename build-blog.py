@@ -115,6 +115,8 @@ def md_to_html(md):
     in_ol = False
     in_code = False
     in_blockquote = False
+    in_table = False
+    table_row_count = 0
 
     for line in lines:
         stripped = line.strip()
@@ -184,17 +186,44 @@ def md_to_html(md):
                 in_ol = True
             text = re.sub(r'^\d+\.\s', '', stripped)
             html_lines.append(f'<li>{inline_format(text)}</li>')
+        # Table row
+        elif stripped.startswith('|') and stripped.endswith('|'):
+            if not in_table:
+                html_lines.append('<div class="blog-table-wrap"><table>')
+                in_table = True
+                table_row_count = 0
+            cells = [c.strip() for c in stripped.strip('|').split('|')]
+            # Skip separator rows (|---|---|)
+            if all(re.match(r'^[-:]+$', c) for c in cells):
+                continue
+            tag = 'th' if table_row_count == 0 else 'td'
+            row_html = ''.join(f'<{tag}>{inline_format(c)}</{tag}>' for c in cells)
+            if table_row_count == 0:
+                html_lines.append(f'<thead><tr>{row_html}</tr></thead><tbody>')
+            else:
+                html_lines.append(f'<tr>{row_html}</tr>')
+            table_row_count += 1
+            continue
         # Image
         elif re.match(r'^!\[.*?\]\(.*?\)$', stripped):
+            if in_table:
+                html_lines.append('</tbody></table></div>')
+                in_table = False
             m = re.match(r'^!\[(.*?)\]\((.*?)\)$', stripped)
             alt = m.group(1)
             src = m.group(2)
             html_lines.append(f'<figure><img src="{src}" alt="{alt}" title="{alt}" loading="lazy" width="1080" height="1350"><figcaption>{alt}</figcaption></figure>')
         # Empty line
         elif stripped == '':
+            if in_table:
+                html_lines.append('</tbody></table></div>')
+                in_table = False
             html_lines.append('')
         # Paragraph
         else:
+            if in_table:
+                html_lines.append('</tbody></table></div>')
+                in_table = False
             html_lines.append(f'<p>{inline_format(stripped)}</p>')
 
     # Close any open tags
@@ -206,8 +235,18 @@ def md_to_html(md):
         html_lines.append('</blockquote>')
     if in_code:
         html_lines.append('</code></pre>')
+    if in_table:
+        html_lines.append('</tbody></table></div>')
 
-    return '\n'.join(html_lines)
+    result = '\n'.join(html_lines)
+    # Post-process: convert TLDR blockquotes to styled divs
+    result = re.sub(
+        r'<blockquote>\s*<p><strong>TLDR:?</strong>(.*?)</p>(.*?)</blockquote>',
+        r'<div class="tldr"><strong>TLDR</strong>\1\2</div>',
+        result,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+    return result
 
 
 def inline_format(text):
@@ -549,6 +588,63 @@ def build_post_html(meta, body_html, read_time):
       border: none;
       border-top: 1px solid var(--border);
       margin: 40px 0;
+    }}
+
+    /* Tables */
+    .blog-table-wrap {{
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }}
+
+    .blog-body table {{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }}
+
+    .blog-body thead {{
+      background: rgba(15, 223, 216, 0.08);
+    }}
+
+    .blog-body th {{
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }}
+
+    .blog-body td {{
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }}
+
+    .blog-body tbody tr:hover {{
+      background: rgba(15, 223, 216, 0.04);
+    }}
+
+    .blog-body tbody tr:last-child td {{
+      border-bottom: none;
+    }}
+
+    /* TLDR box */
+    .blog-body .tldr {{
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }}
+
+    .blog-body .tldr strong:first-child {{
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
     }}
 
     .blog-cta {{

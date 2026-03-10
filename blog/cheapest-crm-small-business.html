@@ -272,6 +272,63 @@
       margin: 40px 0;
     }
 
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .blog-cta {
       max-width: 720px;
       margin: 0 auto;
@@ -477,7 +534,13 @@
     <section class="blog-content">
       <div class="container">
         <div class="blog-body">
-          <h2>You Don't Need the Most Expensive CRM. You Need the Right One.</h2>
+          <div class="tldr"><strong>TLDR</strong> The cheapest CRM is the one that replaces the most tools - not the lowest sticker price.
+<p>- A "$25/month" CRM with add-ons really costs $200+</p>
+<p>- GoHighLevel at $97/month replaces 5-7 tools and includes unlimited users</p>
+<p>- Stop paying for six platforms that don't talk to each other</p>
+</div>
+
+<h2>You Don't Need the Most Expensive CRM. You Need the Right One.</h2>
 
 <p>Here's the truth about choosing a CRM for small business. Most of them are built for enterprise companies with 200-person sales teams. They charge enterprise prices. They ship enterprise complexity. And they leave small business owners paying $150/month for features they'll never touch.</p>
 
@@ -580,23 +643,25 @@
 
 <p>Here's what a typical service business pays without GoHighLevel:</p>
 
-<p>| Tool | Monthly Cost |</p>
-<p>|------|-------------|</p>
-<p>| CRM (Pipedrive or HubSpot Starter) | $25-50 |</p>
-<p>| Email marketing (Mailchimp) | $30-50 |</p>
-<p>| SMS marketing (Twilio + integration) | $25-40 |</p>
-<p>| Landing pages (Leadpages) | $37-79 |</p>
-<p>| Appointment scheduling (Calendly) | $12-20 |</p>
-<p>| Forms and surveys (Typeform) | $25-50 |</p>
-<p>| Automation connector (Zapier) | $20-50 |</p>
-<p>| <strong>Total</strong> | <strong>$174-339/month</strong> |</p>
+<div class="blog-table-wrap"><table>
+<thead><tr><th>Tool</th><th>Monthly Cost</th></tr></thead><tbody>
+<tr><td>CRM (Pipedrive or HubSpot Starter)</td><td>$25-50</td></tr>
+<tr><td>Email marketing (Mailchimp)</td><td>$30-50</td></tr>
+<tr><td>SMS marketing (Twilio + integration)</td><td>$25-40</td></tr>
+<tr><td>Landing pages (Leadpages)</td><td>$37-79</td></tr>
+<tr><td>Appointment scheduling (Calendly)</td><td>$12-20</td></tr>
+<tr><td>Forms and surveys (Typeform)</td><td>$25-50</td></tr>
+<tr><td>Automation connector (Zapier)</td><td>$20-50</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>$174-339/month</strong></td></tr>
+</tbody></table></div>
 
 <p>Now here's what you pay with GoHighLevel:</p>
 
-<p>| Tool | Monthly Cost |</p>
-<p>|------|-------------|</p>
-<p>| CRM + Email + SMS + Landing Pages + Scheduling + Forms + Automation | $97 |</p>
-<p>| <strong>Total</strong> | <strong>$97/month</strong> |</p>
+<div class="blog-table-wrap"><table>
+<thead><tr><th>Tool</th><th>Monthly Cost</th></tr></thead><tbody>
+<tr><td>CRM + Email + SMS + Landing Pages + Scheduling + Forms + Automation</td><td>$97</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>$97/month</strong></td></tr>
+</tbody></table></div>
 
 <p>That's not a CRM. That's an entire business operating system. And it's cheaper than stitching together six different cloud CRM for small business tools.</p>
 

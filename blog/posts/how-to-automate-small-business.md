@@ -9,6 +9,11 @@ cover: images/blog/how-to-automate-small-business-cover.png
 author: Rock
 ---
 
+> **TLDR:** 8 automations you can set up this week to stop babysitting your business.
+> - Start with a time audit - track every repeated task for one week
+> - Lead capture, follow-ups, invoicing, and booking are the biggest wins
+> - 60% of workers could save 30% of their time with automation (McKinsey)
+
 # How to Automate Your Small Business (Step by Step)
 
 You're fire-fighting. Every day. Chasing invoices. Copy-pasting data. Sending the same email for the 400th time. Manually booking appointments and then manually reminding people about those appointments.

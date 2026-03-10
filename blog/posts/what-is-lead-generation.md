@@ -9,6 +9,11 @@ cover: images/blog/what-is-lead-generation-cover.png
 author: Rock
 ---
 
+> **TLDR:** Lead generation is how you fill your pipeline with people who actually want to buy.
+> - You don't have a revenue problem. You have a lead problem
+> - Cold, warm, and hot leads need completely different approaches
+> - Responding within 5 minutes makes you 100x more likely to connect than waiting 30
+
 # What Is Lead Generation? The Complete Guide
 
 You don't have a revenue problem. You have a lead problem.

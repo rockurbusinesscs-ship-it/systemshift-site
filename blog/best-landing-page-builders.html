@@ -272,6 +272,63 @@
       margin: 40px 0;
     }
 
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .blog-cta {
       max-width: 720px;
       margin: 0 auto;
@@ -477,7 +534,13 @@
     <section class="blog-content">
       <div class="container">
         <div class="blog-body">
-          
+          <div class="tldr"><strong>TLDR</strong> 7 landing page builders ranked by what matters for small business - not enterprise fluff.
+<p>- GoHighLevel wins if you want everything in one platform (CRM, email, SMS, funnels)</p>
+<p>- Carrd is dirt cheap at $9/yr if you just need a simple page</p>
+<p>- More landing pages = more leads. Businesses with 30+ pages generate 7x more leads</p>
+</div>
+
+
 <p>You're paying for ads. Running campaigns. Posting content. But where does all that traffic actually go?</p>
 
 <p>If the answer is "my homepage" - you're leaking leads. A homepage tries to be everything to everyone. A landing page does one job. And businesses with 30+ landing pages generate 7x more leads than those with fewer than 10 (HubSpot).</p>
@@ -490,15 +553,16 @@
 
 <h2>Quick Comparison</h2>
 
-<p>| Builder | Best For | Starting Price | Free Tier? | Drag & Drop? |</p>
-<p>|---------|----------|---------------|------------|-------------|</p>
-<p>| GoHighLevel | All-in-one platform | $97/mo | No (14-day trial) | Yes |</p>
-<p>| Unbounce | A/B testing | $74/mo | No (14-day trial) | Yes |</p>
-<p>| Leadpages | Budget-friendly | $37/mo | No (14-day trial) | Yes |</p>
-<p>| Instapage | Ad campaigns | $79/mo | No (14-day trial) | Yes |</p>
-<p>| Carrd | Ultra-cheap | Free / $9/yr | Yes | Yes |</p>
-<p>| ClickFunnels | Sales funnels | $97/mo | No (14-day trial) | Yes |</p>
-<p>| Swipe Pages | Mobile-first | $29/mo | No (14-day trial) | Yes |</p>
+<div class="blog-table-wrap"><table>
+<thead><tr><th>Builder</th><th>Best For</th><th>Starting Price</th><th>Free Tier?</th><th>Drag & Drop?</th></tr></thead><tbody>
+<tr><td>GoHighLevel</td><td>All-in-one platform</td><td>$97/mo</td><td>No (14-day trial)</td><td>Yes</td></tr>
+<tr><td>Unbounce</td><td>A/B testing</td><td>$74/mo</td><td>No (14-day trial)</td><td>Yes</td></tr>
+<tr><td>Leadpages</td><td>Budget-friendly</td><td>$37/mo</td><td>No (14-day trial)</td><td>Yes</td></tr>
+<tr><td>Instapage</td><td>Ad campaigns</td><td>$79/mo</td><td>No (14-day trial)</td><td>Yes</td></tr>
+<tr><td>Carrd</td><td>Ultra-cheap</td><td>Free / $9/yr</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>ClickFunnels</td><td>Sales funnels</td><td>$97/mo</td><td>No (14-day trial)</td><td>Yes</td></tr>
+<tr><td>Swipe Pages</td><td>Mobile-first</td><td>$29/mo</td><td>No (14-day trial)</td><td>Yes</td></tr>
+</tbody></table></div>
 
 <h2>1. GoHighLevel - Best All-in-One Platform</h2>
 <figure><img src="../images/blog/products/gohighlevel-logo.png "GoHighLevel"" alt="GoHighLevel logo" title="GoHighLevel logo" loading="lazy" width="1080" height="1350"><figcaption>GoHighLevel logo</figcaption></figure>

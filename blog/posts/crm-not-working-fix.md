@@ -9,6 +9,11 @@ cover: images/blog/crm-cover.png
 author: Rock
 ---
 
+> **TLDR:** Your CRM is a glorified address book because you built it backwards.
+> - Start with your pipeline stages, not your contact list
+> - Automate every transition so follow-up never depends on memory
+> - One business tripled their closes just by fixing the system - same leads, same service
+
 ## You Have a CRM. It's Not Working. Here's Why.
 
 You paid for the CRM. You set it up. You added your contacts.

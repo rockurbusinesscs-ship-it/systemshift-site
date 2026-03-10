@@ -272,6 +272,63 @@
       margin: 40px 0;
     }
 
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .blog-cta {
       max-width: 720px;
       margin: 0 auto;
@@ -462,7 +519,7 @@
         <div class="blog-post-meta">
           <a href="../blog/category/marketing.html" class="blog-category">Marketing</a>
           <span class="blog-date">March 10, 2026</span>
-          <span class="blog-read-time">10 min read</span>
+          <span class="blog-read-time">11 min read</span>
         </div>
         <h1>8 Best Email Marketing Platforms for Small Business</h1>
         <div class="blog-byline">
@@ -477,7 +534,13 @@
     <section class="blog-content">
       <div class="container">
         <div class="blog-body">
-          
+          <div class="tldr"><strong>TLDR</strong> 8 email platforms compared - real pricing, real pros and cons, no fluff.
+<p>- GoHighLevel is the top pick if you want email, SMS, CRM, and funnels in one bill</p>
+<p>- Email returns $36 for every $1 spent - but only if your tool doesn't tank deliverability</p>
+<p>- Free tiers exist (Mailchimp, ConvertKit, Brevo) but they all cap you fast</p>
+</div>
+
+
 <p>You know email marketing works. Every stat says so. $36 back for every $1 spent, according to Litmus. That's a 3,600% return.</p>
 
 <p>But here's where it breaks. You sign up for the wrong platform. You hit a wall at 500 contacts. Your "free plan" suddenly costs $200/month. And your emails land in spam because the platform you picked has garbage deliverability.</p>
@@ -490,16 +553,17 @@
 
 <h2>Quick Comparison</h2>
 
-<p>| Platform | Best For | Starting Price | Free Tier? | SMS Included? |</p>
-<p>|----------|----------|---------------|------------|---------------|</p>
-<p>| GoHighLevel | All-in-one system | $97/mo | No | Yes |</p>
-<p>| Mailchimp | Beginners | $13/mo | Yes (500 contacts) | No |</p>
-<p>| ConvertKit | Creators & coaches | $25/mo | Yes (1,000 subs) | No |</p>
-<p>| ActiveCampaign | Advanced automation | $15/mo | No | Yes (add-on) |</p>
-<p>| Brevo | Budget multi-channel | $25/mo | Yes (300 emails/day) | Yes |</p>
-<p>| Constant Contact | Events & nonprofits | $12/mo | No | No |</p>
-<p>| GetResponse | Webinar marketing | $13.30/mo | Yes (500 contacts) | Yes (add-on) |</p>
-<p>| AWeber | Simplicity & deliverability | $15/mo | Yes (500 subs) | No |</p>
+<div class="blog-table-wrap"><table>
+<thead><tr><th>Platform</th><th>Best For</th><th>Starting Price</th><th>Free Tier?</th><th>SMS Included?</th></tr></thead><tbody>
+<tr><td>GoHighLevel</td><td>All-in-one system</td><td>$97/mo</td><td>No</td><td>Yes</td></tr>
+<tr><td>Mailchimp</td><td>Beginners</td><td>$13/mo</td><td>Yes (500 contacts)</td><td>No</td></tr>
+<tr><td>ConvertKit</td><td>Creators & coaches</td><td>$25/mo</td><td>Yes (1,000 subs)</td><td>No</td></tr>
+<tr><td>ActiveCampaign</td><td>Advanced automation</td><td>$15/mo</td><td>No</td><td>Yes (add-on)</td></tr>
+<tr><td>Brevo</td><td>Budget multi-channel</td><td>$25/mo</td><td>Yes (300 emails/day)</td><td>Yes</td></tr>
+<tr><td>Constant Contact</td><td>Events & nonprofits</td><td>$12/mo</td><td>No</td><td>No</td></tr>
+<tr><td>GetResponse</td><td>Webinar marketing</td><td>$13.30/mo</td><td>Yes (500 contacts)</td><td>Yes (add-on)</td></tr>
+<tr><td>AWeber</td><td>Simplicity & deliverability</td><td>$15/mo</td><td>Yes (500 subs)</td><td>No</td></tr>
+</tbody></table></div>
 
 <p>Now let's dig into each one.</p>
 

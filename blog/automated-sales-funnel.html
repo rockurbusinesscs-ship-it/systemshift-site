@@ -272,6 +272,63 @@
       margin: 40px 0;
     }
 
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .blog-cta {
       max-width: 720px;
       margin: 0 auto;
@@ -477,7 +534,13 @@
     <section class="blog-content">
       <div class="container">
         <div class="blog-body">
-          <h2>You Don't Have a Sales Problem. You Have a Systems Problem.</h2>
+          <div class="tldr"><strong>TLDR</strong> Your funnel has 5 stages. Most businesses only automate 1 or 2. That's where the money leaks.
+<p>- Build all 5: Awareness, Capture, Nurture, Close, Referral</p>
+<p>- Write your nurture sequence once - it runs for every lead, forever</p>
+<p>- Automate referral asks at 90 days. Referred customers close at 2-4x the rate of cold leads.</p>
+</div>
+
+<h2>You Don't Have a Sales Problem. You Have a Systems Problem.</h2>
 
 <p>You're getting leads. Maybe not enough, but they're coming in. The problem isn't at the top.</p>
 

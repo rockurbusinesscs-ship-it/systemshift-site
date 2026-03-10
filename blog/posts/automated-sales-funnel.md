@@ -9,6 +9,11 @@ cover: images/blog/sales-funnel-cover.png
 author: Rock
 ---
 
+> **TLDR:** Your funnel has 5 stages. Most businesses only automate 1 or 2. That's where the money leaks.
+> - Build all 5: Awareness, Capture, Nurture, Close, Referral
+> - Write your nurture sequence once - it runs for every lead, forever
+> - Automate referral asks at 90 days. Referred customers close at 2-4x the rate of cold leads.
+
 ## You Don't Have a Sales Problem. You Have a Systems Problem.
 
 You're getting leads. Maybe not enough, but they're coming in. The problem isn't at the top.

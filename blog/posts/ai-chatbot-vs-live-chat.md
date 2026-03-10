@@ -9,6 +9,11 @@ cover: images/blog/ai-chatbot-cover.png
 author: Rock
 ---
 
+> **TLDR:** You don't pick AI or live chat. You use both.
+> - AI handles 80% of chats instantly - FAQs, booking, lead capture
+> - Humans handle the 20% that close deals and save relationships
+> - One company went from 8% to 34% chat-to-lead conversion with zero new hires
+
 ## The Chat Problem Nobody Talks About
 
 You put a live chat widget on your website. Great.

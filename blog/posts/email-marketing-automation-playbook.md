@@ -9,6 +9,11 @@ cover: images/blog/email-automation-cover.png
 author: Rock
 ---
 
+> **TLDR:** Five email sequences that run your entire customer lifecycle on autopilot.
+> - Welcome, nurture, re-engagement, review requests, and referrals - build once, run forever
+> - Email returns $36 for every $1 spent - no other channel comes close
+> - Automated emails convert 21x better than manual follow-up sent the next morning
+
 ## Your Best Salesperson Works 24/7 and Never Asks for a Raise
 
 It's email. Specifically, automated email.

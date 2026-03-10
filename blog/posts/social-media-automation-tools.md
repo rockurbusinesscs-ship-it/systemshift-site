@@ -9,6 +9,11 @@ cover: images/blog/social-media-cover.png
 author: Rock
 ---
 
+> **TLDR:** Stop scrambling for posts every day. Build a system instead.
+> - Use the 3-2-1 formula: 3 value posts, 2 personal posts, 1 CTA per week
+> - Batch everything in one 2-hour session, then schedule it with free tools like Buffer
+> - Consistency beats creativity every time - brands that post regularly see 2x more engagement
+
 ## You Don't Have a Content Problem. You Have a Consistency Problem.
 
 Every small business owner I talk to says the same thing. "I know I should be posting more."

@@ -272,6 +272,63 @@
       margin: 40px 0;
     }
 
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .blog-cta {
       max-width: 720px;
       margin: 0 auto;
@@ -462,7 +519,7 @@
         <div class="blog-post-meta">
           <a href="../blog/category/automation.html" class="blog-category">Automation</a>
           <span class="blog-date">March 10, 2026</span>
-          <span class="blog-read-time">10 min read</span>
+          <span class="blog-read-time">11 min read</span>
         </div>
         <h1>What Is Marketing Automation? A Small Business Guide</h1>
         <div class="blog-byline">
@@ -477,7 +534,13 @@
     <section class="blog-content">
       <div class="container">
         <div class="blog-body">
-          
+          <div class="tldr"><strong>TLDR</strong> Marketing automation sends the right message at the right time - without you touching it.
+<p>- It's not AI magic. It's systems that handle follow-ups, emails, and texts while you work</p>
+<p>- Companies using it see 53% higher conversion rates</p>
+<p>- You're not too small for this. You're too small to keep doing it manually</p>
+</div>
+
+
 <p>You got a new lead 3 days ago. Did you follow up?</p>
 
 <p>Be honest. You meant to. You were going to send that email. Maybe a text. But then a client called, a project went sideways, and now that lead is cold. Gone. Probably talking to your competitor who responded in 5 minutes.</p>

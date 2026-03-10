@@ -9,6 +9,11 @@ cover: images/blog/local-seo-cover.png
 author: Rock
 ---
 
+> **TLDR:** 46% of Google searches are local. If you're not in the map pack, you're invisible.
+> - Claim and fully optimize your Google Business Profile - it's the foundation
+> - Get reviews consistently - they're the #1 trust signal for local rankings
+> - You're not competing with Amazon. You're competing with 3-5 local businesses. That's winnable.
+
 ## Your Best Customers Are Searching Right Now. They Just Can't Find You.
 
 Someone in your city just typed "plumber near me" into Google. Or "best accountant in [your city]." Or "emergency HVAC repair."

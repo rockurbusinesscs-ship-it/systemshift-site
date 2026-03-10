@@ -9,6 +9,11 @@ cover: images/blog/best-landing-page-builders-cover.png
 author: Rock
 ---
 
+> **TLDR:** 7 landing page builders ranked by what matters for small business - not enterprise fluff.
+> - GoHighLevel wins if you want everything in one platform (CRM, email, SMS, funnels)
+> - Carrd is dirt cheap at $9/yr if you just need a simple page
+> - More landing pages = more leads. Businesses with 30+ pages generate 7x more leads
+
 # 7 Best Landing Page Builders for Small Business
 
 You're paying for ads. Running campaigns. Posting content. But where does all that traffic actually go?

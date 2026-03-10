@@ -9,6 +9,11 @@ cover: images/blog/what-is-a-sales-funnel-cover.png
 author: Rock
 ---
 
+> **TLDR:** A sales funnel is the system that turns strangers into customers. No funnel = leaked revenue.
+> - Four stages: Awareness, Interest, Decision, Action - skip one and it breaks
+> - Every business already has a funnel. The question is whether yours is built or broken
+> - The fix isn't more traffic. It's plugging the holes where people drop off
+
 # What Is a Sales Funnel? How It Works Step by Step
 
 You are losing customers right now. Not because your product is bad. Not because your price is wrong. Because you have no system guiding people from "who are you?" to "take my money."

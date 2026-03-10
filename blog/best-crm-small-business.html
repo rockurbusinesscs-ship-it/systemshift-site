@@ -272,6 +272,63 @@
       margin: 40px 0;
     }
 
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .blog-cta {
       max-width: 720px;
       margin: 0 auto;
@@ -477,7 +534,13 @@
     <section class="blog-content">
       <div class="container">
         <div class="blog-body">
-          
+          <div class="tldr"><strong>TLDR</strong> 7 CRMs ranked by what actually matters for small business. No fluff.
+<p>- GoHighLevel ($97/mo) replaces your entire tool stack - CRM, email, SMS, funnels, scheduling</p>
+<p>- HubSpot and Zoho have solid free tiers if you're just getting started</p>
+<p>- The wrong CRM wastes months. Pick based on your business type, not feature lists.</p>
+</div>
+
+
 <p>91% of businesses with 10+ employees already use a CRM. That stat from Grand View Research tells you everything. If you're still babysitting spreadsheets and sticky notes, you're not scrappy. You're bleeding revenue.</p>
 
 <p>But picking the wrong CRM is almost worse than having none at all. You'll spend months setting it up, hate using it, and end up back in Google Sheets by April.</p>
@@ -486,15 +549,16 @@
 
 <h2>Quick Comparison</h2>
 
-<p>| CRM | Best For | Starting Price | Free Tier? |</p>
-<p>|-----|----------|---------------|------------|</p>
-<p>| GoHighLevel | All-in-one for service businesses | $97/mo | No (14-day trial) |</p>
-<p>| HubSpot CRM | Free starter CRM | $0 (paid from $20/mo) | Yes |</p>
-<p>| Zoho CRM | Budget-friendly option | $0 (paid from $14/user/mo) | Yes |</p>
-<p>| Salesforce | Enterprise companies | $25/user/mo | No (30-day trial) |</p>
-<p>| Pipedrive | Visual pipeline management | $14/user/mo | No (14-day trial) |</p>
-<p>| Freshsales | AI-powered lead scoring | $0 (paid from $9/user/mo) | Yes |</p>
-<p>| Keap | Coaches and consultants | $249/mo | No (14-day trial) |</p>
+<div class="blog-table-wrap"><table>
+<thead><tr><th>CRM</th><th>Best For</th><th>Starting Price</th><th>Free Tier?</th></tr></thead><tbody>
+<tr><td>GoHighLevel</td><td>All-in-one for service businesses</td><td>$97/mo</td><td>No (14-day trial)</td></tr>
+<tr><td>HubSpot CRM</td><td>Free starter CRM</td><td>$0 (paid from $20/mo)</td><td>Yes</td></tr>
+<tr><td>Zoho CRM</td><td>Budget-friendly option</td><td>$0 (paid from $14/user/mo)</td><td>Yes</td></tr>
+<tr><td>Salesforce</td><td>Enterprise companies</td><td>$25/user/mo</td><td>No (30-day trial)</td></tr>
+<tr><td>Pipedrive</td><td>Visual pipeline management</td><td>$14/user/mo</td><td>No (14-day trial)</td></tr>
+<tr><td>Freshsales</td><td>AI-powered lead scoring</td><td>$0 (paid from $9/user/mo)</td><td>Yes</td></tr>
+<tr><td>Keap</td><td>Coaches and consultants</td><td>$249/mo</td><td>No (14-day trial)</td></tr>
+</tbody></table></div>
 
 <p>Now let's break each one down.</p>
 

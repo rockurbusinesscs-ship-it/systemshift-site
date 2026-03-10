@@ -9,6 +9,11 @@ cover: images/blog/what-is-marketing-automation-cover.png
 author: Rock
 ---
 
+> **TLDR:** Marketing automation sends the right message at the right time - without you touching it.
+> - It's not AI magic. It's systems that handle follow-ups, emails, and texts while you work
+> - Companies using it see 53% higher conversion rates
+> - You're not too small for this. You're too small to keep doing it manually
+
 # What Is Marketing Automation? A Small Business Guide
 
 You got a new lead 3 days ago. Did you follow up?

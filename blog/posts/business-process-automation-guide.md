@@ -9,6 +9,11 @@ cover: images/blog/business-automation-cover.png
 author: Rock
 ---
 
+> **TLDR:** You're the bottleneck. Automation fixes that.
+> - Start with 5 processes: lead response, follow-ups, scheduling, invoicing, and onboarding
+> - Map your process first, then automate it - tools don't fix broken workflows
+> - The first business to respond wins the deal 78% of the time. Make that automatic.
+
 ## You're Not Running a Business. You're Running in Circles.
 
 Every morning looks the same. Check emails. Reply to leads. Send invoices. Follow up on the ones that didn't pay. Chase down that appointment that was supposed to be confirmed. Manually enter data into three different systems.

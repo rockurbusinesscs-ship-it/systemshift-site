@@ -9,6 +9,11 @@ cover: images/blog/marketing-automation-cover.png
 author: Rock
 ---
 
+> **TLDR:** Five automations that run in the background and print money while you sleep.
+> - Welcome sequences, review requests, re-engagement, reminders, and referrals
+> - Set them up once on one platform - they work forever
+> - One client went from 12 Google reviews to 80+ in six months on autopilot
+
 ## You're Not Too Small to Automate. You're Too Small Not To.
 
 Here's the lie small business owners tell themselves:
