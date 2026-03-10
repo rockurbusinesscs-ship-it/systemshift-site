@@ -1,1 +1,5 @@
 .wrangler/
+
+# Temp generation scripts (contain API keys)
+generate_*.py
+build-infographic.py

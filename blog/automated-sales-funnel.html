@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build an Automated Sales Funnel That Closes While You Sleep | SystemShift HQ Blog</title>
+  <meta name="description" content="Automated sales funnel systems that close deals 24/7. The 5-stage framework, the tech stack, and real numbers from a business that built it.">
+  <link rel="canonical" href="https://systemshifthq.com/blog/automated-sales-funnel.html">
+  <meta property="og:title" content="How to Build an Automated Sales Funnel That Closes While You Sleep">
+  <meta property="og:description" content="Automated sales funnel systems that close deals 24/7. The 5-stage framework, the tech stack, and real numbers from a business that built it.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://systemshifthq.com/blog/automated-sales-funnel.html">
+  
+  <meta property="article:published_time" content="2026-02-27T00:00:00-05:00">
+  <meta property="article:section" content="Strategy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Build an Automated Sales Funnel That Closes While You Sleep",
+  "description": "Automated sales funnel systems that close deals 24/7. The 5-stage framework, the tech stack, and real numbers from a business that built it.",
+  "author": {
+    "@type": "Person",
+    "name": "Rock"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SystemShift HQ",
+    "url": "https://systemshifthq.com"
+  },
+  "datePublished": "2026-02-27T00:00:00-05:00",
+  "dateModified": "2026-02-27T00:00:00-05:00",
+  "image": "",
+  "mainEntityOfPage": "https://systemshifthq.com/blog/automated-sales-funnel.html",
+  "articleSection": "Strategy",
+  "keywords": "automated sales funnel, sales funnel automation, how to build a sales funnel, automated lead generation, lead nurture"
+}
+  </script>
+  <style>
+    .blog-post-hero {
+      padding: 140px 0 24px;
+      background: var(--bg-dark);
+    }
+
+    .blog-post-hero .container {
+      max-width: 768px;
+    }
+
+    .blog-post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .blog-category {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--turquoise);
+      background: var(--turquoise-dim);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .blog-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .blog-read-time {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .blog-post-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: #fff;
+      max-width: 800px;
+      margin-bottom: 16px;
+    }
+
+    .blog-post-hero .blog-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .blog-byline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .blog-byline strong {
+      color: #fff;
+    }
+
+    .blog-byline-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--turquoise-dim);
+    }
+
+    .blog-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .blog-tag {
+      font-size: 0.72rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .blog-cover {
+      width: 100%;
+      max-height: 480px;
+      overflow: hidden;
+    }
+
+    .blog-cover img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-cover + .blog-post-hero {
+      padding-top: 40px;
+    }
+
+    .blog-content {
+      padding: 0 0 100px;
+      background: var(--bg-dark);
+    }
+
+    .blog-body {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .blog-body h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 48px 0 16px;
+    }
+
+    .blog-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .blog-body h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 36px 0 12px;
+    }
+
+    .blog-body p {
+      margin-bottom: 20px;
+    }
+
+    .blog-body strong {
+      color: #fff;
+    }
+
+    .blog-body a {
+      color: var(--turquoise);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .blog-body ul, .blog-body ol {
+      margin: 16px 0 24px 24px;
+    }
+
+    .blog-body li {
+      margin-bottom: 8px;
+    }
+
+    .blog-body blockquote {
+      border-left: 3px solid var(--turquoise);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: rgba(255,255,255,0.02);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+
+    .blog-body blockquote p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+    }
+
+    .blog-body pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    .blog-body code {
+      font-size: 0.9em;
+      background: var(--bg-card);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .blog-body pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .blog-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+
+    .blog-body figure {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .blog-body figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body figcaption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    .blog-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .blog-cta {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .blog-cta h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .blog-cta p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--turquoise);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .blog-back:hover { text-decoration: underline; }
+
+    /* Author */
+    .blog-author {
+      max-width: 720px;
+      margin: 48px auto 0;
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .blog-author-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--turquoise-dim);
+    }
+
+    .blog-author-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .blog-author-title {
+      font-size: 0.8rem;
+      color: var(--turquoise);
+      margin-bottom: 8px;
+    }
+
+    .blog-author-bio {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Comments */
+    .blog-comments {
+      max-width: 720px;
+      margin: 48px auto 0;
+    }
+
+    .blog-comments h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comment-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: var(--turquoise);
+    }
+
+    .comment-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .comment-form .btn {
+      align-self: flex-start;
+    }
+
+    .comment-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post-hero { padding: 120px 0 32px; }
+      .blog-body { font-size: 1rem; }
+      .blog-cta { padding: 28px 20px; }
+      .blog-author { flex-direction: column; text-align: center; padding: 24px; }
+      .comment-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo"><img src="../images/logo-white.png" alt="SystemShift HQ"></a>
+      <nav class="header-nav">
+        <a href="../index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="../services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="../service-crm.html">CRM Build + Management</a>
+            <a href="../custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="../service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="../service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="../service-social.html">Social Media Automation</a>
+            <a href="../service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="../service-consulting.html">AI + Automation Consulting</a>
+            <a href="../service-apps.html">Integrator Services</a>
+            <a href="../service-app-design.html">App Design</a>
+            <a href="../service-cao.html">Fractional CAO</a>
+            <a href="../service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="../contact.html">Contact</a>
+        <div class="header-cta"><a href="../contact.html" class="btn btn-primary btn-sm">Book a Call</a></div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    
+    <section class="blog-post-hero">
+      <div class="container">
+        <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
+        <div class="blog-post-meta">
+          <a href="../blog/category/strategy.html" class="blog-category">Strategy</a>
+          <span class="blog-date">February 27, 2026</span>
+          <span class="blog-read-time">9 min read</span>
+        </div>
+        <h1>How to Build an Automated Sales Funnel That Closes While You Sleep</h1>
+        <div class="blog-byline">
+          <img src="../images/rock-hunt.jpg" alt="Rock Hunt" class="blog-byline-avatar">
+          <span>By <strong>Rock Hunt</strong></span>
+        </div>
+        <p class="blog-desc">Automated sales funnel systems that close deals 24/7. The 5-stage framework, the tech stack, and real numbers from a business that built it.</p>
+        <div class="blog-tags"><span class="blog-tag">automated sales funnel</span><span class="blog-tag">sales funnel automation</span><span class="blog-tag">how to build a sales funnel</span><span class="blog-tag">automated lead generation</span><span class="blog-tag">lead nurture</span></div>
+      </div>
+    </section>
+
+    <section class="blog-content">
+      <div class="container">
+        <div class="blog-body">
+          <h2>You Don't Have a Sales Problem. You Have a Systems Problem.</h2>
+
+<p>You're getting leads. Maybe not enough, but they're coming in. The problem isn't at the top.</p>
+
+<p>The problem is what happens after someone raises their hand. They fill out a form. They send a DM. They click an ad. Then what?</p>
+
+<p>If "then what" involves you personally remembering to follow up, you're losing deals every single day. Not because you're bad at sales. Because you're human. And humans forget, get busy, and can't work at 2 AM when your best prospect finally opens your email.</p>
+
+<p>An automated sales funnel fixes this. Not with more hustle. With a system that works when you don't.</p>
+
+<h2>The 5-Stage Automated Sales Funnel</h2>
+
+<p>Here's the framework. Every automated sales funnel has five stages. Miss one and the whole thing breaks.</p>
+
+<ol>
+<li><strong>Awareness</strong> - They find out you exist</li>
+<li><strong>Capture</strong> - They give you their info</li>
+<li><strong>Nurture</strong> - They start trusting you</li>
+<li><strong>Close</strong> - They become a customer</li>
+<li><strong>Referral</strong> - They bring you more customers</li>
+</ol>
+
+<p>Most businesses have stage one figured out. Maybe stage two. Almost nobody has all five automated and connected. That's where the money is.</p>
+
+<p>Let's build each one.</p>
+
+<h2>Stage 1: Awareness - Getting Found</h2>
+
+<p>This isn't about "brand awareness" in some vague corporate sense. This is about putting your business in front of people who already have the problem you solve.</p>
+
+<h3>The Three Awareness Channels That Work</h3>
+
+<p><strong>Organic search.</strong> Blog posts and landing pages targeting keywords your buyers actually search. This is a slow burn but compounds over time. One blog post can generate leads for years.</p>
+
+<p><strong>Paid ads.</strong> Google Ads for people searching now. Facebook and Instagram ads for people who don't know they need you yet. Start with Google if your service has search volume. Start with Meta if it doesn't.</p>
+
+<p><strong>Social content.</strong> LinkedIn for B2B. Instagram for local service businesses. Not posting for vanity metrics. Posting to drive traffic to your capture mechanism.</p>
+
+<p>The automation here is content scheduling and ad management. Set up your content calendar. Batch-create a month of posts. Schedule them. Run your ads with proper targeting and let the algorithms optimize.</p>
+
+<p>But awareness alone is worthless without stage two.</p>
+
+<h2>Stage 2: Capture - Getting Their Info</h2>
+
+<p>Someone clicked your ad. Read your post. Landed on your page. Now what?</p>
+
+<p>You need to convert that anonymous visitor into a known lead. That means getting their name, email, and ideally their phone number.</p>
+
+<h3>The Capture System</h3>
+
+<p><strong>Lead magnet.</strong> Give them something valuable in exchange for their info. A checklist, a calculator, a free assessment, a video training. Not a generic "subscribe to our newsletter." Something specific that solves a specific problem.</p>
+
+<p>A remodeling company might offer a "2026 Kitchen Renovation Cost Calculator." An accountant might offer "The 7 Tax Deductions Most Small Businesses Miss." Give real value.</p>
+
+<p><strong>Landing page.</strong> One page. One offer. One call to action. No navigation menu. No distractions. Headline, three bullets of what they get, a form, and a button.</p>
+
+<p><strong>Form.</strong> Keep it short. Name, email, phone. Every additional field drops your conversion rate by roughly 10%. If you're asking for their company size, annual revenue, and shoe size, you're killing your own funnel.</p>
+
+<h3>The Automation</h3>
+
+<p>When someone fills out the form:</p>
+<ul>
+<li>Their info goes straight into your CRM</li>
+<li>They're tagged based on which lead magnet they downloaded</li>
+<li>They immediately receive the thing they requested</li>
+<li>They enter stage three automatically</li>
+</ul>
+
+<p>No manual data entry. No "I'll send that over later." Instant delivery. This is where sales funnel automation starts earning its keep.</p>
+
+<h2>Stage 3: Nurture - Building Trust</h2>
+
+<p>Here's where most businesses fall apart. They capture the lead and then either call them immediately (too aggressive) or do nothing (too passive).</p>
+
+<p>The nurture stage is where you build enough trust that when you make an offer, the answer is yes.</p>
+
+<h3>The Nurture Sequence</h3>
+
+<p>This is an automated email and SMS sequence that runs over 7-14 days. Here's what it looks like:</p>
+
+<p><strong>Day 0 (immediate):</strong> Deliver the lead magnet. Set expectations for what's coming. Text message: "Hey [name], just sent your [lead magnet] to your email. Keep an eye out."</p>
+
+<p><strong>Day 1:</strong> Share your best case study. Real numbers. Real results. "We helped [company type] go from [problem] to [result] in [timeframe]." Proof builds trust faster than promises.</p>
+
+<p><strong>Day 3:</strong> Teach them something useful. A framework, a checklist, a strategy they can use right now. This positions you as the expert. You're not selling yet. You're helping.</p>
+
+<p><strong>Day 5:</strong> Address objections before they voice them. "Most people wonder if [common objection]. Here's the truth..." Hit the top three reasons people don't buy. Knock them down one by one.</p>
+
+<p><strong>Day 7:</strong> Social proof. Testimonials. Reviews. Screenshots of results. Let your customers sell for you.</p>
+
+<p><strong>Day 10:</strong> Make the offer. By now they know who you are, they've seen proof it works, and their objections have been addressed. The offer feels natural, not pushy.</p>
+
+<p><strong>Day 14:</strong> Final follow-up. "I've sent you a lot over the past two weeks. If now's the right time, here's how to get started. If not, no pressure. We're here when you're ready."</p>
+
+<h3>The Automation</h3>
+
+<p>Every email is pre-written. Every text is pre-scheduled. The sequence triggers automatically when someone enters your CRM. You write it once and it runs for every lead, forever.</p>
+
+<p>The key: segment by behavior. If someone opens every email and clicks three links, they're hot. Move them to stage four faster. If someone hasn't opened anything, slow the cadence down. Don't blast cold leads with daily emails.</p>
+
+<h2>Stage 4: Close - Converting to Customers</h2>
+
+<p>The nurture sequence warmed them up. Now it's time to convert.</p>
+
+<h3>The Closing System</h3>
+
+<p><strong>For high-ticket services ($2,000+):</strong> The close happens on a call. Your automation's job is to get them on that call.</p>
+
+<ul>
+<li>Automated booking link in your nurture emails</li>
+<li>Calendar tool that syncs with your schedule</li>
+<li>Reminder sequence: confirmation email, 24-hour reminder, 1-hour reminder text</li>
+<li>No-show follow-up: automated text 5 minutes after missed appointment offering to reschedule</li>
+</ul>
+
+<p><strong>For lower-ticket services:</strong> The close can happen online. Send them to a checkout page or proposal directly from the nurture sequence.</p>
+
+<h3>The Numbers That Matter</h3>
+
+<p>Track three things:</p>
+<ul>
+<li><strong>Lead-to-booking rate:</strong> What percentage of leads book a call? Target: 10-20%.</li>
+<li><strong>Show rate:</strong> What percentage actually show up? Target: 80%+ with proper reminders.</li>
+<li><strong>Close rate:</strong> What percentage of calls become customers? Target: 25-40% for qualified leads.</li>
+</ul>
+
+<p>If your show rate is below 70%, your reminder sequence is broken. If your close rate is below 20%, your nurture sequence isn't qualifying properly. The numbers tell you exactly where to fix.</p>
+
+<h2>Stage 5: Referral - Multiplying Customers</h2>
+
+<p>The most profitable lead source you'll ever have. A referred customer costs you nothing to acquire and closes at 2-4x the rate of a cold lead.</p>
+
+<p>Yet almost nobody automates referrals.</p>
+
+<h3>The Referral System</h3>
+
+<p><strong>30 days after purchase:</strong> Automated check-in. "How's everything going? Any questions?" This catches problems before they become bad reviews.</p>
+
+<p><strong>60 days after purchase:</strong> Request a review. Direct link to Google. One tap. Make it effortless.</p>
+
+<p><strong>90 days after purchase:</strong> Referral ask. "Know anyone else dealing with [problem you solve]? We'd love to help them too. Here's a link to share - and if they sign up, you get [incentive]."</p>
+
+<p><strong>Ongoing:</strong> Quarterly value emails. Tips, updates, exclusive offers for existing customers. Stay top of mind so when someone asks "know a good [your service]?" your name comes out of their mouth.</p>
+
+<h3>The Automation</h3>
+
+<p>All of this runs on timers triggered by the purchase date in your CRM. Set it up once. Every customer gets the same experience. Every customer gets asked for reviews and referrals at the perfect moment.</p>
+
+<h2>The Tech Stack</h2>
+
+<p>You don't need 15 tools. Here's what actually runs this system:</p>
+
+<ul>
+<li><strong>CRM:</strong> GoHighLevel, HubSpot, or ActiveCampaign. This is the brain. Everything connects here.</li>
+<li><strong>Landing pages:</strong> Your CRM's built-in builder or a tool like Carrd for simple pages.</li>
+<li><strong>Email and SMS:</strong> Built into your CRM. Don't use a separate email tool.</li>
+<li><strong>Scheduling:</strong> Calendly or your CRM's booking tool.</li>
+<li><strong>Ads:</strong> Google Ads and Meta Ads Manager. No shortcuts here.</li>
+<li><strong>Payments:</strong> Stripe connected to your CRM.</li>
+</ul>
+
+<p>Total cost: $97-297 per month depending on the CRM. That's it. One system, not a Frankenstein of disconnected tools.</p>
+
+<h2>Real Numbers: What This Looks Like Working</h2>
+
+<p>One of our clients, a residential cleaning company, built this exact five-stage funnel.</p>
+
+<p>Before: 30 leads per month from Facebook Ads. 8 booked estimates. 4 became customers. Cost per customer: $125. No referral system. No review system.</p>
+
+<p>After: Same 30 leads per month from the same ad spend. 18 booked estimates (automated nurture pre-qualified and warmed them up). 11 became customers. Cost per customer: $45. Automated review requests generated 47 new Google reviews in 90 days. Referral system brought in 6 additional customers per month at zero acquisition cost.</p>
+
+<p>Same ad budget. Same market. Just a system connecting every stage to the next.</p>
+
+<h2>The One Thing Most People Get Wrong</h2>
+
+<p>They try to build all five stages at once. Don't.</p>
+
+<p>Start with stage two and three. Build your capture mechanism and your nurture sequence first. These have the biggest immediate impact because they fix the leads you're already losing.</p>
+
+<p>Then add stage five. Referrals and reviews from existing customers.</p>
+
+<p>Then optimize stage one. Drive more traffic into your now-working system.</p>
+
+<p>Stage four (the close) usually already exists in some form. You're already selling somehow. The automation just removes the friction.</p>
+
+<h2>Stop Losing Leads You Already Paid For</h2>
+
+<p>Every lead that comes in and doesn't hear from you within five minutes is 80% less likely to convert. Every lead that doesn't get nurtured is a lead your competitor will close. Every customer who doesn't get asked for a referral is a missed multiplier.</p>
+
+<p>The automated sales funnel isn't optional anymore. It's the difference between businesses that scale and businesses that stay stuck trading time for money.</p>
+
+<p>You now have the framework. Five stages. The tech stack. Real numbers proving it works.</p>
+
+<p>Build it yourself, stage by stage. Or let us build the whole thing for you in 30 days.</p>
+
+<p><a href="https://systemshift.io/book">Book a free strategy call</a> and we'll map out your five-stage funnel on the call. You'll leave with a blueprint whether you work with us or not.</p>
+        </div>
+        <div class="blog-cta">
+          <h3>Ready to Automate Your Business?</h3>
+          <p>Book a free strategy call and we'll map out exactly what to build first.</p>
+          <a href="../contact.html" class="btn btn-primary">Book Your Call</a>
+        </div>
+        
+        <div class="blog-author">
+          <img src="../images/rock-hunt.jpg" alt="Rock Hunt" class="blog-author-avatar">
+          <div>
+            <div class="blog-author-name">Rock Hunt</div>
+            <div class="blog-author-title">Founder, SystemShift HQ</div>
+            <p class="blog-author-bio">I build AI and automation systems for businesses that are tired of doing everything manually. Based in High Point, NC.</p>
+          </div>
+        </div>
+        <div class="blog-comments">
+          <h3>Join the Conversation</h3>
+          <form class="comment-form" action="https://api.leadbreeze.co/widget/form/submit" method="POST">
+            <input type="hidden" name="blog_post" value="automated-sales-funnel">
+            <div class="comment-row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <textarea name="comment" placeholder="Share your thoughts..." required></textarea>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+            <p class="comment-note">Your email won't be published. Comments are reviewed before posting.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="header-logo"><img src="../images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../blog.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../case-studies.html">Case Studies</a><a href="../contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
