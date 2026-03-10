@@ -457,8 +457,9 @@ def build_post_html(meta, body_html, read_time):
     }}
 
     .blog-cover img {{
-      width: 100%;
-      height: 480px;
+      width: 100% !important;
+      height: 480px !important;
+      max-width: none !important;
       object-fit: cover;
       display: block;
     }}
@@ -1078,8 +1079,8 @@ def build_index_html(posts, page=1, total_pages=1):
     }}
 
     .blog-card-img {{
-      width: 100%;
-      height: 220px;
+      width: 100% !important;
+      height: 220px !important;
       object-fit: cover;
       display: block;
     }}
@@ -1425,7 +1426,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
 
     .blog-card {{ background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; display: block; color: inherit; text-decoration: none; }}
     .blog-card:hover {{ border-color: rgba(15,223,216,0.3); transform: translateY(-4px); box-shadow: 0 12px 48px rgba(0,0,0,0.4); }}
-    .blog-card-img {{ width: 100%; height: 220px; object-fit: cover; display: block; }}
+    .blog-card-img {{ width: 100% !important; height: 220px !important; object-fit: cover; display: block; }}
     .blog-card-placeholder {{ background: linear-gradient(135deg, #1a1a2e, #16213e); }}
     .blog-card-content {{ padding: 24px 28px 28px; }}
     .blog-card-meta {{ display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }}
