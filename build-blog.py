@@ -325,6 +325,10 @@ def build_post_html(meta, body_html, read_time):
       background: var(--bg-dark);
     }}
 
+    .blog-post-hero .container {{
+      max-width: 768px;
+    }}
+
     .blog-post-meta {{
       display: flex;
       align-items: center;
