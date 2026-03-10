@@ -301,7 +301,7 @@ def build_post_html(meta, body_html, read_time):
     author_info = AUTHORS.get(author, AUTHORS.get('Rock'))
     author_html = ''
     if author_info:
-        avatar = f'<img src="../{author_info["avatar"]}" alt="{author_info["name"]}" class="blog-author-avatar">' if author_info.get('avatar') else ''
+        avatar = f'<img src="https://systemshifthq.com/{author_info["avatar"]}" alt="{author_info["name"]}" class="blog-author-avatar">' if author_info.get('avatar') else ''
         author_html = f'''
         <div class="blog-author">
           {avatar}
@@ -314,7 +314,7 @@ def build_post_html(meta, body_html, read_time):
 
     cover_html = f'''
     <div class="blog-cover">
-      <img src="../{cover}" alt="{title}" loading="lazy">
+      <img src="https://systemshifthq.com/{cover}" alt="{title}">
     </div>''' if cover else ''
 
     schema = json.dumps({
@@ -838,7 +838,7 @@ def build_post_html(meta, body_html, read_time):
         </div>
         <h1>{title}</h1>
         <div class="blog-byline">
-          <img src="../{author_info['avatar']}" alt="{author_info['name']}" class="blog-byline-avatar">
+          <img src="https://systemshifthq.com/{author_info['avatar']}" alt="{author_info['name']}" class="blog-byline-avatar">
           <span>By <strong>{author_info['name']}</strong></span>
         </div>
         <p class="blog-desc">{description}</p>
@@ -931,7 +931,7 @@ def build_index_html(posts, page=1, total_pages=1):
         meta = p['meta']
         tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
         cover = meta.get('cover', '')
-        cover_img = f'<img src="{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+        cover_img = f'<img src="https://systemshifthq.com/{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
         author_key = meta.get('author', 'Rock')
         author_data = AUTHORS.get(author_key, AUTHORS.get('Rock'))
 
@@ -953,7 +953,7 @@ def build_index_html(posts, page=1, total_pages=1):
             <h2>{meta.get('title', 'Untitled')}</h2>
             <p>{meta.get('description', '')}</p>
             <div class="blog-card-author">
-              <img src="{author_data['avatar']}" alt="{author_data['name']}" class="blog-card-author-img">
+              <img src="https://systemshifthq.com/{author_data['avatar']}" alt="{author_data['name']}" class="blog-card-author-img">
               <span>By {author_data['name']}</span>
             </div>
           </div>
@@ -1304,7 +1304,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
         meta = p['meta']
         tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
         cover = meta.get('cover', '')
-        cover_img = f'<img src="../../{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+        cover_img = f'<img src="https://systemshifthq.com/{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
         author_key = meta.get('author', 'Rock')
         author_data = AUTHORS.get(author_key, AUTHORS.get('Rock'))
 
@@ -1326,7 +1326,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
             <h2>{meta.get('title', 'Untitled')}</h2>
             <p>{meta.get('description', '')}</p>
             <div class="blog-card-author">
-              <img src="../../{author_data['avatar']}" alt="{author_data['name']}" class="blog-card-author-img">
+              <img src="https://systemshifthq.com/{author_data['avatar']}" alt="{author_data['name']}" class="blog-card-author-img">
               <span>By {author_data['name']}</span>
             </div>
           </div>
