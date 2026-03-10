@@ -362,6 +362,7 @@ a:hover { color: #0cc; }
     top: 72px;
     left: 0;
     right: 0;
+    bottom: 0;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
@@ -371,6 +372,8 @@ a:hover { color: #0cc; }
     opacity: 0;
     transition: transform 0.35s ease, opacity 0.35s ease;
     border-bottom: 1px solid var(--border);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .header-nav.open {
