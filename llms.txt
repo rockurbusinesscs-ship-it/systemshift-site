@@ -1,0 +1,36 @@
+# SystemShift HQ
+
+> SystemShift HQ is an AI automation agency based in High Point, NC that builds custom automation systems, CRM implementations, AI agents, and custom apps for service businesses ready to scale without the busywork.
+
+## Services
+
+- [CRM Build + Management](https://systemshifthq.com/service-crm.html): Full CRM setup, pipeline automation, and ongoing management
+- [Custom AI Solutions](https://systemshifthq.com/custom-ai-solutions.html): AI agents, chatbots, and intelligent automation
+- [AI Voice & Chat Agents](https://systemshifthq.com/service-voice.html): Conversational AI for phone, chat, and SMS
+- [Landing Pages & Funnels](https://systemshifthq.com/service-funnels.html): High-converting landing pages and sales funnels
+- [Social Media Automation](https://systemshifthq.com/service-social.html): Automated posting, engagement, and analytics
+- [LinkedIn Brand Management](https://systemshifthq.com/service-linkedin.html): Profile optimization, content, and outreach
+- [AI + Automation Consulting](https://systemshifthq.com/service-consulting.html): Strategy sessions and systems audits
+- [Integrator Services](https://systemshifthq.com/service-apps.html): Connect your tech stack with custom integrations
+- [App Design & Development](https://systemshifthq.com/service-app-design.html): Custom business apps, portals, and dashboards
+- [Fractional CAO](https://systemshifthq.com/service-cao.html): On-demand automation leadership
+- [GHL Implementation](https://systemshifthq.com/service-ghl.html): GoHighLevel setup and optimization
+
+## Key Pages
+
+- [Home](https://systemshifthq.com/): Main landing page
+- [Services](https://systemshifthq.com/services.html): All services overview
+- [Blog](https://systemshifthq.com/blog.html): Insights on automation, AI, and scaling
+- [Case Studies](https://systemshifthq.com/case-studies.html): Real client results
+- [About](https://systemshifthq.com/about.html): Our story and mission
+- [Contact](https://systemshifthq.com/contact.html): Book a free strategy call
+
+## Location
+
+SystemShift HQ is located at 3980 Premier Dr, High Point, NC 27265. We serve businesses across the Triad (Greensboro, Winston-Salem, High Point) and nationwide.
+
+## Contact
+
+- Email: support@systemshifthq.com
+- Phone: 336-568-8504
+- Book a Call: https://systemshifthq.com/contact.html
