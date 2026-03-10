@@ -5,6 +5,7 @@ slug: email-marketing-automation-playbook
 date: 2026-03-03
 category: Marketing
 tags: [email marketing, marketing automation, automated email sequences, email workflows, service business]
+cover: images/blog/email-automation-cover.png
 author: Rock
 ---
 

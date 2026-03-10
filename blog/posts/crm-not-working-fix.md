@@ -5,6 +5,7 @@ slug: crm-not-working-fix
 date: 2026-03-08
 category: CRM
 tags: [CRM, GoHighLevel, pipeline, sales process, automation]
+cover: images/blog/crm-cover.png
 author: Rock
 ---
 

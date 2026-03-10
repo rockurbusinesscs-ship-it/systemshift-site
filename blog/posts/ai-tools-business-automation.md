@@ -5,6 +5,7 @@ slug: ai-tools-business-automation
 date: 2026-03-04
 category: AI
 tags: [AI, automation, small business, AI tools for business automation, chatbots, productivity]
+cover: images/blog/ai-tools-cover.png
 author: Rock
 ---
 

@@ -5,6 +5,7 @@ slug: ai-chatbot-vs-live-chat
 date: 2026-03-07
 category: AI
 tags: [AI chatbot, live chat, customer service, lead capture, automation]
+cover: images/blog/ai-chatbot-cover.png
 author: Rock
 ---
 

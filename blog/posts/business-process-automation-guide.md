@@ -5,6 +5,7 @@ slug: business-process-automation-guide
 date: 2026-03-01
 category: Automation
 tags: [business process automation, business process automation tools, business process automation benefits, business process automation examples, small business automation, workflow automation]
+cover: images/blog/business-automation-cover.png
 author: Rock
 ---
 

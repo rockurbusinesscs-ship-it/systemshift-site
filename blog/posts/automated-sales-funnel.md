@@ -5,6 +5,7 @@ slug: automated-sales-funnel
 date: 2026-02-27
 category: Strategy
 tags: [automated sales funnel, sales funnel automation, how to build a sales funnel, automated lead generation, lead nurture]
+cover: images/blog/sales-funnel-cover.png
 author: Rock
 ---
 

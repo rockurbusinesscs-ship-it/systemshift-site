@@ -5,6 +5,7 @@ slug: small-business-marketing-automation
 date: 2026-03-06
 category: Marketing
 tags: [marketing automation, email marketing, small business, lead nurture, SMS]
+cover: images/blog/marketing-automation-cover.png
 author: Rock
 ---
 

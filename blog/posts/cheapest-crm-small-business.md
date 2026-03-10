@@ -5,6 +5,7 @@ slug: cheapest-crm-small-business
 date: 2026-03-05
 category: CRM
 tags: [CRM, small business, GoHighLevel, pipeline, automation, cheapest CRM for small business]
+cover: images/blog/cheapest-crm-cover.png
 author: Rock
 ---
 

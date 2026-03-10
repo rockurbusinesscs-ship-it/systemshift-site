@@ -5,6 +5,7 @@ slug: local-seo-small-business-checklist
 date: 2026-02-28
 category: SEO
 tags: [local seo for small business, google business profile optimization checklist, local seo services for small business, map pack, local citations]
+cover: images/blog/local-seo-cover.png
 author: Rock
 ---
 

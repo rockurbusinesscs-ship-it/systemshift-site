@@ -5,6 +5,7 @@ slug: social-media-automation-tools
 date: 2026-03-02
 category: Marketing
 tags: [social media automation tools, best social media automation tools, social media marketing automation tools, social media automation tools free, content scheduling, batch content creation]
+cover: images/blog/social-media-cover.png
 author: Rock
 ---
 
