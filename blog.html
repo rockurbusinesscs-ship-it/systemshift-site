@@ -184,6 +184,23 @@
       color: var(--text-muted);
     }
 
+    .blog-card-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .blog-card-author-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--turquoise-dim);
+    }
+
     .blog-empty {
       text-align: center;
       padding: 80px 0;
@@ -254,7 +271,75 @@
 
     <section class="blog-grid-section">
       <div class="container">
-        {"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}
+        <div class='blog-grid'>
+        <a href="blog/speed-to-lead-automation.html" class="blog-card fade-up">
+          <img src="images/blog/speed-to-lead-cover.png" alt="Speed to Lead - Why Slow Lead Follow Up Is Costing You Thousands" class="blog-card-img" loading="lazy">
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-category">Automation</span>
+              <span class="blog-date">March 09, 2026</span>
+              <span class="blog-read-time">4 min read</span>
+            </div>
+            <h2>Speed to Lead - Why Slow Lead Follow Up Is Costing You Thousands</h2>
+            <p>Speed to lead statistics show responding in under 5 minutes means 100x better contact rates. Build a lead follow up system that responds in seconds and closes more deals.</p>
+            <div class="blog-card-author">
+              <img src="images/rock-hunt.jpg" alt="Rock Hunt" class="blog-card-author-img">
+              <span>By Rock Hunt</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog/crm-not-working-fix.html" class="blog-card fade-up">
+          <div class="blog-card-img blog-card-placeholder"></div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-category">CRM</span>
+              <span class="blog-date">March 08, 2026</span>
+              <span class="blog-read-time">3 min read</span>
+            </div>
+            <h2>Your CRM Isn't Working Because You Built It Backwards</h2>
+            <p>Most businesses set up their CRM wrong from day one. No pipeline structure, no automation, no follow-up system. Here's how to fix your CRM so it actually closes deals.</p>
+            <div class="blog-card-author">
+              <img src="images/rock-hunt.jpg" alt="Rock Hunt" class="blog-card-author-img">
+              <span>By Rock Hunt</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog/ai-chatbot-vs-live-chat.html" class="blog-card fade-up">
+          <div class="blog-card-img blog-card-placeholder"></div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-category">AI</span>
+              <span class="blog-date">March 07, 2026</span>
+              <span class="blog-read-time">3 min read</span>
+            </div>
+            <h2>AI Chatbots vs Live Chat - Why You Need Both and How to Set It Up</h2>
+            <p>AI chatbots handle 80% of customer questions instantly. Live chat handles the 20% that need a human. Here's how to build a system that uses both without losing leads.</p>
+            <div class="blog-card-author">
+              <img src="images/rock-hunt.jpg" alt="Rock Hunt" class="blog-card-author-img">
+              <span>By Rock Hunt</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog/small-business-marketing-automation.html" class="blog-card fade-up">
+          <div class="blog-card-img blog-card-placeholder"></div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-category">Marketing</span>
+              <span class="blog-date">March 06, 2026</span>
+              <span class="blog-read-time">4 min read</span>
+            </div>
+            <h2>The 5 Marketing Automations Every Small Business Needs Running Right Now</h2>
+            <p>Five marketing automations that run in the background and generate leads while you sleep. No marketing degree needed. Just systems that work on autopilot.</p>
+            <div class="blog-card-author">
+              <img src="images/rock-hunt.jpg" alt="Rock Hunt" class="blog-card-author-img">
+              <span>By Rock Hunt</span>
+            </div>
+          </div>
+        </a>
+</div>
       </div>
     </section>
   </main>

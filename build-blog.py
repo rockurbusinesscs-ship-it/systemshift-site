@@ -72,10 +72,10 @@ CATEGORIES = {
 # Author profiles
 AUTHORS = {
     'Rock': {
-        'name': 'Rock',
+        'name': 'Rock Hunt',
         'title': 'Founder, SystemShift HQ',
         'bio': 'I build AI and automation systems for businesses that are tired of doing everything manually. Based in High Point, NC.',
-        'avatar': 'images/about-founder.png',
+        'avatar': 'images/rock-hunt.jpg',
     },
 }
 
@@ -187,7 +187,9 @@ def md_to_html(md):
         # Image
         elif re.match(r'^!\[.*?\]\(.*?\)$', stripped):
             m = re.match(r'^!\[(.*?)\]\((.*?)\)$', stripped)
-            html_lines.append(f'<img src="{m.group(2)}" alt="{m.group(1)}" loading="lazy">')
+            alt = m.group(1)
+            src = m.group(2)
+            html_lines.append(f'<figure><img src="{src}" alt="{alt}" title="{alt}" loading="lazy" width="1080" height="1350"><figcaption>{alt}</figcaption></figure>')
         # Empty line
         elif stripped == '':
             html_lines.append('')
@@ -369,6 +371,27 @@ def build_post_html(meta, body_html, read_time):
       max-width: 700px;
     }}
 
+    .blog-byline {{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }}
+
+    .blog-byline strong {{
+      color: #fff;
+    }}
+
+    .blog-byline-avatar {{
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--turquoise-dim);
+    }}
+
     .blog-tags {{
       display: flex;
       gap: 8px;
@@ -486,8 +509,28 @@ def build_post_html(meta, body_html, read_time):
 
     .blog-body img {{
       max-width: 100%;
+      height: auto;
       border-radius: 12px;
       margin: 24px 0;
+    }}
+
+    .blog-body figure {{
+      margin: 40px 0;
+      text-align: center;
+    }}
+
+    .blog-body figure img {{
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }}
+
+    .blog-body figcaption {{
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
     }}
 
     .blog-body hr {{
@@ -685,6 +728,10 @@ def build_post_html(meta, body_html, read_time):
           <span class="blog-read-time">{read_time} min read</span>
         </div>
         <h1>{title}</h1>
+        <div class="blog-byline">
+          <img src="../{author_info['avatar']}" alt="{author_info['name']}" class="blog-byline-avatar">
+          <span>By <strong>{author_info['name']}</strong></span>
+        </div>
         <p class="blog-desc">{description}</p>
         <div class="blog-tags">{tags_html}</div>
       </div>
@@ -755,6 +802,8 @@ def build_index_html(posts):
         tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
         cover = meta.get('cover', '')
         cover_img = f'<img src="{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+        author_key = meta.get('author', 'Rock')
+        author_data = AUTHORS.get(author_key, AUTHORS.get('Rock'))
 
         try:
             date_obj = datetime.strptime(meta.get('date', ''), '%Y-%m-%d')
@@ -773,7 +822,10 @@ def build_index_html(posts):
             </div>
             <h2>{meta.get('title', 'Untitled')}</h2>
             <p>{meta.get('description', '')}</p>
-            <div class="blog-card-tags">{tags_html}</div>
+            <div class="blog-card-author">
+              <img src="{author_data['avatar']}" alt="{author_data['name']}" class="blog-card-author-img">
+              <span>By {author_data['name']}</span>
+            </div>
           </div>
         </a>
 '''
@@ -964,6 +1016,23 @@ def build_index_html(posts):
       color: var(--text-muted);
     }}
 
+    .blog-card-author {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }}
+
+    .blog-card-author-img {{
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--turquoise-dim);
+    }}
+
     .blog-empty {{
       text-align: center;
       padding: 80px 0;
@@ -1028,7 +1097,7 @@ def build_index_html(posts):
 
     <section class="blog-grid-section">
       <div class="container">
-        {{"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}}
+        {"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}
       </div>
     </section>
   </main>
@@ -1069,6 +1138,8 @@ def build_category_html(cat_name, cat_info, cat_posts):
         tags_html = ''.join(f'<span class="blog-card-tag">{t}</span>' for t in (meta.get('tags', []) if isinstance(meta.get('tags', []), list) else []))
         cover = meta.get('cover', '')
         cover_img = f'<img src="../../{cover}" alt="{meta.get("title", "")}" class="blog-card-img" loading="lazy">' if cover else '<div class="blog-card-img blog-card-placeholder"></div>'
+        author_key = meta.get('author', 'Rock')
+        author_data = AUTHORS.get(author_key, AUTHORS.get('Rock'))
 
         try:
             date_obj = datetime.strptime(meta.get('date', ''), '%Y-%m-%d')
@@ -1087,7 +1158,10 @@ def build_category_html(cat_name, cat_info, cat_posts):
             </div>
             <h2>{meta.get('title', 'Untitled')}</h2>
             <p>{meta.get('description', '')}</p>
-            <div class="blog-card-tags">{tags_html}</div>
+            <div class="blog-card-author">
+              <img src="../../{author_data['avatar']}" alt="{author_data['name']}" class="blog-card-author-img">
+              <span>By {author_data['name']}</span>
+            </div>
           </div>
         </a>
 '''
@@ -1194,6 +1268,8 @@ def build_category_html(cat_name, cat_info, cat_posts):
     .blog-card p {{ font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }}
     .blog-card-tags {{ display: flex; gap: 6px; flex-wrap: wrap; }}
     .blog-card-tag {{ font-size: 0.68rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); color: var(--text-muted); }}
+    .blog-card-author {{ display: flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 0.82rem; color: var(--text-muted); }}
+    .blog-card-author-img {{ width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid var(--turquoise-dim); }}
     .blog-empty {{ text-align: center; padding: 80px 0; color: var(--text-muted); font-size: 1.1rem; }}
 
     @media (max-width: 700px) {{

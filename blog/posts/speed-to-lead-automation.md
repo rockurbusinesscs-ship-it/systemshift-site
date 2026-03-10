@@ -1,15 +1,15 @@
 ---
-title: Speed to Lead Is Killing Your Close Rate - Here's the Fix
-description: 47-hour average lead response time is killing your close rate. Speed to lead under 5 minutes means 100x better contact rates. Here's the system that responds in seconds.
+title: Speed to Lead - Why Slow Lead Follow Up Is Costing You Thousands
+description: Speed to lead statistics show responding in under 5 minutes means 100x better contact rates. Build a lead follow up system that responds in seconds and closes more deals.
 slug: speed-to-lead-automation
 date: 2026-03-09
 category: Automation
-tags: [lead response, CRM, speed to lead, automation, close rate]
-cover: images/case-study-dashboard.png
+tags: [speed to lead, lead follow up, lead response time, lead follow up system, automation]
+cover: images/blog/speed-to-lead-cover.png
 author: Rock
 ---
 
-## Your Leads Are Dying While You Sleep
+## Speed to Lead Is the Metric You're Ignoring
 
 Here's a stat that should make you uncomfortable.
 
@@ -23,7 +23,7 @@ According to a Harvard Business Review study, companies that respond within 5 mi
 
 And you're waiting 47 hours.
 
-## The Real Cost of Slow Response
+## Speed to Lead Statistics That Prove the Point
 
 Let's do the math.
 
@@ -36,7 +36,9 @@ That's 12 clients you're losing every single month. Not because your service is 
 
 If your average client is worth $2,000, that's **$24,000 a month** walking out the door.
 
-## Why It Keeps Happening
+![Speed to lead statistics infographic showing 100x better contact rates when responding in under 5 minutes, 47-hour average lead response time, and 78% of deals going to the first responder](../images/blog/speed-to-lead-infographic.png)
+
+## Why Your Lead Follow Up Is Broken
 
 It's not because you're lazy. It's because you're busy.
 
@@ -50,7 +52,7 @@ Or you do - three hours later, when the lead has already booked with someone who
 
 This isn't a you problem. This is a systems problem.
 
-## The System That Responds in Seconds
+## The Lead Follow Up System That Responds in Seconds
 
 Here's what a speed-to-lead automation actually looks like:
 
@@ -68,9 +70,9 @@ Here's what a speed-to-lead automation actually looks like:
 
 The whole thing runs without you touching it. 24/7. Weekends. Holidays. 3am.
 
-## What Changes When You Fix This
+## What Changes When You Fix Lead Response Time
 
-We built this exact system for a business owner who was getting 40+ leads a month from Google Ads but only closing 3-4.
+We built this exact lead follow up system for a business owner who was getting 40+ leads a month from Google Ads but only closing 3-4.
 
 After the speed-to-lead system went live:
 

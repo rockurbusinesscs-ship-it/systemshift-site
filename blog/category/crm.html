@@ -93,6 +93,8 @@
     .blog-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
     .blog-card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
     .blog-card-tag { font-size: 0.68rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); color: var(--text-muted); }
+    .blog-card-author { display: flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 0.82rem; color: var(--text-muted); }
+    .blog-card-author-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid var(--turquoise-dim); }
     .blog-empty { text-align: center; padding: 80px 0; color: var(--text-muted); font-size: 1.1rem; }
 
     @media (max-width: 700px) {
@@ -151,7 +153,24 @@
 
     <section class="cat-grid-section">
       <div class="container">
-        <p class='blog-empty'>No posts in this category yet. Check back soon.</p>
+        <div class='blog-grid'>
+        <a href="../crm-not-working-fix.html" class="blog-card fade-up">
+          <div class="blog-card-img blog-card-placeholder"></div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-category">CRM</span>
+              <span class="blog-date">March 08, 2026</span>
+              <span class="blog-read-time">3 min read</span>
+            </div>
+            <h2>Your CRM Isn't Working Because You Built It Backwards</h2>
+            <p>Most businesses set up their CRM wrong from day one. No pipeline structure, no automation, no follow-up system. Here's how to fix your CRM so it actually closes deals.</p>
+            <div class="blog-card-author">
+              <img src="../../images/rock-hunt.jpg" alt="Rock Hunt" class="blog-card-author-img">
+              <span>By Rock Hunt</span>
+            </div>
+          </div>
+        </a>
+</div>
       </div>
     </section>
   </main>
