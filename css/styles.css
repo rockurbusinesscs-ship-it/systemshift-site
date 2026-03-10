@@ -239,8 +239,10 @@ a:hover { color: #0cc; }
   transition: transform 0.2s;
 }
 
-.nav-dropdown:hover > a .dropdown-arrow {
-  transform: rotate(180deg);
+@media (min-width: 769px) {
+  .nav-dropdown:hover > a .dropdown-arrow {
+    transform: rotate(180deg);
+  }
 }
 
 .dropdown-menu {
@@ -260,10 +262,12 @@ a:hover { color: #0cc; }
   z-index: 1001;
 }
 
-.nav-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+@media (min-width: 769px) {
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .dropdown-menu a {
