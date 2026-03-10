@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | SystemShift HQ — AI & Automation Agency</title>
+  <meta name="description" content="Custom AI solutions, CRM builds, automation consulting, and more. Every system is built around your actual workflows. Based in High Point, NC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       SERVICES PAGE — ENHANCED WITH ICONS + WIDGETS
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .services-hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/services-hero.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+    }
+
+    .services-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.9) 70%, var(--bg-section-alt) 100%);
+    }
+
+    .services-hero .container { position: relative; z-index: 2; }
+
+    .services-hero .section-title {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .services-hero .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--turquoise);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Service Cards Grid ── */
+    .services-grid-section {
+      padding: 80px 0 120px;
+      background: var(--bg-section-alt);
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .svc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .svc-card:hover {
+      border-color: rgba(15, 223, 216, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .svc-card-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .svc-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .svc-card:hover .svc-card-img img {
+      transform: scale(1.05);
+    }
+
+    .svc-card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--bg-card));
+      pointer-events: none;
+    }
+
+    .svc-card-body {
+      padding: 20px 24px 28px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .svc-card-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .svc-card-body p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .svc-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .svc-card-tags span {
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--border-light);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(10, 10, 10, 0.5);
+    }
+
+    .svc-card:hover .svc-card-tags span {
+      border-color: rgba(15, 223, 216, 0.2);
+      color: var(--text-secondary);
+    }
+
+    .svc-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--turquoise);
+    }
+
+    .svc-card-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .svc-card:hover .svc-card-link svg {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 1024px) {
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .svc-grid { grid-template-columns: 1fr; }
+      .svc-card-img { height: 180px; }
+    }
+
+    /* ── Video Showcase Widget ── */
+    .showcase-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .showcase-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+    }
+
+    .showcase-card video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .showcase-card-body {
+      padding: 20px 24px;
+    }
+
+    .showcase-card-body h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .showcase-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Deliverables Section ── */
+    .deliverables-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .deliverables-section .section-title,
+    .deliverables-section .section-subtitle {
+      text-align: center;
+    }
+
+    .deliverables-section .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .deliverable-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .deliverable-card:hover {
+      border-color: rgba(15, 223, 216, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 36px rgba(0, 0, 0, 0.3);
+    }
+
+    .deliverable-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+      margin-bottom: 18px;
+    }
+
+    .deliverable-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--turquoise);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .deliverable-card h4 {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    /* ── Process Widget ── */
+    .process-widget {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .pw-step {
+      text-align: center;
+      position: relative;
+      padding: 32px 20px;
+    }
+
+    .pw-step::after {
+      content: '';
+      position: absolute;
+      top: 44px;
+      right: -12px;
+      width: 24px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--turquoise), transparent);
+    }
+
+    .pw-step:last-child::after { display: none; }
+
+    .pw-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--turquoise);
+      color: var(--turquoise);
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .pw-step h4 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .pw-step p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── CTA Section ── */
+    .services-cta {
+      padding: 120px 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--turquoise-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .services-cta .container { position: relative; z-index: 1; }
+    .services-cta .section-title { margin-bottom: 16px; }
+    .services-cta .section-subtitle { margin-left: auto; margin-right: auto; margin-bottom: 40px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .bento-wide { grid-column: span 2; }
+      .bento-tall { grid-row: span 1; }
+      .deliverables-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .pw-step::after { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .services-hero { padding: 130px 0 72px; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-wide { grid-column: span 1; }
+      .deliverables-grid { grid-template-columns: repeat(2, 1fr); }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero-stats { gap: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      .deliverables-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .deliverable-card { padding: 24px 14px; }
+      .bento-card { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body class="page-top">
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="services-hero">
+    <div class="container">
+      <span class="section-eyebrow fade-up">Our Services</span>
+      <h1 class="section-title fade-up">What We'll Build For Your Company</h1>
+      <p class="section-subtitle fade-up">Start Today, Scale Tomorrow. Every system is custom-built around your actual workflows.</p>
+      <a href="contact.html" class="btn btn-primary fade-up">Book Your Audit</a>
+      <div class="hero-stats fade-up">
+        <div class="hero-stat">
+          <div class="hero-stat-number">10+</div>
+          <div class="hero-stat-label">Services</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">30 Days</div>
+          <div class="hero-stat-label">Avg Build Time</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">100%</div>
+          <div class="hero-stat-label">Custom Built</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICES SHOWCASE ══════════ -->
+  <section style="padding: 0 0 0; background: var(--bg-section-alt);">
+    <div class="container">
+      <div class="fade-up" style="margin-top: -40px; border-radius: 16px; border: 1px solid rgba(15,223,216,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.4); overflow: hidden;">
+        <img src="images/services-showcase.png" alt="Connected business tools and automation" style="max-width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICE CARDS — 3 PER ROW ══════════ -->
+  <section class="services-grid-section">
+    <div class="container">
+      <div class="svc-grid">
+
+        <a href="service-crm.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-crm.png" alt="CRM Dashboard"></div>
+          <div class="svc-card-body">
+            <h3>CRM Build + Management</h3>
+            <p>GoHighLevel CRMs that drive decisions. Automated lead tracking, nurturing, and conversion systems.</p>
+            <div class="svc-card-tags"><span>Pipeline Automation</span><span>Lead Capture</span><span>Dashboards</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="custom-ai-solutions.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-ai.png" alt="Custom AI Solutions"></div>
+          <div class="svc-card-body">
+            <h3>Custom AI Solutions</h3>
+            <p>AI tools that think like your team -- custom GPTs, copilots, and workflow-aware automation.</p>
+            <div class="svc-card-tags"><span>Custom GPTs</span><span>AI Copilots</span><span>Task Routing</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-voice.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-voice.png" alt="AI Voice Agents"></div>
+          <div class="svc-card-body">
+            <h3>AI Voice &amp; Conversational Agents</h3>
+            <p>AI agents that talk, book, and follow up -- your 24/7 assistant that never forgets a lead.</p>
+            <div class="svc-card-tags"><span>AI Phone Agents</span><span>Chat Automation</span><span>24/7</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-funnels.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-funnels.png" alt="Funnels & Landing Pages"></div>
+          <div class="svc-card-body">
+            <h3>Landing Pages, Funnels &amp; Websites</h3>
+            <p>Conversion-focused digital assets connected directly to your automation systems.</p>
+            <div class="svc-card-tags"><span>Landing Pages</span><span>Sales Funnels</span><span>A/B Testing</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-social.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-social.png" alt="Social Media Automation"></div>
+          <div class="svc-card-body">
+            <h3>Social Media Automation</h3>
+            <p>Automate how you connect, engage, and convert across every platform.</p>
+            <div class="svc-card-tags"><span>Auto-Posting</span><span>DM Triggers</span><span>AI Captions</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-linkedin.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-linkedin.png" alt="LinkedIn Brand Management"></div>
+          <div class="svc-card-body">
+            <h3>LinkedIn Brand Management</h3>
+            <p>Turn your LinkedIn into an inbound engine. Automation, AI, and brand strategy.</p>
+            <div class="svc-card-tags"><span>Lead Sync</span><span>Thought Leadership</span><span>Profile Optimization</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-consulting.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-consulting.png" alt="Automation Consulting"></div>
+          <div class="svc-card-body">
+            <h3>AI + Automation Consulting</h3>
+            <p>We audit your systems, find the friction, and rebuild workflows for scale.</p>
+            <div class="svc-card-tags"><span>System Audits</span><span>Workflow Mapping</span><span>SOPs</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-apps.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-apps.png" alt="AI App Development"></div>
+          <div class="svc-card-body">
+            <h3>Custom AI App Development</h3>
+            <p>AI-powered tools that turn your disconnected tech stack into a self-operating system.</p>
+            <div class="svc-card-tags"><span>Zapier</span><span>Make</span><span>API Integrations</span><span>N8N</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-cao.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-cao.png" alt="Fractional CAO"></div>
+          <div class="svc-card-body">
+            <h3>Fractional CAO &amp; Systems Trainer</h3>
+            <p>Your on-demand operations and automation leader. Systems that evolve with you.</p>
+            <div class="svc-card-tags"><span>5-20 hrs/month</span><span>Training</span><span>Change Management</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="service-ghl.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-ghl.png" alt="GHL Implementation"></div>
+          <div class="svc-card-body">
+            <h3>GHL Implementation &amp; Management</h3>
+            <p>GoHighLevel as your operating system -- we manage it like your digital HQ.</p>
+            <div class="svc-card-tags"><span>Account Setup</span><span>Retainers</span><span>Snapshots</span></div>
+            <span class="svc-card-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ VIDEO SHOWCASE ══════════ -->
+  <section class="showcase-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">Our Work In Action</span>
+        <h2 class="section-title fade-up">See What We Build</h2>
+        <p class="section-subtitle mx-auto fade-up">Real systems. Real clients. Real results you can see and hear.</p>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-card fade-up">
+          <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/696857e602f1be240189d925.png">
+            <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/66176c0b041ea776d458412b.mov" type="video/mp4">
+          </video>
+          <div class="showcase-card-body">
+            <h4>Monty — Move Makers Consulting</h4>
+            <p>Full CRM + automation build that generated thousands of leads and tens of thousands in revenue on autopilot.</p>
+          </div>
+        </div>
+        <div class="showcase-card fade-up">
+          <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/69685d7a25c12a7a5a18e33c.png">
+            <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/676a24c87e62110eb7b7c262.mp4" type="video/mp4">
+          </video>
+          <div class="showcase-card-body">
+            <h4>Mariah — BetterWealth Operations</h4>
+            <p>Rebuilt broken automation system at scale. Fixed what was wrong and made it better than before.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROCESS WIDGET ══════════ -->
+  <section class="process-widget">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">How We Work</span>
+        <h2 class="section-title fade-up">The Signature Process</h2>
+      </div>
+      <div class="process-steps">
+        <div class="pw-step fade-up">
+          <div class="pw-num">1</div>
+          <h4>Discovery Audit</h4>
+          <p>We assess your goals, tech stack, and pain points. Full bottleneck identification.</p>
+        </div>
+        <div class="pw-step fade-up">
+          <div class="pw-num">2</div>
+          <h4>Onboarding</h4>
+          <p>Secure project folder, document collection, and SOP intake to get started fast.</p>
+        </div>
+        <div class="pw-step fade-up">
+          <div class="pw-num">3</div>
+          <h4>Build + Track</h4>
+          <p>Real-time milestone updates. You see every step as we build your system.</p>
+        </div>
+        <div class="pw-step fade-up">
+          <div class="pw-num">4</div>
+          <h4>Launch + Test</h4>
+          <p>30-day testing period with bug fixes, training videos, and full documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ DELIVERABLES ══════════ -->
+  <section class="deliverables-section">
+    <div class="container">
+      <span class="section-eyebrow text-center fade-up" style="display:block;">Every Engagement Includes</span>
+      <h2 class="section-title text-center fade-up">What You Walk Away With</h2>
+      <p class="section-subtitle text-center mx-auto fade-up">No black boxes. You own everything we build -- plus the documentation, training, and support to keep it running.</p>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-card fade-up">
+          <div class="deliverable-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h4>SOPs &amp; Documentation</h4>
+        </div>
+        <div class="deliverable-card fade-up">
+          <div class="deliverable-icon">
+            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h4>Recorded Trainings</h4>
+        </div>
+        <div class="deliverable-card fade-up">
+          <div class="deliverable-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h4>Client Success Folder</h4>
+        </div>
+        <div class="deliverable-card fade-up">
+          <div class="deliverable-icon">
+            <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h4>Intake Forms</h4>
+        </div>
+        <div class="deliverable-card fade-up">
+          <div class="deliverable-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h4>System Architecture</h4>
+        </div>
+        <div class="deliverable-card fade-up">
+          <div class="deliverable-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>30-Day Support</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA ══════════ -->
+  <section class="services-cta">
+    <div class="container">
+      <span class="section-eyebrow fade-up">Let's Talk</span>
+      <h2 class="section-title fade-up">Ready to Build Your System?</h2>
+      <p class="section-subtitle fade-up">Book a free audit. We'll map your workflows, find the gaps, and show you exactly what to automate first.</p>
+      <div class="cta-buttons fade-up">
+        <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        <a href="custom-ai-solutions.html" class="btn btn-outline">Explore AI Solutions</a>
+      </div>
+      <p class="cta-trust fade-up">No commitment required. 30-minute strategy call.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo">
+            <img src="images/logo-white.png" alt="SystemShift HQ">
+          </a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+          <a href="custom-ai-solutions.html">AI Solutions</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="contact.html">Book a Call</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

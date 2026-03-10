@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & Automation Consulting | SystemShift HQ</title>
+  <meta name="description" content="Expert systems audits, workflow mapping, and automation roadmaps. Find the friction and rebuild for scale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       CONSULTING — AUDIT BREAKDOWN / PROCESS-HEAVY
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .consulting-hero {
+      position: relative;
+      padding: 180px 0 120px;
+      text-align: center;
+      background: var(--bg-dark);
+      overflow: hidden;
+    }
+
+    /* Hero background image */
+    .consulting-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/consulting-hero.png');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.4;
+    }
+
+    .consulting-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.95) 25%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 75%, transparent 100%);
+    }
+
+    .hero-circle-outer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 850px;
+      height: 850px;
+      border: 1px solid rgba(15,223,216,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* ── Feature Image Frame ── */
+    .feature-image-frame {
+      border-radius: 16px;
+      border: 1px solid rgba(15,223,216,0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      overflow: hidden;
+      margin: 48px auto 0;
+      max-width: 700px;
+    }
+
+    .feature-image-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .consulting-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 20px;
+    }
+
+    .consulting-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      max-width: 650px;
+      margin: 0 auto 24px;
+      line-height: 1.15;
+    }
+
+    .consulting-hero .hero-sub {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* ── What We Audit — 3x2 Grid ── */
+    .audit-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+    }
+
+    .audit-section .section-label {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .audit-section .section-label h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .audit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .audit-card:hover {
+      border-color: var(--turquoise);
+      transform: translateY(-4px);
+    }
+
+    .audit-card-number {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--turquoise);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .audit-card h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .audit-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .audit-card ul li {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      padding: 6px 0;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .audit-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      opacity: 0.5;
+    }
+
+    @media (max-width: 900px) {
+      .audit-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .audit-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── The Deliverable ── */
+    .deliverable-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+    }
+
+    .deliverable-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .deliverable-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deliverable-inner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--turquoise), transparent);
+    }
+
+    .deliverable-inner h3 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 36px;
+    }
+
+    .deliverable-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+    }
+
+    .deliverable-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding: 8px 0;
+    }
+
+    .deliverable-list li .d-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .deliverable-list li .d-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--turquoise);
+      stroke-width: 3;
+      fill: none;
+    }
+
+    @media (max-width: 700px) {
+      .deliverable-inner { padding: 36px 24px; }
+      .deliverable-list { grid-template-columns: 1fr; }
+    }
+
+    /* ── Engagement Options ── */
+    .engagement-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+    }
+
+    .engagement-section .section-label {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .engagement-section .section-label h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .engagement-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 36px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .engagement-card:hover {
+      border-color: var(--turquoise);
+      transform: translateY(-4px);
+    }
+
+    .engagement-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--turquoise), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .engagement-card:hover::before {
+      opacity: 1;
+    }
+
+    .engagement-card h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .engagement-card p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .engagement-card .best-for {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--turquoise);
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 700px) {
+      .engagement-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      padding: 80px 0;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .stat-item .stat-number {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--turquoise);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-item .stat-label {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Bottom CTA ── */
+    .bottom-cta {
+      padding: 120px 0;
+      text-align: center;
+      background: var(--bg-dark);
+      position: relative;
+    }
+
+    .bottom-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(15,223,216,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .bottom-cta .container { position: relative; z-index: 1; }
+
+    .bottom-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      max-width: 650px;
+      margin: 0 auto 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="consulting-hero">
+    <div class="hero-circle-outer"></div>
+    <div class="container">
+      <p class="hero-eyebrow">AI &amp; Automation Consulting</p>
+      <h1>Find the Friction. Fix the Flow.</h1>
+      <p class="hero-sub">We audit your systems, find every bottleneck, and rebuild your workflows for efficiency and scale. Every consultation delivers a clear, actionable roadmap -- not a 50-page report that collects dust.</p>
+      <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+    </div>
+  </section>
+
+  <!-- ── What We Audit — 3x2 Grid ── -->
+  <section class="audit-section">
+    <div class="section-label">
+      <p class="hero-eyebrow">What We Audit</p>
+      <h2>Six Areas. Zero Blind Spots.</h2>
+    </div>
+    <div class="audit-grid">
+      <div class="audit-card">
+        <div class="audit-card-number">1</div>
+        <h3>Lead Generation</h3>
+        <ul>
+          <li>Where leads come from</li>
+          <li>Conversion rates by channel</li>
+          <li>Cost per lead</li>
+          <li>Channel performance</li>
+        </ul>
+      </div>
+      <div class="audit-card">
+        <div class="audit-card-number">2</div>
+        <h3>Sales Process</h3>
+        <ul>
+          <li>Pipeline stages</li>
+          <li>Follow-up timing</li>
+          <li>Close rates</li>
+          <li>Deal velocity</li>
+        </ul>
+      </div>
+      <div class="audit-card">
+        <div class="audit-card-number">3</div>
+        <h3>Marketing Systems</h3>
+        <ul>
+          <li>Campaign automation</li>
+          <li>Content workflow</li>
+          <li>Analytics tracking</li>
+        </ul>
+      </div>
+      <div class="audit-card">
+        <div class="audit-card-number">4</div>
+        <h3>Operations</h3>
+        <ul>
+          <li>Task management</li>
+          <li>SOPs</li>
+          <li>Team communication</li>
+          <li>Tool stack</li>
+        </ul>
+      </div>
+      <div class="audit-card">
+        <div class="audit-card-number">5</div>
+        <h3>Customer Experience</h3>
+        <ul>
+          <li>Onboarding flow</li>
+          <li>Support response time</li>
+          <li>Retention metrics</li>
+        </ul>
+      </div>
+      <div class="audit-card">
+        <div class="audit-card-number">6</div>
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>Tool overlap</li>
+          <li>Integration gaps</li>
+          <li>Data flow</li>
+          <li>Monthly software costs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Audit Visual ── -->
+  <div class="container" style="padding: 0 24px 60px;">
+    <div class="feature-image-frame fade-up">
+      <img src="images/consulting-feature.png" alt="Systems Audit Breakdown" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ── The Deliverable ── -->
+  <section class="deliverable-section">
+    <div class="deliverable-card">
+      <div class="deliverable-inner">
+        <h3>Your Systems Audit Report</h3>
+        <ul class="deliverable-list">
+          <li>
+            <div class="d-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Complete workflow maps for every department
+          </li>
+          <li>
+            <div class="d-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Bottleneck identification with severity scoring
+          </li>
+          <li>
+            <div class="d-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Prioritized automation opportunities (quick wins first)
+          </li>
+          <li>
+            <div class="d-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Custom solution roadmap with timeline and budget
+          </li>
+          <li>
+            <div class="d-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Recorded strategy session walkthrough
+          </li>
+          <li>
+            <div class="d-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Tool stack recommendations
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Engagement Options ── -->
+  <section class="engagement-section">
+    <div class="section-label">
+      <p class="hero-eyebrow">Engagement Options</p>
+      <h2>Choose Your Path</h2>
+    </div>
+    <div class="engagement-grid">
+      <div class="engagement-card">
+        <h3>One-Time Audit</h3>
+        <p>A comprehensive deep-dive into your systems with a complete roadmap delivered in 7-10 business days.</p>
+        <div class="best-for">Best for: Businesses that want a plan before committing</div>
+      </div>
+      <div class="engagement-card">
+        <h3>Ongoing Advisory</h3>
+        <p>Fractional CAO support. We become part of your team -- auditing, planning, and overseeing implementation. 5-20 hours per month.</p>
+        <div class="best-for">Best for: Businesses actively building and scaling systems</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Bar ── -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Audits Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Areas Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">7-10</div>
+        <div class="stat-label">Day Delivery</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Actionable Roadmap</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="bottom-cta">
+    <div class="container">
+      <h2>Ready to Find (and Fix) Your Bottlenecks?</h2>
+      <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Engagement Models | SystemShift HQ</title>
+  <meta name="description" content="Transparent automation pricing. Systems start at $500. Monthly support from $500/mo. Free systems audit for NC businesses.">
+  <meta name="keywords" content="automation pricing, AI automation cost, CRM pricing, High Point NC automation, workflow automation pricing, business automation rates, Triad NC, Greensboro automation">
+  <link rel="canonical" href="https://www.systemshifthq.com/pricing.html">
+  <meta property="og:title" content="Pricing & Engagement Models | SystemShift HQ">
+  <meta property="og:description" content="Transparent automation pricing. Systems start at $500. Monthly support from $500/mo. Free systems audit for NC businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.systemshifthq.com/pricing.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SystemShift HQ",
+    "description": "AI and automation agency offering transparent pricing for CRM builds, workflow automation, and fractional CAO services.",
+    "url": "https://www.systemshifthq.com",
+    "telephone": "+13365688504",
+    "email": "support@systemshifthq.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3980 Premier Dr",
+      "addressLocality": "High Point",
+      "addressRegion": "NC",
+      "postalCode": "27265",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.9557,
+      "longitude": -80.0053
+    },
+    "priceRange": "$500 - $5000+",
+    "areaServed": ["High Point", "Greensboro", "Winston-Salem", "Triad NC"]
+  }
+  </script>
+  <style>
+    /* ── Pricing Hero ── */
+    .pricing-hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+    .pricing-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/pricing-plans.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+    }
+    .pricing-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.95) 80%, #0A0A0A 100%);
+    }
+    .pricing-hero .container { position: relative; z-index: 2; }
+    .pricing-hero .section-title {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pricing-hero .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+
+    /* ── How Pricing Works ── */
+    .pricing-explain {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+    .pricing-explain-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .pricing-explain h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .pricing-explain p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .pricing-factors {
+      list-style: none;
+      margin: 24px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .pricing-factors li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+    .pricing-factors li .factor-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+      color: var(--turquoise);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Engagement Cards ── */
+    .engagement-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .engagement-card {
+      background: var(--bg-card);
+      background-image: linear-gradient(135deg, rgba(15,223,216,0.03) 0%, transparent 50%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .engagement-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--turquoise), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .engagement-card:hover {
+      border-color: rgba(15, 223, 216, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 56px rgba(0,0,0,0.5);
+    }
+    .engagement-card:hover::before { opacity: 1; }
+    .engagement-card h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .engagement-card .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .engagement-price {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--turquoise);
+      margin-bottom: 4px;
+    }
+    .engagement-range {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .engagement-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+    .engagement-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .engagement-includes li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .engagement-best {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: auto;
+    }
+    .engagement-best strong {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 900px) {
+      .engagement-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+    }
+
+    /* ── Included Checklist ── */
+    .included-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+    .included-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .included-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color 0.3s;
+    }
+    .included-item:hover { border-color: rgba(15, 223, 216, 0.25); }
+    .included-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .included-check svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: var(--turquoise);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .included-item span {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    @media (max-width: 600px) {
+      .included-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── FAQ ── */
+    .pricing-faq {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    /* ── Final CTA ── */
+    .pricing-cta {
+      padding: 120px 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--turquoise-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .pricing-cta .container { position: relative; z-index: 1; }
+    .pricing-cta .section-subtitle { margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body class="page-top">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta"><a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a></div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="pricing-hero">
+    <div class="container">
+      <span class="section-eyebrow fade-up">Pricing</span>
+      <h1 class="section-title fade-up">Transparent Pricing. No Surprises.</h1>
+      <p class="section-subtitle fade-up">We don't do flat rates because every business is different. But we don't hide our pricing either. Here's how our engagements work.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ HOW PRICING WORKS ══════════ -->
+  <section class="pricing-explain">
+    <div class="container">
+      <div class="pricing-explain-inner fade-up">
+        <span class="section-eyebrow">How It Works</span>
+        <h2>Every Project Starts With a Free Audit</h2>
+        <p>Every project starts with a free Systems Audit where we map your bottlenecks and design the solution. After that, you get a detailed proposal with exact costs before any work begins.</p>
+        <p>Our pricing depends on three things:</p>
+        <ol class="pricing-factors">
+          <li><span class="factor-num">1</span> Complexity of your workflows</li>
+          <li><span class="factor-num">2</span> Number of integrations needed</li>
+          <li><span class="factor-num">3</span> Level of AI involved</li>
+        </ol>
+        <p>No hourly billing. No scope creep surprises. Just a clear project price with milestones. Whether you're a service business in <a href="greensboro-automation.html">Greensboro</a>, a startup in <a href="winston-salem-automation.html">Winston-Salem</a>, or scaling across the <a href="raleigh-automation.html">Triangle</a> -- you'll know exactly what you're paying before we write a single line of code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ ENGAGEMENT MODELS ══════════ -->
+  <section class="engagement-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">Engagement Models</span>
+        <h2 class="section-title fade-up">Choose How You Work With Us</h2>
+        <p class="section-subtitle mx-auto fade-up">Three flexible models to fit your business stage -- from a single system build to ongoing operational leadership.</p>
+      </div>
+      <div class="engagement-grid">
+
+        <!-- Card 1: Project-Based -->
+        <div class="engagement-card fade-up">
+          <h3>Project-Based Build</h3>
+          <p class="card-desc">A complete system built and delivered with training and 30-day testing.</p>
+          <div class="engagement-price">Starting at $500</div>
+          <div class="engagement-range">Typical range: $500 - $5,000+</div>
+          <ul class="engagement-includes">
+            <li>Discovery &amp; systems audit</li>
+            <li>Custom build &amp; configuration</li>
+            <li>Recorded training videos</li>
+            <li>Written SOPs &amp; documentation</li>
+            <li>30-day testing period</li>
+          </ul>
+          <div class="engagement-best"><strong>Best for:</strong> Businesses that need a specific system built -- CRM, automation, or AI agent.</div>
+          <div style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted);">Timeline: 2-4 weeks</div>
+        </div>
+
+        <!-- Card 2: Monthly Retainer -->
+        <div class="engagement-card fade-up">
+          <h3>Monthly Retainer</h3>
+          <p class="card-desc">Ongoing management, optimization, and new builds as your business grows.</p>
+          <div class="engagement-price">Starting at $500/mo</div>
+          <div class="engagement-range">Scales with scope</div>
+          <ul class="engagement-includes">
+            <li>Monthly system optimization</li>
+            <li>New workflow builds</li>
+            <li>Priority support</li>
+            <li>Performance monitoring</li>
+            <li>Quarterly strategy reviews</li>
+          </ul>
+          <div class="engagement-best"><strong>Best for:</strong> Businesses that want continuous improvement and don't want to manage their own systems.</div>
+        </div>
+
+        <!-- Card 3: Fractional CAO -->
+        <div class="engagement-card fade-up">
+          <h3>Fractional CAO</h3>
+          <p class="card-desc">Executive-level operations leadership at a fraction of the cost.</p>
+          <div class="engagement-price">5-20 hours/month</div>
+          <div class="engagement-range">Custom pricing based on scope</div>
+          <ul class="engagement-includes">
+            <li>Systems strategy &amp; roadmap</li>
+            <li>Team training &amp; change management</li>
+            <li>Active builds &amp; implementation</li>
+            <li>Ongoing advisory</li>
+            <li>Tech stack evaluation</li>
+          </ul>
+          <div class="engagement-best"><strong>Best for:</strong> Businesses in growth mode that need operational leadership without a full-time hire.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ WHAT'S ALWAYS INCLUDED ══════════ -->
+  <section class="included-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">Every Engagement</span>
+        <h2 class="section-title fade-up">What's Always Included</h2>
+        <p class="section-subtitle mx-auto fade-up">No matter which model you choose, these come standard.</p>
+      </div>
+      <div class="included-grid fade-up">
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Free Systems Audit</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Custom solution roadmap</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Recorded strategy session</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>No obligation quote</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>30-day testing period</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Recorded training videos</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Written SOPs</span>
+        </div>
+        <div class="included-item">
+          <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Post-launch support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FAQ ══════════ -->
+  <section class="pricing-faq">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">FAQ</span>
+        <h2 class="section-title fade-up">Pricing Questions</h2>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Do you charge hourly?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>No. All projects are fixed-price with clear milestones. You'll know exactly what you're paying before we start.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What does "starting at $500" mean?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Simple CRM setups and basic workflow automation start there. Complex AI systems with multiple integrations cost more. You'll know the exact price before we start.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are there hidden fees?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Never. Your proposal includes everything. The only additional costs are third-party software licenses (like GoHighLevel at $97/mo), which we discuss upfront.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you offer payment plans?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes, for larger projects. We typically split payments across project milestones so you're paying as progress happens.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is the Systems Audit really free?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes. You get a complete bottleneck analysis and solution roadmap. Even if you never hire us, you walk away with actionable insights for your business.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you work with businesses outside of High Point, NC?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Absolutely. We're based in High Point and serve the entire Triad -- Greensboro, Winston-Salem, and beyond. We also work with businesses across the US remotely.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA ══════════ -->
+  <section class="pricing-cta">
+    <div class="container">
+      <span class="section-eyebrow fade-up">Get Started</span>
+      <h2 class="section-title fade-up">Get Your Free Systems Audit</h2>
+      <p class="section-subtitle fade-up">45 minutes. Zero obligation. Walk away with a complete automation roadmap -- whether you work with us or not.</p>
+      <div class="cta-buttons fade-up">
+        <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        <a href="services.html" class="btn btn-outline">View Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

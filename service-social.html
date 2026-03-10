@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Automation | SystemShift HQ</title>
+  <meta name="description" content="Automate your social media presence across every platform. AI captions, scheduled posts, DM triggers, and engagement automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       SOCIAL MEDIA — FEED / TIMELINE STYLE
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .social-hero {
+      position: relative;
+      padding: 180px 0 120px;
+      text-align: center;
+      background: var(--bg-dark);
+      overflow: hidden;
+    }
+
+    .social-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/social-hero.png') center center / cover no-repeat;
+      z-index: 0;
+      opacity: 0.25;
+    }
+
+    .social-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.95) 70%);
+    }
+
+    .platform-pill svg {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .social-hero::before {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(15,223,216,0.1) 0%, rgba(15,223,216,0.03) 40%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .social-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 20px;
+    }
+
+    .social-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      max-width: 700px;
+      margin: 0 auto 24px;
+      line-height: 1.15;
+    }
+
+    .social-hero .hero-sub {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* Floating social cards */
+    .floating-cards {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .float-card {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      opacity: 0.35;
+      transform: rotate(var(--rot));
+    }
+
+    .float-card .fc-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .float-card .fc-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+    }
+
+    .float-card .fc-name {
+      font-weight: 500;
+      color: var(--text-primary);
+      font-size: 0.75rem;
+    }
+
+    .float-card .fc-body {
+      width: 140px;
+      height: 12px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .float-card .fc-body.short {
+      width: 90px;
+    }
+
+    .float-card .fc-stats {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .fc-stat-turq {
+      color: var(--turquoise);
+    }
+
+    .float-card:nth-child(1) { top: 18%; left: 6%; --rot: -6deg; }
+    .float-card:nth-child(2) { top: 12%; right: 5%; --rot: 4deg; }
+    .float-card:nth-child(3) { bottom: 20%; left: 4%; --rot: 3deg; }
+    .float-card:nth-child(4) { bottom: 15%; right: 7%; --rot: -5deg; }
+    .float-card:nth-child(5) { top: 50%; left: 2%; --rot: -2deg; }
+    .float-card:nth-child(6) { top: 45%; right: 3%; --rot: 7deg; }
+
+    @media (max-width: 900px) {
+      .floating-cards { display: none; }
+    }
+
+    /* ── Platform Badges ── */
+    .platforms-section {
+      padding: 60px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .platforms-scroll {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .platform-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 12px 28px;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .platform-pill:hover {
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }
+
+    /* ── Feed Timeline ── */
+    .feed-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .feed-section .section-label {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .feed-section .section-label .hero-eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .feed-section .section-label h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .feed-timeline {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .feed-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .feed-timeline::before { left: 20px; }
+    }
+
+    .feed-card {
+      position: relative;
+      width: 45%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .feed-card:hover {
+      border-color: var(--turquoise);
+      transform: translateY(-4px);
+    }
+
+    .feed-card.left {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .feed-card.right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    /* Timeline dot */
+    .feed-card::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      box-shadow: 0 0 12px var(--turquoise-glow);
+    }
+
+    .feed-card.left::before {
+      right: -36px;
+    }
+
+    .feed-card.right::before {
+      left: -36px;
+    }
+
+    /* Connector line */
+    .feed-card::after {
+      content: '';
+      position: absolute;
+      top: 42px;
+      height: 2px;
+      width: 22px;
+      background: var(--border);
+    }
+
+    .feed-card.left::after {
+      right: -22px;
+    }
+
+    .feed-card.right::after {
+      left: -22px;
+    }
+
+    .feed-card h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .feed-card p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .feed-card {
+        width: calc(100% - 50px);
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+      }
+      .feed-card::before {
+        left: -36px !important;
+        right: auto !important;
+      }
+      .feed-card::after {
+        left: -22px !important;
+        right: auto !important;
+      }
+    }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      padding: 80px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .stat-item .stat-number {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--turquoise);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-item .stat-label {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Bottom CTA ── */
+    .bottom-cta {
+      padding: 120px 0;
+      text-align: center;
+      background: var(--bg-dark);
+      position: relative;
+    }
+
+    .bottom-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(15,223,216,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .bottom-cta .container { position: relative; z-index: 1; }
+
+    .bottom-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="social-hero">
+    <div class="social-hero-bg"></div>
+    <div class="floating-cards">
+      <div class="float-card">
+        <div class="fc-header"><div class="fc-avatar"></div><div class="fc-name">@brand</div></div>
+        <div class="fc-body"></div><div class="fc-body short"></div>
+        <div class="fc-stats"><span class="fc-stat-turq">142 likes</span><span>23 comments</span></div>
+      </div>
+      <div class="float-card">
+        <div class="fc-header"><div class="fc-avatar"></div><div class="fc-name">@company</div></div>
+        <div class="fc-body"></div><div class="fc-body short"></div>
+        <div class="fc-stats"><span class="fc-stat-turq">89 likes</span><span>12 shares</span></div>
+      </div>
+      <div class="float-card">
+        <div class="fc-header"><div class="fc-avatar"></div><div class="fc-name">@page</div></div>
+        <div class="fc-body"></div>
+        <div class="fc-stats"><span class="fc-stat-turq">310 views</span><span>45 saves</span></div>
+      </div>
+      <div class="float-card">
+        <div class="fc-header"><div class="fc-avatar"></div><div class="fc-name">@business</div></div>
+        <div class="fc-body"></div><div class="fc-body short"></div>
+        <div class="fc-stats"><span class="fc-stat-turq">67 likes</span><span>8 DMs</span></div>
+      </div>
+      <div class="float-card">
+        <div class="fc-header"><div class="fc-avatar"></div><div class="fc-name">@post</div></div>
+        <div class="fc-body"></div>
+        <div class="fc-stats"><span class="fc-stat-turq">201 likes</span></div>
+      </div>
+      <div class="float-card">
+        <div class="fc-header"><div class="fc-avatar"></div><div class="fc-name">@feed</div></div>
+        <div class="fc-body"></div><div class="fc-body short"></div>
+        <div class="fc-stats"><span class="fc-stat-turq">55 shares</span><span>19 saves</span></div>
+      </div>
+    </div>
+    <div class="container">
+      <p class="hero-eyebrow">Social Media Automation</p>
+      <h1>Stay Visible Without the Constant Effort</h1>
+      <p class="hero-sub">Automate how you connect, engage, and convert across every platform. AI-generated captions, scheduled posts, automated DM responses, and engagement tracking -- all running while you focus on your business.</p>
+      <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+    </div>
+  </section>
+
+  <!-- ── Platform Badges ── -->
+  <section class="platforms-section">
+    <div class="platforms-scroll">
+      <span class="platform-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</span>
+      <span class="platform-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>Facebook</span>
+      <span class="platform-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</span>
+      <span class="platform-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 108 0 4 4 0 00-8 0z"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M16.5 7.5v0"/></svg>TikTok</span>
+      <span class="platform-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>YouTube</span>
+      <span class="platform-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"/><path d="M4 20l6.768-6.768M20 4l-6.768 6.768"/></svg>X / Twitter</span>
+    </div>
+  </section>
+
+  <!-- ── What We Automate (Feed Timeline) ── -->
+  <section class="feed-section">
+    <div class="section-label">
+      <p class="hero-eyebrow">What We Automate</p>
+      <h2>Your Social Media, Systemized</h2>
+    </div>
+    <div class="feed-timeline">
+      <div class="feed-card left">
+        <h3>AI-Generated Captions</h3>
+        <p>Stop staring at blank screens. AI writes on-brand captions for every platform, tuned to your voice and audience.</p>
+      </div>
+      <div class="feed-card right">
+        <h3>Scheduled Content Publishing</h3>
+        <p>Plan and auto-publish across all platforms. Set it once, let it run. Consistent posting without daily effort.</p>
+      </div>
+      <div class="feed-card left">
+        <h3>DM Automation &amp; Triggers</h3>
+        <p>Keyword triggers in DMs that auto-respond, qualify leads, and route hot prospects to your CRM.</p>
+      </div>
+      <div class="feed-card right">
+        <h3>Engagement Automation</h3>
+        <p>Auto-like, auto-comment, and story interactions that keep your brand active and visible 24/7.</p>
+      </div>
+      <div class="feed-card left">
+        <h3>Analytics &amp; Reporting</h3>
+        <p>Unified dashboard showing engagement, growth, and conversion metrics across all platforms.</p>
+      </div>
+      <div class="feed-card right">
+        <h3>ManyChat Integration</h3>
+        <p>Advanced chatbot flows for Instagram and Facebook that qualify leads, answer FAQs, and book calls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Bar ── -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">5X</div>
+        <div class="stat-label">More Engagement</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10hrs</div>
+        <div class="stat-label">Saved Weekly</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Posting</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">All</div>
+        <div class="stat-label">Platforms Covered</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="bottom-cta">
+    <div class="container">
+      <h2>Ready to Put Social Media on Autopilot?</h2>
+      <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

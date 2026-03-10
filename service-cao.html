@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractional CAO & Systems Trainer | SystemShift HQ</title>
+  <meta name="description" content="On-demand operations leadership. Systems training, SOPs, and implementation coaching at a fraction of the cost.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       SERVICE-CAO — Pricing / Engagement Comparison
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .cao-hero {
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .cao-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/cao-hero.png');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .cao-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.95) 25%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 75%, transparent 100%);
+      z-index: 1;
+    }
+
+    .cao-hero .container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .cao-hero-text .section-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    }
+
+    .cao-hero-text .section-subtitle {
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+
+    .cao-hero-typography {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .cao-letters {
+      font-family: var(--serif);
+      font-size: clamp(8rem, 18vw, 16rem);
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(15, 223, 216, 0.2);
+      line-height: 0.85;
+      letter-spacing: -8px;
+      user-select: none;
+      position: relative;
+    }
+
+    .cao-letters::after {
+      content: 'CAO';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      -webkit-text-stroke: 1px rgba(15, 223, 216, 0.08);
+      z-index: -1;
+    }
+
+    @media (max-width: 900px) {
+      .cao-hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .cao-hero-text .section-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cao-letters {
+        font-size: 8rem;
+        letter-spacing: -4px;
+      }
+      .cao-hero-typography {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cao-letters {
+        font-size: 5rem;
+        letter-spacing: -2px;
+      }
+    }
+
+    /* ── What a Fractional CAO Does ── */
+    .cao-does-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .cao-does-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cao-does-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .cao-does-row:last-child {
+      border-bottom: none;
+    }
+
+    .cao-does-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .cao-does-content h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cao-does-content p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .cao-does-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* ── Engagement Tiers ── */
+    .tiers-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .tier-card {
+      background: var(--bg-card);
+      background-image: linear-gradient(160deg, rgba(15,223,216,0.03) 0%, transparent 40%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .tier-card:hover {
+      border-color: rgba(15,223,216,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .tier-card.featured {
+      border-color: var(--turquoise);
+      position: relative;
+    }
+
+    .tier-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--turquoise);
+      color: var(--bg-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .tier-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--turquoise);
+      margin-bottom: 8px;
+    }
+
+    .tier-name {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .tier-hours {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .tier-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      flex: 1;
+    }
+
+    .tier-list li {
+      padding: 10px 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(34,34,34,0.5);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .tier-list li:last-child {
+      border-bottom: none;
+    }
+
+    .tier-check {
+      color: var(--turquoise);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tier-best-for {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+
+    .tier-best-for strong {
+      color: var(--text-secondary);
+    }
+
+    /* Engagement level bar */
+    .tier-engagement {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tier-engagement-bar {
+      flex: 1;
+      height: 4px;
+      background: rgba(34,34,34,0.8);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .tier-engagement-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--turquoise), rgba(15,223,216,0.5));
+    }
+
+    .tier-engagement-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .tiers-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ── Who This Is For ── */
+    .who-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .who-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .who-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .who-item:last-child {
+      border-bottom: none;
+    }
+
+    .who-bullet {
+      width: 8px;
+      height: 8px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .who-item p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .cao-cta {
+      padding: 120px 0;
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cao-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--turquoise-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cao-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+
+    <!-- ── HERO ── -->
+    <section class="cao-hero">
+      <div class="cao-hero-bg"></div>
+      <div class="cao-hero-overlay"></div>
+      <div class="container">
+        <div class="cao-hero-text">
+          <span class="section-eyebrow fade-up">Fractional CAO &amp; Systems Trainer</span>
+          <h1 class="section-title fade-up">Your Operations Leader. Without the Full-Time Cost.</h1>
+          <p class="section-subtitle fade-up">You need someone who can see the big picture, build the systems, train your team, and keep everything evolving. You don't need to pay $150K+ for that. Our fractional CAO service gives you executive-level operations leadership at 5-20 hours per month.</p>
+          <div class="fade-up">
+            <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+          </div>
+        </div>
+        <div class="cao-hero-typography fade-up">
+          <div class="cao-letters">CAO</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT A FRACTIONAL CAO DOES ── -->
+    <section class="cao-does-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 48px;">
+          <span class="section-eyebrow">The Role</span>
+          <h2 class="section-title mx-auto" style="max-width: 650px;">What a Fractional CAO Does</h2>
+          <p class="section-subtitle mx-auto">Three pillars that transform how your business operates.</p>
+        </div>
+        <div class="cao-does-grid">
+          <div class="cao-does-row fade-up">
+            <div class="cao-does-icon">&#9878;</div>
+            <div class="cao-does-content">
+              <h3>Systems Architecture &amp; Design</h3>
+              <p>We design the operating system for your business. From tool selection to workflow mapping to integration planning -- every system is built to scale.</p>
+            </div>
+          </div>
+          <div class="cao-does-row fade-up">
+            <div class="cao-does-icon">&#128218;</div>
+            <div class="cao-does-content">
+              <h3>Team Training &amp; SOPs</h3>
+              <p>Recorded trainings, written documentation, and hands-on coaching so your team actually knows how to use the systems. No more tribal knowledge.</p>
+            </div>
+          </div>
+          <div class="cao-does-row fade-up">
+            <div class="cao-does-icon">&#128260;</div>
+            <div class="cao-does-content">
+              <h3>Ongoing Optimization</h3>
+              <p>Systems aren't set-it-and-forget-it. We continuously audit, refine, and improve your workflows as your business evolves.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ENGAGEMENT TIERS ── -->
+    <section class="tiers-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">Engagement Options</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Choose Your Level of Support</h2>
+          <p class="section-subtitle mx-auto">Flexible tiers designed to match where you are right now. Scale up as you grow.</p>
+        </div>
+        <div class="tiers-grid">
+          <!-- Advisory -->
+          <div class="tier-card fade-up">
+            <div class="tier-label">Tier 1</div>
+            <div class="tier-name">Advisory</div>
+            <div class="tier-hours">5 hours / month</div>
+            <div class="tier-engagement">
+              <div class="tier-engagement-bar"><div class="tier-engagement-fill" style="width: 25%;"></div></div>
+              <span class="tier-engagement-label">Light</span>
+            </div>
+            <ul class="tier-list">
+              <li><span class="tier-check">&#10003;</span> Monthly systems review</li>
+              <li><span class="tier-check">&#10003;</span> Priority Slack/email access</li>
+              <li><span class="tier-check">&#10003;</span> Quarterly optimization audit</li>
+              <li><span class="tier-check">&#10003;</span> Tool stack recommendations</li>
+            </ul>
+            <div class="tier-best-for"><strong>Best for:</strong> Businesses with existing systems that need guidance</div>
+          </div>
+          <!-- Builder -->
+          <div class="tier-card featured fade-up">
+            <div class="tier-label">Tier 2</div>
+            <div class="tier-name">Builder</div>
+            <div class="tier-hours">10 hours / month</div>
+            <div class="tier-engagement">
+              <div class="tier-engagement-bar"><div class="tier-engagement-fill" style="width: 55%;"></div></div>
+              <span class="tier-engagement-label">Active</span>
+            </div>
+            <ul class="tier-list">
+              <li><span class="tier-check">&#10003;</span> Everything in Advisory</li>
+              <li><span class="tier-check">&#10003;</span> Active workflow builds</li>
+              <li><span class="tier-check">&#10003;</span> Team training sessions</li>
+              <li><span class="tier-check">&#10003;</span> SOP documentation</li>
+              <li><span class="tier-check">&#10003;</span> Integration development</li>
+            </ul>
+            <div class="tier-best-for"><strong>Best for:</strong> Businesses actively building new systems</div>
+          </div>
+          <!-- Embedded -->
+          <div class="tier-card fade-up">
+            <div class="tier-label">Tier 3</div>
+            <div class="tier-name">Embedded</div>
+            <div class="tier-hours">20 hours / month</div>
+            <div class="tier-engagement">
+              <div class="tier-engagement-bar"><div class="tier-engagement-fill" style="width: 100%;"></div></div>
+              <span class="tier-engagement-label">Full</span>
+            </div>
+            <ul class="tier-list">
+              <li><span class="tier-check">&#10003;</span> Everything in Builder</li>
+              <li><span class="tier-check">&#10003;</span> Weekly strategy calls</li>
+              <li><span class="tier-check">&#10003;</span> Full project management</li>
+              <li><span class="tier-check">&#10003;</span> Change management support</li>
+              <li><span class="tier-check">&#10003;</span> Dedicated Slack channel</li>
+            </ul>
+            <div class="tier-best-for"><strong>Best for:</strong> Businesses in rapid growth or transformation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHO THIS IS FOR ── -->
+    <section class="who-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 48px;">
+          <span class="section-eyebrow">Is This You?</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Who This Is For</h2>
+        </div>
+        <div class="who-grid">
+          <div class="who-item fade-up">
+            <div class="who-bullet"></div>
+            <p>You've outgrown doing everything yourself but aren't ready for a full-time ops hire</p>
+          </div>
+          <div class="who-item fade-up">
+            <div class="who-bullet"></div>
+            <p>Your team has tools but nobody knows how to connect them</p>
+          </div>
+          <div class="who-item fade-up">
+            <div class="who-bullet"></div>
+            <p>You've built systems before that nobody uses</p>
+          </div>
+          <div class="who-item fade-up">
+            <div class="who-bullet"></div>
+            <p>You need someone who speaks both business and tech</p>
+          </div>
+          <div class="who-item fade-up">
+            <div class="who-bullet"></div>
+            <p>You want to build once and have it actually stick</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cao-cta">
+      <div class="container">
+        <span class="section-eyebrow fade-up">Get Started</span>
+        <h2 class="section-title fade-up" style="max-width: 700px; margin-left: auto; margin-right: auto;">Ready for Operations Leadership That Scales With You?</h2>
+        <p class="section-subtitle mx-auto fade-up">Stop guessing. Start building with someone who has done this hundreds of times.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

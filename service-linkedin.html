@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Brand Management | SystemShift HQ</title>
+  <meta name="description" content="Turn your LinkedIn into an inbound lead engine with automation, AI content, and brand strategy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       LINKEDIN — PROFILE MOCKUP + STATS HEAVY
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero (Split) ── */
+    .linkedin-hero {
+      padding: 160px 0 100px;
+      background: var(--bg-dark);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .linkedin-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/linkedin-hero.png') center right / cover no-repeat;
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    .linkedin-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.95) 25%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 75%, transparent 100%);
+    }
+
+    .hero-split {
+      position: relative;
+      z-index: 2;
+    }
+
+    .linkedin-showcase-img {
+      border-radius: 16px;
+      border: 1px solid rgba(15, 223, 216, 0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(15, 223, 216, 0.05);
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .linkedin-showcase-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-split { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .hero-text .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .hero-text .hero-sub {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    /* LinkedIn Profile Mockup Card */
+    .li-profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .li-banner {
+      height: 80px;
+      background: linear-gradient(135deg, #0B6E6E 0%, #0FDFD8 100%);
+      position: relative;
+    }
+
+    .li-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      border: 3px solid var(--bg-card);
+      position: absolute;
+      bottom: -36px;
+      left: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .li-avatar-inner {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--turquoise-dim), rgba(15,223,216,0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--turquoise);
+    }
+
+    .li-profile-body {
+      padding: 48px 24px 24px;
+    }
+
+    .li-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .li-headline {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .li-stats-row {
+      display: flex;
+      gap: 20px;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .li-stats-row span strong {
+      color: var(--turquoise);
+    }
+
+    .li-post-preview {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .li-post-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .li-post-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+    }
+
+    .li-post-meta {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .li-post-meta strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 0.8rem;
+    }
+
+    .li-post-body {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .li-post-engagement {
+      display: flex;
+      gap: 16px;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .li-post-engagement span.active {
+      color: var(--turquoise);
+    }
+
+    /* ── What We Do — Feature Blocks ── */
+    .features-section {
+      padding: 0;
+      background: var(--bg-dark);
+    }
+
+    .feature-block {
+      padding: 80px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .feature-block:nth-child(even) {
+      background: var(--bg-section-alt);
+    }
+
+    .feature-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .feature-number {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--turquoise);
+      opacity: 0.3;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 80px;
+    }
+
+    .feature-content h3 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .feature-content p {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .feature-inner { flex-direction: column; gap: 16px; }
+      .feature-number { min-width: auto; }
+    }
+
+    /* ── Results Dashboard ── */
+    .results-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+    }
+
+    .results-section .section-label {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .results-section .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 12px;
+    }
+
+    .results-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .result-card:hover {
+      border-color: var(--turquoise);
+      transform: translateY(-4px);
+    }
+
+    .result-value {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--turquoise);
+      margin-bottom: 4px;
+    }
+
+    .result-label {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .result-detail {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .results-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── What's Included (Checklist) ── */
+    .included-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+    }
+
+    .included-section .section-label {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .included-section .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 12px;
+    }
+
+    .included-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 60px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .check-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--turquoise);
+      stroke-width: 3;
+      fill: none;
+    }
+
+    @media (max-width: 600px) {
+      .checklist-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Bottom CTA ── */
+    .bottom-cta {
+      padding: 120px 0;
+      text-align: center;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .bottom-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(15,223,216,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .bottom-cta .container { position: relative; z-index: 1; }
+
+    .bottom-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ── HERO (Split) ── -->
+  <section class="linkedin-hero">
+    <div class="linkedin-hero-bg"></div>
+    <div class="hero-split">
+      <div class="hero-text">
+        <p class="hero-eyebrow">LinkedIn Brand Management</p>
+        <h1>Turn LinkedIn Into Your Inbound Engine</h1>
+        <p class="hero-sub">Your LinkedIn should be generating leads while you sleep. We build the automation, write the content, and optimize your profile to attract decision-makers -- not just connections.</p>
+        <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+      </div>
+      <div class="hero-mockup">
+        <div class="li-profile-card">
+          <div class="li-banner">
+            <div class="li-avatar">
+              <div class="li-avatar-inner">YN</div>
+            </div>
+          </div>
+          <div class="li-profile-body">
+            <div class="li-name">Your Name</div>
+            <div class="li-headline">Helping [Industry] businesses scale with AI &amp; automation</div>
+            <div class="li-stats-row">
+              <span><strong>1.5K</strong> Connections</span>
+              <span><strong>500+</strong> Following</span>
+              <span><strong>12K</strong> Profile Views</span>
+            </div>
+            <div class="li-post-preview">
+              <div class="li-post-header">
+                <div class="li-post-avatar"></div>
+                <div class="li-post-meta">
+                  <strong>Your Name</strong>
+                  2h ago
+                </div>
+              </div>
+              <div class="li-post-body">Stop trading time for money. Build systems that scale without you. Here's the framework I used to 3X revenue in 90 days...</div>
+              <div class="li-post-engagement">
+                <span class="active">127 likes</span>
+                <span>34 comments</span>
+                <span>12 reposts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What We Do — Feature Blocks ── -->
+  <section class="features-section">
+    <div class="feature-block">
+      <div class="feature-inner">
+        <div class="feature-number">01</div>
+        <div class="feature-content">
+          <h3>Profile Optimization</h3>
+          <p>We rewrite your headline, about section, and experience to position you as the go-to expert in your industry. Every word is designed to attract your ideal client.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-block">
+      <div class="feature-inner">
+        <div class="feature-number">02</div>
+        <div class="feature-content">
+          <h3>AI-Powered Content Strategy</h3>
+          <p>Weekly content calendar with AI-generated posts tuned to your voice. Thought leadership that builds authority and drives inbound leads.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-block">
+      <div class="feature-inner">
+        <div class="feature-number">03</div>
+        <div class="feature-content">
+          <h3>Automated Outreach Sequences</h3>
+          <p>Connection requests, follow-up messages, and engagement sequences that run on autopilot. Warm up prospects before the first call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LinkedIn Network Showcase ── -->
+  <section style="padding: 80px 0; background: var(--bg-dark); border-top: 1px solid var(--border);">
+    <div class="container fade-up" style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+      <div class="linkedin-showcase-img">
+        <img src="images/linkedin-hero.png" alt="LinkedIn Professional Network Visualization" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Results Dashboard ── -->
+  <section class="results-section">
+    <div class="section-label">
+      <p class="hero-eyebrow">Results Dashboard</p>
+      <h2>What Our Clients See</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-value">+340%</div>
+        <div class="result-label">Profile Views</div>
+        <div class="result-detail">in 90 days</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value">45%</div>
+        <div class="result-label">Connection Acceptance</div>
+        <div class="result-detail">rate</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value">8-12</div>
+        <div class="result-label">Inbound Leads</div>
+        <div class="result-detail">per month</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value">3X</div>
+        <div class="result-label">Content Engagement</div>
+        <div class="result-detail">increase</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What's Included ── -->
+  <section class="included-section">
+    <div class="section-label">
+      <p class="hero-eyebrow">What's Included</p>
+      <h2>Everything You Need to Win on LinkedIn</h2>
+    </div>
+    <div class="checklist-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Profile rewrite
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Weekly content (4 posts)
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Banner design
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Engagement automation
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Headline optimization
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Connection sequences
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        About section
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Monthly analytics
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Experience section
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Strategy calls
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="bottom-cta">
+    <div class="container">
+      <h2>Ready to Make LinkedIn Work for You?</h2>
+      <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

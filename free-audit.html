@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Systems Audit | AI Automation Assessment | SystemShift HQ</title>
+  <meta name="description" content="Get a free 45-minute systems audit for your business. We'll map your bottlenecks, identify automation opportunities, and create a custom roadmap. Based in High Point, NC -- serving businesses nationwide.">
+  <meta name="keywords" content="free systems audit, business automation assessment, workflow audit, AI automation consultation, High Point NC, Greensboro, Winston-Salem, Triad NC, free consultation, operations audit">
+  <link rel="canonical" href="https://systemshifthq.com/free-audit.html">
+  <meta property="og:title" content="Free Systems Audit | AI Automation Assessment | SystemShift HQ">
+  <meta property="og:description" content="Get a free 45-minute systems audit. We'll map your bottlenecks and create a custom automation roadmap. Based in High Point, NC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://systemshifthq.com/free-audit.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Free Systems Audit",
+    "description": "A comprehensive 45-minute business operations audit covering lead generation, sales pipeline, marketing, operations, client experience, and tech stack. Includes a recorded strategy session and custom automation roadmap.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "SystemShift HQ",
+      "url": "https://systemshifthq.com",
+      "telephone": "+13365688504",
+      "email": "support@systemshifthq.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3980 Premier Dr",
+        "addressLocality": "High Point",
+        "addressRegion": "NC",
+        "postalCode": "27265",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.9557,
+        "longitude": -80.0053
+      }
+    },
+    "areaServed": ["High Point, NC", "Greensboro, NC", "Winston-Salem, NC", "Raleigh, NC", "Charlotte, NC", "United States"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free systems audit -- no commitment required"
+    }
+  }
+  </script>
+  <style>
+    /* ── Audit Hero -- Split Layout ── */
+    .audit-hero {
+      padding: 140px 0 100px;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .audit-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/free-audit-hero.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .audit-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.9) 30%, rgba(10,10,10,0.6) 60%, rgba(10,10,10,0.4) 100%);
+      pointer-events: none;
+    }
+
+    .audit-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .audit-hero-text .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 20px;
+    }
+
+    .audit-hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .audit-hero-text .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      max-width: 500px;
+    }
+
+    .audit-hero-text .hero-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+
+    .audit-benefit-card {
+      background: var(--bg-card);
+      border: 2px solid var(--turquoise);
+      border-radius: 16px;
+      padding: 40px 32px;
+    }
+
+    .audit-benefit-card h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .audit-benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .audit-benefit-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .audit-benefit-list li .check-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .audit-benefit-list li .check-dot svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: var(--turquoise);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 900px) {
+      .audit-hero-grid { grid-template-columns: 1fr; }
+      .audit-hero { padding: 120px 0 80px; }
+    }
+
+    /* ── What We Evaluate ── */
+    .evaluate-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .evaluate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .evaluate-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15,223,216,0.03) 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+    }
+
+    .evaluate-card:hover {
+      border-color: rgba(15, 223, 216, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .evaluate-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .evaluate-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .evaluate-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--turquoise-dim);
+      color: var(--turquoise);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .evaluate-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Who This Is For ── */
+    .who-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 900px;
+      margin: 48px auto 0;
+      align-items: start;
+    }
+
+    .who-col h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .who-col.who-yes h3 { color: var(--turquoise); }
+    .who-col.who-no h3 { color: #e85454; }
+
+    .who-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .who-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .who-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .who-yes .who-dot { background: var(--turquoise); }
+    .who-no .who-dot { background: #e85454; }
+
+    @media (max-width: 600px) {
+      .who-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Social Proof ── */
+    .proof-section {
+      padding: 80px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .proof-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .proof-card blockquote {
+      font-size: 1rem;
+      color: var(--text-primary);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .proof-card cite {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    @media (max-width: 768px) {
+      .proof-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Audit FAQ ── */
+    .audit-faq {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    /* ── Final CTA ── */
+    .audit-cta {
+      padding: 120px 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .audit-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(15, 223, 216, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .audit-cta .container { position: relative; z-index: 1; }
+    .audit-cta .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    .cta-trust {
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body class="page-top">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="audit-hero">
+    <div class="container">
+      <div class="audit-hero-grid">
+        <div class="audit-hero-text fade-up">
+          <span class="hero-eyebrow">Free Assessment</span>
+          <h1>Get Your Free<br>Systems Audit</h1>
+          <p class="hero-sub">In 45 minutes, we'll uncover the bottlenecks costing your business time and money -- and show you exactly what to automate first.</p>
+          <p class="hero-note">No commitment. No sales pitch. Just a real diagnostic of your operations.</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Schedule Your Free Audit</a>
+            <a href="how-it-works.html" class="btn btn-outline">See Our Process</a>
+          </div>
+        </div>
+        <div class="audit-benefit-card fade-up">
+          <h3>What You'll Walk Away With</h3>
+          <ul class="audit-benefit-list">
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Complete workflow analysis</li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Bottleneck identification & severity scoring</li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Custom automation roadmap</li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Tool stack recommendations</li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Recorded strategy session</li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Priority pricing for NC businesses</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Schedule Your Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ WHAT WE EVALUATE ══════════ -->
+  <section class="evaluate-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">The Assessment</span>
+        <h2 class="section-title fade-up">What We'll Cover in Your Audit</h2>
+        <p class="section-subtitle mx-auto fade-up">We look at six core areas of your business to find where time and money are leaking.</p>
+      </div>
+      <div class="evaluate-grid">
+        <div class="evaluate-card fade-up">
+          <div class="evaluate-num">01</div>
+          <h3>Lead Generation</h3>
+          <p>How leads find you and what happens when they do. Are you capturing every opportunity or letting them slip?</p>
+        </div>
+        <div class="evaluate-card fade-up">
+          <div class="evaluate-num">02</div>
+          <h3>Sales Pipeline</h3>
+          <p>How deals move from inquiry to close. Where are prospects dropping off and why?</p>
+        </div>
+        <div class="evaluate-card fade-up">
+          <div class="evaluate-num">03</div>
+          <h3>Marketing Systems</h3>
+          <p>Campaign automation, tracking, and attribution. Are you measuring what matters?</p>
+        </div>
+        <div class="evaluate-card fade-up">
+          <div class="evaluate-num">04</div>
+          <h3>Operations</h3>
+          <p>SOPs, task management, and team workflows. How much time is lost to manual processes?</p>
+        </div>
+        <div class="evaluate-card fade-up">
+          <div class="evaluate-num">05</div>
+          <h3>Client Experience</h3>
+          <p>Onboarding, communication, and retention. What does the journey look like after they sign?</p>
+        </div>
+        <div class="evaluate-card fade-up">
+          <div class="evaluate-num">06</div>
+          <h3>Tech Stack</h3>
+          <p>Tool overlap, integration gaps, and monthly costs. Are you paying for software you're not using?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ WHO THIS IS FOR ══════════ -->
+  <section class="who-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">Is This You?</span>
+        <h2 class="section-title fade-up">Who This Audit Is For (and Who It's Not)</h2>
+      </div>
+      <div class="who-grid fade-up">
+        <div class="who-col who-yes">
+          <h3>This Is For You If...</h3>
+          <ul class="who-list">
+            <li><span class="who-dot"></span> You run a service business doing $250K - $5M annually</li>
+            <li><span class="who-dot"></span> Your team is 2-50 people</li>
+            <li><span class="who-dot"></span> You use 3+ software tools that don't talk to each other</li>
+            <li><span class="who-dot"></span> You spend 10+ hours/week on tasks that could be automated</li>
+            <li><span class="who-dot"></span> You're in the <a href="nc-automation.html">Triad</a>, Triangle, Charlotte, or anywhere in the US</li>
+            <li><span class="who-dot"></span> You're ready to invest in systems that save you time</li>
+          </ul>
+        </div>
+        <div class="who-col who-no">
+          <h3>This Probably Isn't For You If...</h3>
+          <ul class="who-list">
+            <li><span class="who-dot"></span> You're just starting out and don't have a client base yet</li>
+            <li><span class="who-dot"></span> You're looking for a free website or social media posts</li>
+            <li><span class="who-dot"></span> You want someone to "just set up Mailchimp"</li>
+            <li><span class="who-dot"></span> You're not willing to invest in tech that runs your business</li>
+            <li><span class="who-dot"></span> You need results overnight with zero process</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SOCIAL PROOF ══════════ -->
+  <section class="proof-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">What They Said</span>
+        <h2 class="section-title fade-up">The Audit Speaks for Itself</h2>
+      </div>
+      <div class="proof-grid fade-up">
+        <div class="proof-card">
+          <blockquote>"The audit alone was worth more than what most agencies charge for a full project."</blockquote>
+          <cite>-- Monty, Move Makers Consulting</cite>
+        </div>
+        <div class="proof-card">
+          <blockquote>"He identified issues we didn't even know we had."</blockquote>
+          <cite>-- Emily, Business Owner / Nutritionist</cite>
+        </div>
+        <div class="proof-card">
+          <blockquote>"Fast, thorough, and zero pressure."</blockquote>
+          <cite>-- Mariah, BetterWealth</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FAQ ══════════ -->
+  <section class="audit-faq">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">FAQ</span>
+        <h2 class="section-title fade-up">Questions About the Free Audit</h2>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is the audit really free?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. 100% free. No credit card. No hidden fees. You'll get a recorded strategy session and a custom automation roadmap even if you never hire us. We do this because the audit sells itself -- once you see the gaps, you'll want them fixed.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does it take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>About 45 minutes for the initial call. We then prepare your custom roadmap and schedule a second call (usually within a few days) to walk through the solution visually.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens after the audit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You get a recorded strategy session and a custom automation roadmap. If you want us to build it, we'll scope the project and send a proposal. If not, you keep the roadmap and can implement it yourself or with another team. Zero pressure.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you work with businesses outside of North Carolina?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. We're based in High Point, NC, but we serve clients nationwide. The audit is done over Zoom so location doesn't matter. NC businesses do get priority scheduling and Local First pricing.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What if I already have a CRM or automation tools?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Even better. We'll evaluate what you already have, identify what's working and what isn't, and show you how to get more out of your existing tools before recommending anything new. Most businesses are sitting on unused features they're already paying for.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How much does it cost if I decide to move forward?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We walk through pricing on the second call after you've seen the full solution design. Every project is custom-scoped based on what you actually need. We'll cover that together -- no surprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FINAL CTA ══════════ -->
+  <section class="audit-cta">
+    <div class="container">
+      <span class="section-eyebrow fade-up">Take the First Step</span>
+      <h2 class="section-title fade-up">Your Systems Audit Is Free.<br>The Insights Are Priceless.</h2>
+      <p class="section-subtitle fade-up">45 minutes. No obligation. You'll walk away knowing exactly where your business is leaking time and money -- and what to do about it.</p>
+      <div class="cta-buttons fade-up">
+        <a href="contact.html" class="btn btn-primary">Book Your Free Audit Now</a>
+      </div>
+      <p class="cta-trust fade-up">Based in High Point, NC. Serving the Triad, Triangle, and beyond.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo">
+            <img src="images/logo-white.png" alt="SystemShift HQ">
+          </a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+          <a href="custom-ai-solutions.html">AI Solutions</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="contact.html">Book a Call</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

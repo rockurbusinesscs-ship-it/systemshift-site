@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom AI App Development | SystemShift HQ</title>
+  <meta name="description" content="AI-powered tools and backend automations that turn your disconnected tech stack into a self-operating system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       SERVICE-APPS — Integration Hub / Tech Stack Visual
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .apps-hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .apps-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/apps-hero.png');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.4;
+    }
+
+    .apps-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.95) 25%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 75%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* ── Feature Image Frame ── */
+    .feature-image-frame {
+      border-radius: 16px;
+      border: 1px solid rgba(15,223,216,0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    .feature-image-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .apps-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .apps-hero .section-title {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .apps-hero .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+
+    /* Connection web behind hero */
+    .connection-web {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .web-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      box-shadow: 0 0 40px var(--turquoise-glow), 0 0 80px var(--turquoise-dim);
+    }
+
+    .web-line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 250px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--turquoise), transparent);
+      transform-origin: left center;
+    }
+
+    .web-line:nth-child(2) { transform: rotate(0deg); }
+    .web-line:nth-child(3) { transform: rotate(60deg); }
+    .web-line:nth-child(4) { transform: rotate(120deg); }
+    .web-line:nth-child(5) { transform: rotate(180deg); }
+    .web-line:nth-child(6) { transform: rotate(240deg); }
+    .web-line:nth-child(7) { transform: rotate(300deg); }
+
+    .web-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      box-shadow: 0 0 20px var(--turquoise-glow);
+    }
+
+    .web-dot:nth-child(8)  { top: 10%; left: 50%; }
+    .web-dot:nth-child(9)  { top: 25%; left: 85%; }
+    .web-dot:nth-child(10) { top: 70%; left: 90%; }
+    .web-dot:nth-child(11) { top: 90%; left: 50%; }
+    .web-dot:nth-child(12) { top: 70%; left: 10%; }
+    .web-dot:nth-child(13) { top: 25%; left: 15%; }
+
+    /* ── Integration Hub Section ── */
+    .hub-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+      overflow: hidden;
+    }
+
+    .hub-layout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      min-height: 500px;
+    }
+
+    .hub-center {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 2px solid var(--turquoise);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      background: var(--bg-card);
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+      box-shadow: 0 0 60px var(--turquoise-dim);
+    }
+
+    .hub-spokes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      position: relative;
+    }
+
+    .spoke-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .spoke-card:hover {
+      border-color: rgba(15,223,216,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .spoke-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.4rem;
+    }
+
+    .spoke-card h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .spoke-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Mobile hub layout */
+    @media (max-width: 900px) {
+      .hub-layout {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .hub-spokes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hub-spokes {
+        grid-template-columns: 1fr;
+      }
+      .hub-center {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ── What We Build ── */
+    .build-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .build-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      transition: all 0.3s ease;
+    }
+
+    .build-card:hover {
+      border-color: rgba(15,223,216,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .build-card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--turquoise-dim);
+      color: var(--turquoise);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .build-card h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .build-card > p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .build-examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .build-examples span {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-dark);
+    }
+
+    @media (max-width: 768px) {
+      .build-grid {
+        grid-template-columns: 1fr;
+      }
+      .build-card {
+        padding: 32px 24px;
+      }
+    }
+
+    /* ── Tech Stack Scroll ── */
+    .techstack-section {
+      padding: 60px 0;
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .techstack-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .techstack-track {
+      display: flex;
+      gap: 56px;
+      animation: marquee 20s linear infinite;
+      width: max-content;
+      align-items: center;
+    }
+
+    .techstack-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .techstack-item:hover {
+      opacity: 1;
+      color: var(--turquoise);
+    }
+
+    .techstack-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Stats ── */
+    .apps-stats {
+      padding: 80px 0;
+      background: var(--bg-dark);
+    }
+
+    /* ── CTA ── */
+    .apps-cta {
+      padding: 120px 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .apps-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--turquoise-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .apps-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+
+    <!-- ── HERO ── -->
+    <section class="apps-hero">
+      <div class="connection-web">
+        <div class="web-center"></div>
+        <div class="web-line"></div>
+        <div class="web-line"></div>
+        <div class="web-line"></div>
+        <div class="web-line"></div>
+        <div class="web-line"></div>
+        <div class="web-line"></div>
+        <div class="web-dot"></div>
+        <div class="web-dot"></div>
+        <div class="web-dot"></div>
+        <div class="web-dot"></div>
+        <div class="web-dot"></div>
+        <div class="web-dot"></div>
+      </div>
+      <div class="container">
+        <span class="section-eyebrow fade-up">Custom AI App Development</span>
+        <h1 class="section-title fade-up">Connect Everything. Automate Anything.</h1>
+        <p class="section-subtitle fade-up">Your tools don't talk to each other. Data lives in silos. Manual copy-paste between apps eats hours every week. We build the bridges that make your entire tech stack work as one system.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTEGRATION HUB ── -->
+    <section class="hub-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">Integration Ecosystem</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Your Business at the Center</h2>
+          <p class="section-subtitle mx-auto">Every tool in your stack connects through a single intelligent hub. No more silos.</p>
+        </div>
+        <div class="hub-layout">
+          <div class="hub-center fade-up">Your<br>Business</div>
+          <div class="hub-spokes">
+            <div class="spoke-card fade-up">
+              <div class="spoke-icon">&#9889;</div>
+              <h3>Zapier</h3>
+              <p>Multi-step workflows connecting 5,000+ apps</p>
+            </div>
+            <div class="spoke-card fade-up">
+              <div class="spoke-icon">&#9881;</div>
+              <h3>Make (Integromat)</h3>
+              <p>Visual automation builder for complex logic</p>
+            </div>
+            <div class="spoke-card fade-up">
+              <div class="spoke-icon">&#128202;</div>
+              <h3>Google Sheets</h3>
+              <p>Live dashboards and reporting from any data source</p>
+            </div>
+            <div class="spoke-card fade-up">
+              <div class="spoke-icon">&#128172;</div>
+              <h3>Slack</h3>
+              <p>Team notifications, alerts, and bot commands</p>
+            </div>
+            <div class="spoke-card fade-up">
+              <div class="spoke-icon">&#128193;</div>
+              <h3>Google Drive</h3>
+              <p>Automated document generation and file management</p>
+            </div>
+            <div class="spoke-card fade-up">
+              <div class="spoke-icon">&#128268;</div>
+              <h3>Custom APIs</h3>
+              <p>Direct integrations with any system that has an API</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT WE BUILD ── -->
+    <section class="build-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">What We Build</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Systems That Work While You Sleep</h2>
+          <p class="section-subtitle mx-auto">From backend automations to client-facing apps, every build is designed around your actual workflows.</p>
+        </div>
+        <div class="build-grid">
+          <div class="build-card fade-up">
+            <div class="build-card-number">1</div>
+            <h3>Backend Workflow Automation</h3>
+            <p>Multi-step automations that move data between your tools automatically. Triggers, conditions, and actions that eliminate manual work.</p>
+            <div class="build-examples">
+              <span>Lead data syncing</span>
+              <span>Invoice generation</span>
+              <span>Report compilation</span>
+              <span>Email parsing</span>
+            </div>
+          </div>
+          <div class="build-card fade-up">
+            <div class="build-card-number">2</div>
+            <h3>AI-Powered Internal Tools</h3>
+            <p>Custom dashboards, copilots, and AI assistants built on your data. Tools your team actually uses.</p>
+            <div class="build-examples">
+              <span>AI document generator</span>
+              <span>Smart search</span>
+              <span>Data analysis bots</span>
+              <span>Content assistants</span>
+            </div>
+          </div>
+          <div class="build-card fade-up">
+            <div class="build-card-number">3</div>
+            <h3>Client-Facing Applications</h3>
+            <p>Portals, dashboards, and apps that give your clients visibility and self-service capabilities.</p>
+            <div class="build-examples">
+              <span>Client portals</span>
+              <span>Booking systems</span>
+              <span>Progress trackers</span>
+              <span>Payment integrations</span>
+            </div>
+          </div>
+          <div class="build-card fade-up">
+            <div class="build-card-number">4</div>
+            <h3>Data Pipeline &amp; Reporting</h3>
+            <p>Automated data collection, transformation, and reporting. Real-time dashboards that update themselves.</p>
+            <div class="build-examples">
+              <span>KPI dashboards</span>
+              <span>Lead source tracking</span>
+              <span>Revenue attribution</span>
+              <span>Custom analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="techstack-section">
+      <p class="techstack-label">Our Tech Stack</p>
+      <div class="techstack-track">
+        <span class="techstack-item"><span class="techstack-dot"></span>Zapier</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Make</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>N8N</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>OpenAI</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>GoHighLevel</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Google Workspace</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Slack</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Twilio</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Stripe</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Airtable</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="techstack-item"><span class="techstack-dot"></span>Zapier</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Make</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>N8N</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>OpenAI</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>GoHighLevel</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Google Workspace</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Slack</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Twilio</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Stripe</span>
+        <span class="techstack-item"><span class="techstack-dot"></span>Airtable</span>
+      </div>
+    </section>
+
+    <!-- ── WORKFLOW SHOWCASE ── -->
+    <section style="padding: 80px 0; background: var(--bg-dark); border-top: 1px solid var(--border);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;" class="fade-up">
+          <div>
+            <span class="section-eyebrow">How It Works</span>
+            <h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem);">Your Workflows, Automated End to End</h2>
+            <p class="section-subtitle">From the moment a lead enters your system to the final invoice, every step runs without you touching it. We map your process, build the connections, and let the machines handle the rest.</p>
+          </div>
+          <div class="feature-image-frame fade-up">
+            <img src="images/automation-workflow.png" alt="Automation Workflow" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATS ── -->
+    <section class="apps-stats">
+      <div class="container">
+        <div class="stats-grid fade-up">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Integrations Built</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Tools Connected</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Manual Data Entry</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">30</div>
+            <div class="stat-label">Day Build Time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="apps-cta">
+      <div class="container">
+        <span class="section-eyebrow fade-up">Get Started</span>
+        <h2 class="section-title fade-up" style="max-width: 600px; margin-left: auto; margin-right: auto;">Ready to Connect Your Tech Stack?</h2>
+        <p class="section-subtitle mx-auto fade-up">Stop copy-pasting between tools. Let us build the system that ties everything together.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SystemShift HQ — AI Automation Agency</title>
+  <meta name="description" content="We build AI and automation systems for businesses ready to scale without the busywork. CRM, AI agents, workflow automation, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background: #0A0A0A;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero-bg.png');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.5;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        #0A0A0A 0%,
+        rgba(10, 10, 10, 0.95) 25%,
+        rgba(10, 10, 10, 0.7) 50%,
+        rgba(10, 10, 10, 0.3) 75%,
+        transparent 100%
+      );
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(15, 223, 216, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-left: max(24px, calc((100% - 1200px) / 2 + 24px));
+      padding-right: 40%;
+      padding-top: 72px;
+      padding-bottom: 80px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+      font-size: clamp(45px, 5.5vw, 55px);
+      font-weight: 600;
+      line-height: 1em;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      color: var(--turquoise);
+      margin-bottom: 24px;
+    }
+
+    .hero-body {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero { min-height: auto; }
+      .hero-content {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 120px;
+        padding-bottom: 80px;
+      }
+    }
+
+    /* ── VALUE PROPOSITION ── */
+    .value-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .value-hub {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Center node */
+    .value-node {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--turquoise), #0B6E6E);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 40px rgba(15, 223, 216, 0.3);
+    }
+
+    .value-node svg {
+      width: 36px;
+      height: 36px;
+      stroke: #fff;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Connector lines from center node to cards */
+    .value-connectors {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 48px;
+    }
+
+    .value-connectors::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: var(--turquoise);
+      transform: translateX(-50%);
+    }
+
+    .value-connectors::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(12.5% + 12px);
+      right: calc(12.5% + 12px);
+      height: 2px;
+      background: var(--turquoise);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Vertical drop lines from horizontal bar to each card */
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      width: 2px;
+      height: 28px;
+      background: var(--turquoise);
+      transform: translateX(-50%);
+    }
+
+    .value-card:hover {
+      border-color: rgba(15, 223, 216, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .value-check {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .value-check svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: var(--turquoise);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .value-card p {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .value-grid { grid-template-columns: 1fr 1fr; }
+      .value-connectors::after {
+        left: calc(25% + 12px);
+        right: calc(25% + 12px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .value-grid { grid-template-columns: 1fr; }
+      .value-connectors { display: none; }
+      .value-card::before { display: none; }
+      .value-node { margin-bottom: 32px; }
+    }
+
+    /* ── STATS ── */
+    .stats-section {
+      padding: 80px 0;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── SERVICES GRID ── */
+    .services-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .svc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .svc-card:hover {
+      border-color: rgba(15, 223, 216, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .svc-card-img {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .svc-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .svc-card:hover .svc-card-img img {
+      transform: scale(1.05);
+    }
+
+    .svc-card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: linear-gradient(to bottom, transparent, var(--bg-card));
+      pointer-events: none;
+    }
+
+    .svc-card-body {
+      padding: 16px 20px 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .svc-card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .svc-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .svc-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .svc-card-tags span {
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--border-light);
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(10, 10, 10, 0.5);
+    }
+
+    .svc-card:hover .svc-card-tags span {
+      border-color: rgba(15, 223, 216, 0.2);
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 900px) {
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .svc-grid { grid-template-columns: 1fr; }
+      .svc-card-img { height: 160px; }
+    }
+
+    /* ── PROCESS TIMELINE ── */
+    .process-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .process-timeline {
+      position: relative;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .process-step {
+      position: relative;
+      padding-left: 76px;
+      padding-bottom: 56px;
+    }
+
+    .process-step:last-child { padding-bottom: 0; }
+
+    .process-step-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--turquoise);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--turquoise);
+      z-index: 1;
+    }
+
+    .process-step-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      padding-top: 12px;
+    }
+
+    .process-step-body {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .process-includes {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .process-includes li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .process-includes li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .process-includes { grid-template-columns: 1fr; }
+    }
+
+    /* ── COMPARISON ── */
+    .comparison-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .comparison-col {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+    }
+
+    .comparison-col h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .comparison-col.col-bad h3 { color: #e85454; }
+    .comparison-col.col-good h3 { color: var(--turquoise); }
+
+    .comparison-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comparison-col li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .comparison-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .comparison-icon.icon-x {
+      background: rgba(232, 84, 84, 0.15);
+    }
+
+    .comparison-icon.icon-x svg {
+      width: 12px;
+      height: 12px;
+      stroke: #e85454;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .comparison-icon.icon-check {
+      background: var(--turquoise-dim);
+    }
+
+    .comparison-icon.icon-check svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--turquoise);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 700px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── VIDEO TESTIMONIALS ── */
+    .video-testimonials {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .video-grid .video-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .video-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-section-alt);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .video-card video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .video-card-info {
+      padding: 16px 20px;
+    }
+
+    .video-card-info h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .video-card-info p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 900px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .video-grid .video-featured { grid-template-columns: 1fr; }
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 120px 0;
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(15, 223, 216, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .final-cta .container { position: relative; z-index: 1; }
+
+    .final-cta .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body class="page-top">
+
+  <!-- ══════════ MARQUEE BAR ══════════ -->
+  <section class="marquee-bar" style="margin-top: 72px;">
+    <div class="marquee-track">
+      <span class="marquee-tag">AI Automation Agency</span>
+      <span class="marquee-tag">GoHighLevel Setup</span>
+      <span class="marquee-tag">CRM Management</span>
+      <span class="marquee-tag">Workflow Automation</span>
+      <span class="marquee-tag">Fractional CAO</span>
+      <span class="marquee-tag">Automation Consulting</span>
+      <span class="marquee-tag">White Label Automation</span>
+      <span class="marquee-tag">Conversational AI</span>
+      <span class="marquee-tag">AI Automation Agency</span>
+      <span class="marquee-tag">GoHighLevel Setup</span>
+      <span class="marquee-tag">CRM Management</span>
+      <span class="marquee-tag">Workflow Automation</span>
+      <span class="marquee-tag">Fractional CAO</span>
+      <span class="marquee-tag">Automation Consulting</span>
+      <span class="marquee-tag">White Label Automation</span>
+      <span class="marquee-tag">Conversational AI</span>
+    </div>
+  </section>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow fade-up">AI Automation Agency</span>
+      <h1 class="fade-up">Turning Chaos<br>Into Clarity.</h1>
+      <p class="hero-sub fade-up">Business Automations That Scale</p>
+      <p class="hero-body fade-up">We build AI and automation systems for businesses that are ready to scale without doing the busywork.</p>
+      <div class="hero-buttons fade-up">
+        <a href="#process" class="btn btn-primary">See How It Works</a>
+        <a href="contact.html" class="btn btn-outline">Book A Call</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════ VALUE PROPOSITION ══════════ -->
+  <section class="value-section">
+    <div class="container">
+      <div class="text-center fade-up">
+        <span class="section-eyebrow">Why SystemShift</span>
+        <h2 class="section-title">One System. Zero Leaks.</h2>
+        <p class="section-subtitle mx-auto">We combine GoHighLevel, custom AI, and workflow automation into one connected system.</p>
+      </div>
+      <div class="value-hub fade-up">
+        <div class="value-node">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+        </div>
+        <div class="value-connectors"></div>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p>Capture &amp; qualify leads automatically</p>
+          </div>
+          <div class="value-card">
+            <div class="value-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p>Follow up instantly so you never lose a deal</p>
+          </div>
+          <div class="value-card">
+            <div class="value-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p>Automate repetitive tasks without human intervention</p>
+          </div>
+          <div class="value-card">
+            <div class="value-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p>Get real visibility into what's working</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ STATS ══════════ -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid fade-up">
+        <div class="stat-item">
+          <div class="stat-number">30 Days</div>
+          <div class="stat-label">Average Build Time</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1 Day</div>
+          <div class="stat-label">Average ROI Timeline</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">17,540+</div>
+          <div class="stat-label">Hours Saved</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">136K+</div>
+          <div class="stat-label">Qualified Leads</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICES ══════════ -->
+  <section class="services-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">What We Build</span>
+        <h2 class="section-title fade-up">Services</h2>
+        <p class="section-subtitle mx-auto fade-up">From CRM builds to conversational AI -- we design, build, and manage the systems that run your business.</p>
+      </div>
+      <div class="svc-grid">
+        <a href="service-crm.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-crm.png" alt="CRM Dashboard"></div>
+          <div class="svc-card-body">
+            <h3>CRM Build + Management</h3>
+            <p>GoHighLevel CRMs that drive decisions. Automated lead tracking, nurturing, and conversion systems.</p>
+            <div class="svc-card-tags"><span>Pipeline Automation</span><span>Lead Capture</span><span>Dashboards</span></div>
+          </div>
+        </a>
+        <a href="custom-ai-solutions.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-ai.png" alt="Custom AI Solutions"></div>
+          <div class="svc-card-body">
+            <h3>Custom AI Solutions</h3>
+            <p>AI tools that think like your team -- custom GPTs, copilots, and workflow-aware automation.</p>
+            <div class="svc-card-tags"><span>Custom GPTs</span><span>AI Copilots</span><span>Task Routing</span></div>
+          </div>
+        </a>
+        <a href="service-voice.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-voice.png" alt="AI Voice Agents"></div>
+          <div class="svc-card-body">
+            <h3>AI Voice &amp; Conversational Agents</h3>
+            <p>AI agents that talk, book, and follow up -- your 24/7 assistant that never forgets a lead.</p>
+            <div class="svc-card-tags"><span>AI Phone Agents</span><span>Chat Automation</span><span>24/7</span></div>
+          </div>
+        </a>
+        <a href="service-funnels.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-funnels.png" alt="Funnels & Landing Pages"></div>
+          <div class="svc-card-body">
+            <h3>Landing Pages, Funnels &amp; Websites</h3>
+            <p>Conversion-focused digital assets connected directly to your automation systems.</p>
+            <div class="svc-card-tags"><span>Landing Pages</span><span>Sales Funnels</span><span>A/B Testing</span></div>
+          </div>
+        </a>
+        <a href="service-social.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-social.png" alt="Social Media Automation"></div>
+          <div class="svc-card-body">
+            <h3>Social Media Automation</h3>
+            <p>Automate how you connect, engage, and convert across every platform.</p>
+            <div class="svc-card-tags"><span>Auto-Posting</span><span>DM Triggers</span><span>AI Captions</span></div>
+          </div>
+        </a>
+        <a href="service-linkedin.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-linkedin.png" alt="LinkedIn Brand Management"></div>
+          <div class="svc-card-body">
+            <h3>LinkedIn Brand Management</h3>
+            <p>Turn your LinkedIn into an inbound engine. Automation, AI, and brand strategy.</p>
+            <div class="svc-card-tags"><span>Lead Sync</span><span>Thought Leadership</span><span>Profile Optimization</span></div>
+          </div>
+        </a>
+        <a href="service-consulting.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-consulting.png" alt="Automation Consulting"></div>
+          <div class="svc-card-body">
+            <h3>AI + Automation Consulting</h3>
+            <p>We audit your systems, find the friction, and rebuild workflows for scale.</p>
+            <div class="svc-card-tags"><span>System Audits</span><span>Workflow Mapping</span><span>SOPs</span></div>
+          </div>
+        </a>
+        <a href="service-apps.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-apps.png" alt="AI App Development"></div>
+          <div class="svc-card-body">
+            <h3>Custom AI App Development</h3>
+            <p>AI-powered tools that turn your disconnected tech stack into a self-operating system.</p>
+            <div class="svc-card-tags"><span>Zapier</span><span>Make</span><span>API Integrations</span></div>
+          </div>
+        </a>
+        <a href="service-cao.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-cao.png" alt="Fractional CAO"></div>
+          <div class="svc-card-body">
+            <h3>Fractional CAO &amp; Systems Trainer</h3>
+            <p>Your on-demand operations and automation leader. Systems that evolve with you.</p>
+            <div class="svc-card-tags"><span>5-20 hrs/month</span><span>Training</span><span>Change Management</span></div>
+          </div>
+        </a>
+        <a href="service-ghl.html" class="svc-card fade-up">
+          <div class="svc-card-img"><img src="images/card-ghl.png" alt="GHL Implementation"></div>
+          <div class="svc-card-body">
+            <h3>GHL Implementation &amp; Management</h3>
+            <p>GoHighLevel as your operating system -- we manage it like your digital HQ.</p>
+            <div class="svc-card-tags"><span>Account Setup</span><span>Retainers</span><span>Snapshots</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROCESS ══════════ -->
+  <section id="process" class="process-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">How We Work</span>
+        <h2 class="section-title fade-up">The Signature Automation Process</h2>
+        <p class="section-subtitle mx-auto fade-up">A proven 4-step system that takes you from chaos to clarity -- without the guesswork.</p>
+      </div>
+      <div class="fade-up" style="margin-bottom: 56px; border-radius: 16px; border: 1px solid rgba(15,223,216,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.4); overflow: hidden;">
+        <img src="images/team-office.png" alt="SystemShift team workspace" style="max-width: 100%; height: auto; display: block;">
+      </div>
+      <div class="process-timeline">
+        <!-- Step 1 -->
+        <div class="process-step fade-up">
+          <div class="process-step-number">1</div>
+          <h3 class="process-step-title">Discovery / Systems Audit</h3>
+          <p class="process-step-body">Book your audit and we'll uncover the bottlenecks in your business. We assess your goals, tech stack, and pain points.</p>
+          <ul class="process-includes">
+            <li>Full tech stack review</li>
+            <li>Bottleneck identification</li>
+            <li>Custom solution roadmap</li>
+            <li>Recorded strategy session</li>
+          </ul>
+        </div>
+        <!-- Step 2 -->
+        <div class="process-step fade-up">
+          <div class="process-step-number">2</div>
+          <h3 class="process-step-title">Setup / Onboarding</h3>
+          <p class="process-step-body">We start the setup process and create a secure Google Drive to exchange everything we need.</p>
+          <ul class="process-includes">
+            <li>Dedicated project folder</li>
+            <li>Secure password exchange</li>
+            <li>Business document collection</li>
+            <li>SOP intake forms</li>
+          </ul>
+        </div>
+        <!-- Step 3 -->
+        <div class="process-step fade-up">
+          <div class="process-step-number">3</div>
+          <h3 class="process-step-title">Build / Milestone Tracking</h3>
+          <p class="process-step-body">You'll be notified at every milestone. Updates go straight to your client success folder.</p>
+          <ul class="process-includes">
+            <li>Real-time progress updates</li>
+            <li>Client success folder</li>
+            <li>Milestone notifications</li>
+            <li>Direct team communication</li>
+          </ul>
+        </div>
+        <!-- Step 4 -->
+        <div class="process-step fade-up">
+          <div class="process-step-number">4</div>
+          <h3 class="process-step-title">Launch / 30-Day Testing</h3>
+          <p class="process-step-body">After we complete the project, we test it for 30 days. During this time you can request changes within scope.</p>
+          <ul class="process-includes">
+            <li>30-day testing period</li>
+            <li>Bug fixes &amp; adjustments</li>
+            <li>Recorded training videos</li>
+            <li>Documentation &amp; SOPs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ VIDEO TESTIMONIALS ══════════ -->
+  <section class="video-testimonials">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">See The Results</span>
+        <h2 class="section-title fade-up">Hear It From Our Clients</h2>
+        <p class="section-subtitle mx-auto fade-up">Real businesses. Real systems. Real results.</p>
+      </div>
+      <div class="video-grid">
+        <div class="video-featured">
+          <div class="video-card fade-up">
+            <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/696857e602f1be240189d925.png">
+              <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/66176c0b041ea776d458412b.mov" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <h4>Monty — CEO, Move Makers Consulting</h4>
+              <p>"He set up automations that helped me generate thousands of leads and tens of thousands in revenue."</p>
+            </div>
+          </div>
+          <div class="video-card fade-up">
+            <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/69685d7a25c12a7a5a18e33c.png">
+              <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/676a24c87e62110eb7b7c262.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <h4>Mariah — Head of Operations, BetterWealth</h4>
+              <p>"Not only did he fix what was wrong, he rebuilt it better than before."</p>
+            </div>
+          </div>
+        </div>
+        <div class="video-card fade-up">
+          <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/69685b0c25c12ae2701875d2.png">
+            <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/6605b66870e7b60898d749c8.mp4" type="video/mp4">
+          </video>
+          <div class="video-card-info">
+            <h4>Emmie — Business Owner</h4>
+            <p>"He automated everything running in the background."</p>
+          </div>
+        </div>
+        <div class="video-card fade-up">
+          <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/6968620a8ed937a59110e753.png">
+            <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/69605d06d461d489d946be1f.mp4" type="video/mp4">
+          </video>
+          <div class="video-card-info">
+            <h4>Compass Circle</h4>
+            <p>"The systems run on autopilot — we just focus on closing."</p>
+          </div>
+        </div>
+        <div class="video-card fade-up">
+          <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/xvuIgA0uneWIpa1cpME5/media/696860448ed9372a2e10a875.png">
+            <source src="https://storage.googleapis.com/msgsndr/xvuIgA0uneWIpa1cpME5/media/696556c51f5e0ac1bfc11c41.mp4" type="video/mp4">
+          </video>
+          <div class="video-card-info">
+            <h4>Kalina — Financial Coach / Realtor</h4>
+            <p>"He was so knowledgeable about everything I was asking him about."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ COMPARISON ══════════ -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">The Difference</span>
+        <h2 class="section-title fade-up">Not Your Typical Agency</h2>
+      </div>
+      <div class="comparison-grid fade-up">
+        <!-- Other Agencies -->
+        <div class="comparison-col col-bad">
+          <h3>What Other Agencies Do</h3>
+          <ul>
+            <li>
+              <span class="comparison-icon icon-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              Build it and disappear -- no training, no docs
+            </li>
+            <li>
+              <span class="comparison-icon icon-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              Cookie-cutter templates that don't fit your business
+            </li>
+            <li>
+              <span class="comparison-icon icon-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              Scope creep with endless upsells
+            </li>
+            <li>
+              <span class="comparison-icon icon-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              Zero visibility into project progress
+            </li>
+            <li>
+              <span class="comparison-icon icon-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              Weeks of back-and-forth just to get started
+            </li>
+            <li>
+              <span class="comparison-icon icon-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              No testing period -- you're on your own after launch
+            </li>
+          </ul>
+        </div>
+        <!-- SystemShift -->
+        <div class="comparison-col col-good">
+          <h3>How We're Different</h3>
+          <ul>
+            <li>
+              <span class="comparison-icon icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Recorded trainings so your team actually knows the system
+            </li>
+            <li>
+              <span class="comparison-icon icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Custom-built solutions tailored to your workflows
+            </li>
+            <li>
+              <span class="comparison-icon icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Clear scope from day one -- no surprise invoices
+            </li>
+            <li>
+              <span class="comparison-icon icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Milestone tracking with real-time updates
+            </li>
+            <li>
+              <span class="comparison-icon icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Streamlined onboarding with intake forms &amp; secure docs
+            </li>
+            <li>
+              <span class="comparison-icon icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              30-day testing period with revisions included
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FAQ ══════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-eyebrow fade-up">FAQ</span>
+        <h2 class="section-title fade-up">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            What exactly does SystemShift do?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Think of us as your business's backstage crew, streamlining everything from lead generation and onboarding to client follow-ups and payments. Bottom line: less manual work, more profit, more time back in your day.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Who is SystemShift for?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We work best with small to mid-sized businesses, agency owners, and solo entrepreneurs who are tired of doing everything manually. If your team spends hours managing leads, chasing clients, or juggling 10+ tools just to stay organized, we've got you covered.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How much does it cost?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We don't do flat rates because every business is different. Our non-AI automated systems start around $500, but your exact price depends on what you need automated. Booking a quick call lets us figure out what actually matters for your business. Schedule a free call to get a personalized quote.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What kinds of automation can you build?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Pretty much anything. From CRM builds and workflow automations to AI chatbots, onboarding flows, and full funnel systems. We use tools like Go High Level, OpenAI, and N8N to make your business run smoother and faster.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does setup take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most projects are completed within 2-4 weeks, depending on size and complexity. If you're doing advanced AI builds, we'll set clear expectations upfront.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer monthly support?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Once your system is live, we handle monthly maintenance starting at $500/month. That includes updates, new workflow builds, and ongoing performance tweaks.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What if I don't know what I need?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No problem, that's what the intro call is for. We'll look at how your business currently runs, identify what's slowing you down, and show you what automation can fix.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FINAL CTA ══════════ -->
+  <section class="final-cta">
+    <div class="container">
+      <span class="section-eyebrow fade-up">Ready?</span>
+      <h2 class="section-title fade-up">Ready to Build Your System?</h2>
+      <p class="section-subtitle mx-auto fade-up">Start with a Systems Audit. We'll map your bottlenecks, design the solution, and show you exactly what we'll build -- before you commit.</p>
+      <div class="cta-buttons fade-up">
+        <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

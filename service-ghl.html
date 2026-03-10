@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoHighLevel Implementation & Management | SystemShift HQ</title>
+  <meta name="description" content="Full GoHighLevel setup, management, and optimization. Your digital headquarters, built and maintained by experts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       SERVICE-GHL — Feature Checklist / Comparison Grid
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .ghl-hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .ghl-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/ghl-hero.png');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.4;
+    }
+
+    .ghl-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0.95) 25%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 75%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* ── Feature Image Frame ── */
+    .feature-image-frame {
+      border-radius: 16px;
+      border: 1px solid rgba(15,223,216,0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    .feature-image-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .ghl-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ghl-hero .section-title {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ghl-hero .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Checklist Section ── */
+    .checklist-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .checklist-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(34,34,34,0.6);
+      font-size: 1rem;
+      color: var(--text-primary);
+      transition: color 0.2s;
+    }
+
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+
+    .checklist-item:hover {
+      color: var(--turquoise);
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--turquoise-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--turquoise);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 600px) {
+      .checklist-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    /* ── Management Plans ── */
+    .plans-section {
+      padding: 100px 0;
+      background: var(--bg-dark);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .plan-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .plan-card:hover {
+      border-color: rgba(15,223,216,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+
+    .plan-card.featured {
+      border-color: var(--turquoise);
+    }
+
+    .plan-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .plan-badge.setup { background: var(--turquoise-dim); color: var(--turquoise); }
+    .plan-badge.retainer { background: rgba(59,130,246,0.15); color: #3B82F6; }
+    .plan-badge.agency { background: rgba(168,85,247,0.15); color: #A855F7; }
+
+    .plan-card h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .plan-card > p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .plan-includes {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      flex: 1;
+    }
+
+    .plan-includes li {
+      padding: 8px 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .plan-includes .plan-check {
+      color: var(--turquoise);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .plan-meta {
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .plan-meta strong {
+      color: var(--turquoise);
+      font-size: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .plans-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ── Comparison Section ── */
+    .compare-section {
+      padding: 100px 0;
+      background: var(--bg-section-alt);
+    }
+
+    .compare-table {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .compare-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15,223,216,0.05) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-header span {
+      padding: 20px 24px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .compare-header span:first-child {
+      color: var(--text-secondary);
+    }
+
+    .compare-header span:nth-child(2) {
+      color: var(--turquoise);
+      text-align: center;
+    }
+
+    .compare-header span:nth-child(3) {
+      text-align: center;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid rgba(34,34,34,0.6);
+      transition: background 0.2s;
+    }
+
+    .compare-row:last-child {
+      border-bottom: none;
+    }
+
+    .compare-row:hover {
+      background: rgba(15,223,216,0.03);
+    }
+
+    .compare-row span {
+      padding: 16px 24px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    .compare-row span:first-child {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .compare-row span:nth-child(2) {
+      text-align: center;
+      color: var(--turquoise);
+      font-weight: 600;
+    }
+
+    .compare-row span:nth-child(3) {
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .compare-bottom {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15,223,216,0.08) 100%);
+      border-top: 1px solid var(--border);
+      padding: 28px;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--turquoise);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 600px) {
+      .compare-header span,
+      .compare-row span {
+        padding: 12px 12px;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* ── Stats ── */
+    .ghl-stats {
+      padding: 80px 0;
+      background: var(--bg-dark);
+    }
+
+    /* ── CTA ── */
+    .ghl-cta {
+      padding: 120px 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ghl-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--turquoise-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ghl-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-white.png" alt="SystemShift HQ">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="custom-ai-solutions.html">AI Solutions</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="contact.html">Contact</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+
+    <!-- ── HERO ── -->
+    <section class="ghl-hero">
+      <div class="container">
+        <span class="section-eyebrow fade-up">GHL Implementation &amp; Management</span>
+        <h1 class="section-title fade-up">GoHighLevel Is Your Operating System. We Make It Work.</h1>
+        <p class="section-subtitle fade-up">GoHighLevel can do everything -- but only if it's set up right. Most businesses use 20% of what GHL offers. We unlock the other 80% and turn it into your fully automated digital headquarters.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT WE SET UP ── -->
+    <section class="checklist-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">Full Setup</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">What We Set Up</h2>
+          <p class="section-subtitle mx-auto">Every feature GHL offers, configured and connected to work for your business.</p>
+        </div>
+        <div style="max-width: 600px; margin: 0 auto 48px;">
+          <div class="feature-image-frame fade-up">
+            <img src="images/crm-feature.png" alt="CRM Dashboard" loading="lazy">
+          </div>
+        </div>
+        <div class="checklist-grid fade-up">
+          <div class="checklist-col">
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> CRM &amp; Pipeline Configuration</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Contact Management &amp; Segmentation</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Email &amp; SMS Campaign Builder</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Workflow Automation Engine</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Calendar &amp; Booking System</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Reputation Management</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Invoicing &amp; Payments</div>
+          </div>
+          <div class="checklist-col">
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Website &amp; Funnel Builder</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Membership &amp; Course Areas</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Social Media Planner</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Call Tracking &amp; Recording</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> Custom Dashboards &amp; Reporting</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> API Integrations &amp; Webhooks</div>
+            <div class="checklist-item"><span class="check-icon">&#10003;</span> White-Label Setup (for agencies)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MANAGEMENT PLANS ── -->
+    <section class="plans-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">Plans</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Management Plans</h2>
+          <p class="section-subtitle mx-auto">From one-time setup to full ongoing management. Pick what fits.</p>
+        </div>
+        <div class="plans-grid">
+          <!-- One-Time Setup -->
+          <div class="plan-card fade-up">
+            <span class="plan-badge setup">Setup</span>
+            <h3>One-Time Setup</h3>
+            <p>Complete GHL build from scratch. We configure everything, connect your tools, and hand you a fully operational system.</p>
+            <ul class="plan-includes">
+              <li><span class="plan-check">&#10003;</span> Full account setup</li>
+              <li><span class="plan-check">&#10003;</span> Pipeline &amp; workflows</li>
+              <li><span class="plan-check">&#10003;</span> Training &amp; SOPs</li>
+              <li><span class="plan-check">&#10003;</span> 30-day testing</li>
+            </ul>
+            <div class="plan-meta">
+              <span>Timeline</span>
+              <strong>2-4 Weeks</strong>
+            </div>
+          </div>
+          <!-- Monthly Retainer -->
+          <div class="plan-card featured fade-up">
+            <span class="plan-badge retainer">Retainer</span>
+            <h3>Monthly Retainer</h3>
+            <p>Ongoing management and optimization. We keep your GHL running smoothly and build new automations as you grow.</p>
+            <ul class="plan-includes">
+              <li><span class="plan-check">&#10003;</span> Everything in Setup</li>
+              <li><span class="plan-check">&#10003;</span> Monthly optimization</li>
+              <li><span class="plan-check">&#10003;</span> New workflow builds</li>
+              <li><span class="plan-check">&#10003;</span> Priority support</li>
+            </ul>
+            <div class="plan-meta">
+              <span>Starting at</span>
+              <strong>$500/month</strong>
+            </div>
+          </div>
+          <!-- Multi-Location / Agency -->
+          <div class="plan-card fade-up">
+            <span class="plan-badge agency">Agency</span>
+            <h3>Multi-Location / Agency</h3>
+            <p>Managing multiple GHL sub-accounts? We handle snapshots, white-label setup, and cross-account automation.</p>
+            <ul class="plan-includes">
+              <li><span class="plan-check">&#10003;</span> Everything in Retainer</li>
+              <li><span class="plan-check">&#10003;</span> Snapshot management</li>
+              <li><span class="plan-check">&#10003;</span> Sub-account builds</li>
+              <li><span class="plan-check">&#10003;</span> Agency dashboard setup</li>
+            </ul>
+            <div class="plan-meta">
+              <span>For</span>
+              <strong>Agencies &amp; Franchises</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY GHL? COMPARISON ── -->
+    <section class="compare-section">
+      <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 64px;">
+          <span class="section-eyebrow">The Case for GHL</span>
+          <h2 class="section-title mx-auto" style="max-width: 650px;">Why GoHighLevel Over Other Platforms?</h2>
+          <p class="section-subtitle mx-auto">Replace a dozen subscriptions with one platform. Here's what that looks like.</p>
+        </div>
+        <div class="compare-table fade-up">
+          <div class="compare-header">
+            <span>Feature</span>
+            <span>GoHighLevel</span>
+            <span>Separate Tools</span>
+          </div>
+          <div class="compare-row">
+            <span>CRM</span>
+            <span>Built-in</span>
+            <span>Salesforce / HubSpot ($50-300/mo)</span>
+          </div>
+          <div class="compare-row">
+            <span>Email</span>
+            <span>Built-in</span>
+            <span>Mailchimp / ActiveCampaign ($20-100/mo)</span>
+          </div>
+          <div class="compare-row">
+            <span>SMS</span>
+            <span>Built-in</span>
+            <span>Twilio direct ($variable)</span>
+          </div>
+          <div class="compare-row">
+            <span>Funnels</span>
+            <span>Built-in</span>
+            <span>ClickFunnels ($97-297/mo)</span>
+          </div>
+          <div class="compare-row">
+            <span>Booking</span>
+            <span>Built-in</span>
+            <span>Calendly ($8-16/mo)</span>
+          </div>
+          <div class="compare-row">
+            <span>Courses</span>
+            <span>Built-in</span>
+            <span>Kajabi ($149-399/mo)</span>
+          </div>
+          <div class="compare-bottom">One platform. One login. One bill.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATS ── -->
+    <section class="ghl-stats">
+      <div class="container">
+        <div class="stats-grid fade-up">
+          <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">GHL Accounts Built</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$2K+</div>
+            <div class="stat-label">Saved Monthly (avg tool consolidation)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">14</div>
+            <div class="stat-label">Day Average Setup</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Automation Running</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="ghl-cta">
+      <div class="container">
+        <span class="section-eyebrow fade-up">Get Started</span>
+        <h2 class="section-title fade-up" style="max-width: 700px; margin-left: auto; margin-right: auto;">Ready to Unlock the Full Power of GoHighLevel?</h2>
+        <p class="section-subtitle mx-auto fade-up">Stop paying for ten tools when one does it all. Let us build your GHL the right way.</p>
+        <div class="fade-up">
+          <a href="contact.html" class="btn btn-primary">Book Your Audit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><img src="images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><div class="nav-dropdown">
+          <a href="services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="service-crm.html">CRM Build + Management</a>
+            <a href="custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="service-social.html">Social Media Automation</a>
+            <a href="service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="service-consulting.html">AI + Automation Consulting</a>
+            <a href="service-apps.html">Custom AI App Development</a>
+            <a href="service-cao.html">Fractional CAO</a>
+            <a href="service-ghl.html">GHL Implementation</a>
+          </div>
+        </div><a href="custom-ai-solutions.html">AI Solutions</a><a href="about.html">About</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="case-studies.html">Case Studies</a><a href="contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
