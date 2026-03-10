@@ -286,13 +286,22 @@ a:hover { color: #0cc; }
   .dropdown-menu {
     position: static;
     transform: none;
-    opacity: 1;
-    visibility: visible;
     background: rgba(10, 10, 10, 0.5);
     border: none;
     box-shadow: none;
     padding: 0 0 0 16px;
     min-width: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .nav-dropdown.dropdown-open .dropdown-menu {
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
   }
 
   .dropdown-menu a {
@@ -305,7 +314,11 @@ a:hover { color: #0cc; }
   }
 
   .nav-dropdown > a .dropdown-arrow {
-    display: none;
+    transition: transform 0.3s;
+  }
+
+  .nav-dropdown.dropdown-open > a .dropdown-arrow {
+    transform: rotate(180deg);
   }
 }
 

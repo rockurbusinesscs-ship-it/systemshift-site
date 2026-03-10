@@ -20,13 +20,34 @@
   toggle.addEventListener('click', function() {
     toggle.classList.toggle('open');
     nav.classList.toggle('open');
+    // Close any open dropdowns when closing menu
+    if (!nav.classList.contains('open')) {
+      nav.querySelectorAll('.nav-dropdown').forEach(function(d) {
+        d.classList.remove('dropdown-open');
+      });
+    }
   });
 
-  // Close on link click
+  // Mobile dropdown toggle (tap to expand/collapse Services)
+  nav.querySelectorAll('.nav-dropdown > a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        var dropdown = link.closest('.nav-dropdown');
+        dropdown.classList.toggle('dropdown-open');
+      }
+    });
+  });
+
+  // Close on link click (but not the dropdown trigger)
   nav.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function() {
+      if (link.closest('.nav-dropdown') && link === link.closest('.nav-dropdown').querySelector(':scope > a')) return;
       toggle.classList.remove('open');
       nav.classList.remove('open');
+      nav.querySelectorAll('.nav-dropdown').forEach(function(d) {
+        d.classList.remove('dropdown-open');
+      });
     });
   });
 })();

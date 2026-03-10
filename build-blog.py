@@ -806,8 +806,30 @@ def build_post_html(meta, body_html, read_time):
 </html>'''
 
 
-def build_index_html(posts):
-    """Generate blog index page."""
+POSTS_PER_PAGE = 8
+
+
+def build_pagination_html(page, total_pages):
+    """Generate pagination nav HTML."""
+    if total_pages <= 1:
+        return ''
+    links = ''
+    if page > 1:
+        prev_href = 'blog.html' if page == 2 else f'blog-page-{page - 1}.html'
+        links += f'<a href="{prev_href}">&larr; Prev</a>'
+    for i in range(1, total_pages + 1):
+        href = 'blog.html' if i == 1 else f'blog-page-{i}.html'
+        if i == page:
+            links += f'<span class="page-current">{i}</span>'
+        else:
+            links += f'<a href="{href}">{i}</a>'
+    if page < total_pages:
+        links += f'<a href="blog-page-{page + 1}.html">Next &rarr;</a>'
+    return f'<nav class="blog-pagination">{links}</nav>'
+
+
+def build_index_html(posts, page=1, total_pages=1):
+    """Generate blog index page with pagination."""
     cards_html = ''
     for p in posts:
         meta = p['meta']
@@ -1052,6 +1074,42 @@ def build_index_html(posts):
       font-size: 1.1rem;
     }}
 
+    .blog-pagination {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 48px 0 0;
+    }}
+
+    .blog-pagination a, .blog-pagination span {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s;
+    }}
+
+    .blog-pagination a:hover {{
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+    }}
+
+    .blog-pagination .page-current {{
+      background: var(--turquoise-dim);
+      border-color: var(--turquoise);
+      color: var(--turquoise);
+      font-weight: 700;
+    }}
+
     @media (max-width: 700px) {{
       .blog-grid {{ grid-template-columns: 1fr; }}
       .blog-hero {{ padding: 120px 0 60px; }}
@@ -1110,6 +1168,7 @@ def build_index_html(posts):
     <section class="blog-grid-section">
       <div class="container">
         {"<div class='blog-grid'>" + cards_html + "</div>" if cards_html else "<p class='blog-empty'>New posts coming soon. Check back shortly.</p>"}
+        {build_pagination_html(page, total_pages)}
       </div>
     </section>
   </main>
@@ -1528,11 +1587,18 @@ def main():
             f.write(html)
         print(f'  Built: blog/{slug}.html')
 
-    # Build blog index
-    index_html = build_index_html(posts)
-    with open(os.path.join(SITE_DIR, 'blog.html'), 'w', encoding='utf-8') as f:
-        f.write(index_html)
-    print(f'  Built: blog.html ({len(posts)} posts)')
+    # Build paginated blog index
+    import math
+    total_pages = max(1, math.ceil(len(posts) / POSTS_PER_PAGE))
+    for pg in range(1, total_pages + 1):
+        start = (pg - 1) * POSTS_PER_PAGE
+        end = start + POSTS_PER_PAGE
+        page_posts = posts[start:end]
+        index_html = build_index_html(page_posts, page=pg, total_pages=total_pages)
+        filename = 'blog.html' if pg == 1 else f'blog-page-{pg}.html'
+        with open(os.path.join(SITE_DIR, filename), 'w', encoding='utf-8') as f:
+            f.write(index_html)
+        print(f'  Built: {filename} ({len(page_posts)} posts, page {pg}/{total_pages})')
 
     # Build category pages
     os.makedirs(CATEGORY_DIR, exist_ok=True)
