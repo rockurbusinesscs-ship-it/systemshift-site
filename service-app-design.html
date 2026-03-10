@@ -51,46 +51,6 @@
     "serviceType": "Custom Software Development"
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does it take to build a custom business app?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most custom apps are designed, built, and deployed within 4-8 weeks depending on complexity. Simple client portals can launch in as little as 2 weeks. We use an agile approach so you see progress from week one."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a custom app or can I use an off-the-shelf tool?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If you're spending more time working around your tools than working in them, it's time for a custom build. Signs include: duct-taping multiple tools together, paying for features you don't use, or your team avoiding the tool entirely because it doesn't fit their workflow."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What technologies do you use to build custom apps?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We use modern web technologies including React, Next.js, Node.js, Python, and cloud platforms like AWS and Google Cloud. For mobile, we build cross-platform apps with React Native. Every app includes API integrations with your existing tools."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does a custom business app cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Custom app projects start at different price points based on scope. We walk through pricing, timeline, and exactly what you'll get on a free strategy call. No surprises — you'll know the full investment before we start."
-        }
-      }
-    ]
-  }
-  </script>
 
   <style>
     /* ══════════════════════════════════════════════════════════════
@@ -464,66 +424,15 @@
       }
     }
 
-    /* ── FAQ ── */
-    .faq-section {
+    /* ── Booking Section ── */
+    .booking-section {
       padding: 100px 0;
       background: var(--bg-dark);
     }
 
-    .faq-list {
+    .booking-wrapper {
       max-width: 800px;
       margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 24px 0;
-    }
-
-    .faq-question {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      background: none;
-      border: none;
-      width: 100%;
-      text-align: left;
-      padding: 0;
-    }
-
-    .faq-question::after {
-      content: '+';
-      font-size: 1.4rem;
-      color: var(--turquoise);
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-
-    .faq-item.active .faq-question::after {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-    }
-
-    .faq-answer p {
-      padding-top: 16px;
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
     }
 
     /* ── CTA ── */
@@ -847,81 +756,17 @@
       </div>
     </section>
 
-    <!-- ── FAQ ── -->
-    <section class="faq-section">
+    <!-- ── BOOK A CALL ── -->
+    <section class="booking-section">
       <div class="container">
-        <div class="text-center fade-up" style="margin-bottom: 64px;">
-          <span class="section-eyebrow">FAQ</span>
-          <h2 class="section-title mx-auto" style="max-width: 600px;">Common Questions</h2>
+        <div class="text-center fade-up" style="margin-bottom: 48px;">
+          <span class="section-eyebrow">Get Started</span>
+          <h2 class="section-title mx-auto" style="max-width: 600px;">Book Your Strategy Call</h2>
+          <p class="section-subtitle mx-auto">Stop settling for tools that almost work. Let's build the app your business actually needs.</p>
         </div>
-        <div class="faq-list">
-
-          <div class="faq-item fade-up">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-              How long does it take to build a custom business app?
-            </button>
-            <div class="faq-answer">
-              <p>Most custom apps are designed, built, and deployed within 4-8 weeks depending on complexity. Simple client portals can launch in as little as 2 weeks. We use an agile approach so you see progress from week one.</p>
-            </div>
-          </div>
-
-          <div class="faq-item fade-up">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-              Do I need a custom app or can I use an off-the-shelf tool?
-            </button>
-            <div class="faq-answer">
-              <p>If you're spending more time working around your tools than working in them, it's time for a custom build. Signs include: duct-taping multiple tools together, paying for features you don't use, or your team avoiding the tool entirely because it doesn't fit their workflow.</p>
-            </div>
-          </div>
-
-          <div class="faq-item fade-up">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-              What technologies do you use?
-            </button>
-            <div class="faq-answer">
-              <p>We use modern web technologies including React, Next.js, Node.js, Python, and cloud platforms like AWS and Google Cloud. For mobile, we build cross-platform apps with React Native. Every app includes API integrations with your existing tools.</p>
-            </div>
-          </div>
-
-          <div class="faq-item fade-up">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-              How much does a custom business app cost?
-            </button>
-            <div class="faq-answer">
-              <p>Custom app projects vary based on scope and complexity. We walk through pricing, timeline, and exactly what you'll get on a free strategy call. No surprises — you'll know the full investment before we start.</p>
-            </div>
-          </div>
-
-          <div class="faq-item fade-up">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-              Can you integrate with our existing tools?
-            </button>
-            <div class="faq-answer">
-              <p>Absolutely. Every app we build connects to your existing stack — CRM, email, payment processor, calendar, inventory system, whatever you're already using. The app becomes the central hub, not another silo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item fade-up">
-            <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-              Do you provide ongoing support after launch?
-            </button>
-            <div class="faq-answer">
-              <p>Every project includes 30 days of hands-on support after launch. After that, we offer maintenance plans for updates, new features, and priority support. Your app stays current and running smoothly.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CTA ── -->
-    <section class="appdesign-cta">
-      <div class="container">
-        <span class="section-eyebrow fade-up">Get Started</span>
-        <h2 class="section-title fade-up" style="max-width: 600px; margin-left: auto; margin-right: auto;">Ready to Build Your Custom App?</h2>
-        <p class="section-subtitle mx-auto fade-up">Stop settling for tools that almost work. Let's build the app your business actually needs.</p>
-        <div class="fade-up">
-          <a href="contact.html" class="btn btn-primary">Book Your Strategy Call</a>
+        <div class="booking-wrapper fade-up">
+          <iframe src="https://api.leadbreeze.co/widget/booking/FBchK74K5eoQRaoV4EAK" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="FBchK74K5eoQRaoV4EAK_1773107153722"></iframe>
+          <script src="https://api.leadbreeze.co/js/form_embed.js" type="text/javascript"></script>
         </div>
       </div>
     </section>
