@@ -359,6 +359,7 @@ def build_post_html(meta, body_html, read_time):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css?v=4">
+  <link rel="stylesheet" href="../css/chat-widget.css">
   <script type="application/ld+json">
   {schema}
   </script>
@@ -904,6 +905,7 @@ def build_post_html(meta, body_html, read_time):
   </footer>
 
   <script src="../js/main.js?v=4"></script>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="68348ac6a19eb9611a32d968"></script>
 </body>
 </html>'''
 
@@ -986,6 +988,7 @@ def build_index_html(posts, page=1, total_pages=1):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/chat-widget.css">
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
@@ -1304,6 +1307,7 @@ def build_index_html(posts, page=1, total_pages=1):
   </footer>
 
   <script src="js/main.js?v=4"></script>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="68348ac6a19eb9611a32d968"></script>
 </body>
 </html>'''
 
@@ -1367,6 +1371,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css?v=4">
+  <link rel="stylesheet" href="../../css/chat-widget.css">
   <style>
     .cat-hero {{
       padding: 160px 0 40px;
@@ -1540,6 +1545,7 @@ def build_category_html(cat_name, cat_info, cat_posts):
   </footer>
 
   <script src="../../js/main.js"></script>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="68348ac6a19eb9611a32d968"></script>
 </body>
 </html>'''
 

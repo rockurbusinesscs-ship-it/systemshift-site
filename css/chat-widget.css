@@ -1,0 +1,313 @@
+/* ══════════════════════════════════════════════════════════════
+   SYSTEMSHIFT HQ — CHAT WIDGET OVERRIDES
+   Styles the GHL/LeadConnector chat widget to match our dark theme
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Chat Bubble / Launcher Button ── */
+chat-widget [class*="chat-bubble"],
+chat-widget [class*="launcher"],
+chat-widget [class*="widget-bubble"],
+chat-widget button[class*="bubble"],
+chat-widget .lc_text_widget_open,
+chat-widget .chat-widget-open-btn {
+  background: #0FDFD8 !important;
+  border: none !important;
+  box-shadow: 0 4px 24px rgba(15, 223, 216, 0.35) !important;
+  transition: all 0.3s ease !important;
+}
+
+chat-widget [class*="chat-bubble"]:hover,
+chat-widget [class*="launcher"]:hover,
+chat-widget [class*="widget-bubble"]:hover,
+chat-widget button[class*="bubble"]:hover,
+chat-widget .lc_text_widget_open:hover,
+chat-widget .chat-widget-open-btn:hover {
+  background: #0BC8C2 !important;
+  box-shadow: 0 6px 32px rgba(15, 223, 216, 0.5) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ── Chat Window / Panel Container ── */
+chat-widget [class*="chat-window"],
+chat-widget [class*="chat-container"],
+chat-widget [class*="widget-container"],
+chat-widget [class*="chat-panel"],
+chat-widget .lc_text_widget {
+  background: #0A0A0A !important;
+  border: 1px solid #222222 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  overflow: hidden !important;
+}
+
+/* ── Chat Header Bar ── */
+chat-widget [class*="chat-header"],
+chat-widget [class*="widget-header"],
+chat-widget [class*="header-container"] {
+  background: #111111 !important;
+  border-bottom: 1px solid #222222 !important;
+  color: #E8E8E8 !important;
+  padding: 16px 20px !important;
+}
+
+chat-widget [class*="chat-header"] *,
+chat-widget [class*="widget-header"] * {
+  color: #E8E8E8 !important;
+}
+
+chat-widget [class*="header"] [class*="title"],
+chat-widget [class*="header"] [class*="name"],
+chat-widget [class*="header"] h2,
+chat-widget [class*="header"] h3,
+chat-widget [class*="header"] h4 {
+  color: #FFFFFF !important;
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  font-weight: 700 !important;
+}
+
+chat-widget [class*="header"] [class*="subtitle"],
+chat-widget [class*="header"] [class*="status"],
+chat-widget [class*="header"] p {
+  color: #0FDFD8 !important;
+  font-size: 0.8rem !important;
+}
+
+/* ── Close Button ── */
+chat-widget [class*="close"],
+chat-widget [class*="header"] button {
+  color: #A0A0A0 !important;
+  transition: color 0.2s !important;
+}
+
+chat-widget [class*="close"]:hover,
+chat-widget [class*="header"] button:hover {
+  color: #FFFFFF !important;
+}
+
+/* ── Messages Area ── */
+chat-widget [class*="message-list"],
+chat-widget [class*="messages-container"],
+chat-widget [class*="chat-body"],
+chat-widget [class*="message-area"] {
+  background: #0A0A0A !important;
+}
+
+/* ── Received Message Bubbles (Agent) ── */
+chat-widget [class*="message"][class*="received"],
+chat-widget [class*="message"][class*="agent"],
+chat-widget [class*="message"][class*="bot"],
+chat-widget [class*="message"][class*="incoming"],
+chat-widget [class*="message-bubble"][class*="left"],
+chat-widget [class*="reply"] {
+  background: #141414 !important;
+  border: 1px solid #222222 !important;
+  border-radius: 12px 12px 12px 4px !important;
+  color: #E8E8E8 !important;
+}
+
+/* ── Sent Message Bubbles (User) ── */
+chat-widget [class*="message"][class*="sent"],
+chat-widget [class*="message"][class*="user"],
+chat-widget [class*="message"][class*="outgoing"],
+chat-widget [class*="message-bubble"][class*="right"] {
+  background: rgba(15, 223, 216, 0.15) !important;
+  border: 1px solid rgba(15, 223, 216, 0.25) !important;
+  border-radius: 12px 12px 4px 12px !important;
+  color: #E8E8E8 !important;
+}
+
+/* ── Message Text ── */
+chat-widget [class*="message"] p,
+chat-widget [class*="message"] span,
+chat-widget [class*="message-text"] {
+  color: #E8E8E8 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ── Timestamp ── */
+chat-widget [class*="timestamp"],
+chat-widget [class*="time"],
+chat-widget [class*="date"] {
+  color: #666666 !important;
+  font-size: 0.72rem !important;
+}
+
+/* ── Input Area ── */
+chat-widget [class*="input-container"],
+chat-widget [class*="composer"],
+chat-widget [class*="chat-footer"],
+chat-widget [class*="input-area"] {
+  background: #111111 !important;
+  border-top: 1px solid #222222 !important;
+  padding: 12px 16px !important;
+}
+
+chat-widget textarea,
+chat-widget input[type="text"],
+chat-widget [class*="input-field"],
+chat-widget [class*="message-input"] {
+  background: #1A1A1A !important;
+  border: 1px solid #333333 !important;
+  border-radius: 10px !important;
+  color: #E8E8E8 !important;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.92rem !important;
+  padding: 10px 14px !important;
+  transition: border-color 0.2s !important;
+}
+
+chat-widget textarea:focus,
+chat-widget input[type="text"]:focus,
+chat-widget [class*="input-field"]:focus,
+chat-widget [class*="message-input"]:focus {
+  border-color: #0FDFD8 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(15, 223, 216, 0.15) !important;
+}
+
+chat-widget textarea::placeholder,
+chat-widget input::placeholder,
+chat-widget [class*="input-field"]::placeholder {
+  color: #666666 !important;
+}
+
+/* ── Send Button ── */
+chat-widget [class*="send"],
+chat-widget button[type="submit"],
+chat-widget [class*="submit-btn"] {
+  background: #0FDFD8 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: #0A0A0A !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+}
+
+chat-widget [class*="send"]:hover,
+chat-widget button[type="submit"]:hover,
+chat-widget [class*="submit-btn"]:hover {
+  background: #0BC8C2 !important;
+  transform: scale(1.05) !important;
+}
+
+/* ── Send Button Icon (SVG) ── */
+chat-widget [class*="send"] svg,
+chat-widget button[type="submit"] svg {
+  fill: #0A0A0A !important;
+  color: #0A0A0A !important;
+}
+
+/* ── Links inside chat ── */
+chat-widget a {
+  color: #0FDFD8 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+}
+
+chat-widget a:hover {
+  color: #0BC8C2 !important;
+}
+
+/* ── Pre-chat Form / Lead Capture ── */
+chat-widget [class*="pre-chat"],
+chat-widget [class*="form-container"],
+chat-widget form {
+  background: #0A0A0A !important;
+}
+
+chat-widget form input,
+chat-widget form textarea,
+chat-widget form select {
+  background: #1A1A1A !important;
+  border: 1px solid #333333 !important;
+  border-radius: 10px !important;
+  color: #E8E8E8 !important;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  padding: 10px 14px !important;
+}
+
+chat-widget form input:focus,
+chat-widget form textarea:focus,
+chat-widget form select:focus {
+  border-color: #0FDFD8 !important;
+  outline: none !important;
+}
+
+chat-widget form label {
+  color: #A0A0A0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+}
+
+chat-widget form button,
+chat-widget [class*="form"] button[type="submit"] {
+  background: #0FDFD8 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #0A0A0A !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  padding: 12px 24px !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+chat-widget form button:hover,
+chat-widget [class*="form"] button[type="submit"]:hover {
+  background: #0BC8C2 !important;
+}
+
+/* ── Scrollbar inside chat ── */
+chat-widget ::-webkit-scrollbar {
+  width: 6px;
+}
+
+chat-widget ::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+chat-widget ::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+chat-widget ::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* ── Powered-by / Branding footer ── */
+chat-widget [class*="powered"],
+chat-widget [class*="branding"],
+chat-widget [class*="footer-text"] {
+  opacity: 0.4 !important;
+  font-size: 0.68rem !important;
+}
+
+/* ── Notification Badge ── */
+chat-widget [class*="badge"],
+chat-widget [class*="unread"] {
+  background: #0FDFD8 !important;
+  color: #0A0A0A !important;
+  font-weight: 700 !important;
+}
+
+/* ── Avatar ── */
+chat-widget [class*="avatar"] img {
+  border-radius: 50% !important;
+  border: 2px solid rgba(15, 223, 216, 0.25) !important;
+}
+
+/* ── Tooltip / Greeting Prompt ── */
+chat-widget [class*="tooltip"],
+chat-widget [class*="greeting"],
+chat-widget [class*="prompt-message"],
+chat-widget [class*="welcome"] {
+  background: #141414 !important;
+  border: 1px solid #222222 !important;
+  border-radius: 12px !important;
+  color: #E8E8E8 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
