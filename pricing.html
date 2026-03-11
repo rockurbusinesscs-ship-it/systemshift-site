@@ -38,7 +38,47 @@
       "longitude": -80.0053
     },
     "priceRange": "$500 - $5000+",
-    "areaServed": ["High Point", "Greensboro", "Winston-Salem", "Triad NC"]
+    "areaServed": ["High Point", "Greensboro", "Winston-Salem", "Triad NC"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "SystemShift HQ Engagement Models",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Project-Based Build",
+          "description": "A complete system built and delivered with training and 30-day testing.",
+          "price": "500",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "500",
+            "priceCurrency": "USD",
+            "minPrice": "500",
+            "maxPrice": "5000"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Retainer",
+          "description": "Ongoing management, optimization, and new builds as your business grows.",
+          "price": "500",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "500",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {"@type": "QuantitativeValue", "value": "1", "unitCode": "MON"}
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Fractional CAO",
+          "description": "Executive-level operations leadership at a fraction of the cost. 5-20 hours per month.",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
   }
   </script>
   <style>

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoHighLevel Setup Guide for Home Services and HVAC Companies | SystemShift HQ Blog</title>
+  <meta name="description" content="GoHighLevel setup guide for home services and HVAC companies. Pipelines, automations, booking calendars, and review widgets built for contractors.">
+  <link rel="canonical" href="https://systemshifthq.com/blog/gohighlevel-setup-guide-home-services.html">
+  <meta property="og:title" content="GoHighLevel Setup Guide for Home Services and HVAC Companies">
+  <meta property="og:description" content="GoHighLevel setup guide for home services and HVAC companies. Pipelines, automations, booking calendars, and review widgets built for contractors.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://systemshifthq.com/blog/gohighlevel-setup-guide-home-services.html">
+  <meta property='og:image' content='https://systemshifthq.com/images/blog/ghl-cover.png'>
+  <meta property="article:published_time" content="2026-03-10T00:00:00-05:00">
+  <meta property="article:section" content="Automation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=4">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GoHighLevel Setup Guide for Home Services and HVAC Companies",
+  "description": "GoHighLevel setup guide for home services and HVAC companies. Pipelines, automations, booking calendars, and review widgets built for contractors.",
+  "author": {
+    "@type": "Person",
+    "name": "Rock"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SystemShift HQ",
+    "url": "https://systemshifthq.com"
+  },
+  "datePublished": "2026-03-10T00:00:00-05:00",
+  "dateModified": "2026-03-10T00:00:00-05:00",
+  "image": "https://systemshifthq.com/images/blog/ghl-cover.png",
+  "mainEntityOfPage": "https://systemshifthq.com/blog/gohighlevel-setup-guide-home-services.html",
+  "articleSection": "Automation",
+  "keywords": "GoHighLevel, HVAC, home services, CRM setup"
+}
+  </script>
+  <style>
+    .blog-post-hero {
+      padding: 140px 0 24px;
+      background: var(--bg-dark);
+    }
+
+    .blog-post-hero .container {
+      max-width: 768px;
+    }
+
+    .blog-post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .blog-category {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--turquoise);
+      background: var(--turquoise-dim);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .blog-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .blog-read-time {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .blog-post-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: #fff;
+      max-width: 800px;
+      margin-bottom: 16px;
+    }
+
+    .blog-post-hero .blog-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .blog-byline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .blog-byline strong {
+      color: #fff;
+    }
+
+    .blog-byline-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--turquoise-dim);
+    }
+
+    .blog-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .blog-tag {
+      font-size: 0.72rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .blog-cover {
+      width: 100%;
+      max-height: 480px;
+      overflow: hidden;
+    }
+
+    .blog-cover img {
+      width: 100% !important;
+      height: 480px !important;
+      max-width: none !important;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-cover + .blog-post-hero {
+      padding-top: 40px;
+    }
+
+    .blog-content {
+      padding: 0 0 100px;
+      background: var(--bg-dark);
+    }
+
+    .blog-body {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .blog-body h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 48px 0 16px;
+    }
+
+    .blog-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .blog-body h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 36px 0 12px;
+    }
+
+    .blog-body p {
+      margin-bottom: 20px;
+    }
+
+    .blog-body strong {
+      color: #fff;
+    }
+
+    .blog-body a {
+      color: var(--turquoise);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .blog-body ul, .blog-body ol {
+      margin: 16px 0 24px 24px;
+    }
+
+    .blog-body li {
+      margin-bottom: 8px;
+    }
+
+    .blog-body blockquote {
+      border-left: 3px solid var(--turquoise);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: rgba(255,255,255,0.02);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+
+    .blog-body blockquote p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+    }
+
+    .blog-body pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    .blog-body code {
+      font-size: 0.9em;
+      background: var(--bg-card);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .blog-body pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .blog-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+
+    .blog-body figure {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .blog-body figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body figcaption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    .blog-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* Tables */
+    .blog-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .blog-body thead {
+      background: rgba(15, 223, 216, 0.08);
+    }
+
+    .blog-body th {
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .blog-body td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .blog-body tbody tr:hover {
+      background: rgba(15, 223, 216, 0.04);
+    }
+
+    .blog-body tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* TLDR box */
+    .blog-body .tldr {
+      background: rgba(15, 223, 216, 0.06);
+      border: 1px solid rgba(15, 223, 216, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 0 0 32px 0;
+    }
+
+    .blog-body .tldr strong:first-child {
+      color: var(--turquoise);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .blog-cta {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .blog-cta h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .blog-cta p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--turquoise);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .blog-back:hover { text-decoration: underline; }
+
+    /* Author */
+    .blog-author {
+      max-width: 720px;
+      margin: 48px auto 0;
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .blog-author-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--turquoise-dim);
+    }
+
+    .blog-author-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .blog-author-title {
+      font-size: 0.8rem;
+      color: var(--turquoise);
+      margin-bottom: 8px;
+    }
+
+    .blog-author-bio {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Comments */
+    .blog-comments {
+      max-width: 720px;
+      margin: 48px auto 0;
+    }
+
+    .blog-comments h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comment-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: var(--turquoise);
+    }
+
+    .comment-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .comment-form .btn {
+      align-self: flex-start;
+    }
+
+    .comment-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post-hero { padding: 120px 0 32px; }
+      .blog-body { font-size: 1rem; }
+      .blog-cta { padding: 28px 20px; }
+      .blog-author { flex-direction: column; text-align: center; padding: 24px; }
+      .comment-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo"><img src="../images/logo-white.png" alt="SystemShift HQ"></a>
+      <nav class="header-nav">
+        <a href="../index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="../services.html">Services <svg class="dropdown-arrow" viewBox="0 0 12 12"><polyline points="2 4 6 8 10 4"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="../service-crm.html">CRM Build + Management</a>
+            <a href="../custom-ai-solutions.html">Custom AI Solutions</a>
+            <a href="../service-voice.html">AI Voice &amp; Chat Agents</a>
+            <a href="../service-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="../service-social.html">Social Media Automation</a>
+            <a href="../service-linkedin.html">LinkedIn Brand Management</a>
+            <a href="../service-consulting.html">AI + Automation Consulting</a>
+            <a href="../service-apps.html">Integrator Services</a>
+            <a href="../service-app-design.html">App Design</a>
+            <a href="../service-cao.html">Fractional CAO</a>
+            <a href="../service-ghl.html">GHL Implementation</a>
+          </div>
+        </div>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="https://www.youtube.com/@rockurbusiness" target="_blank" rel="noopener">Education</a>
+        <a href="../contact.html">Contact</a>
+        <div class="header-cta"><a href="../contact.html" class="btn btn-primary btn-sm">Book a Call</a></div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    
+    <div class="blog-cover">
+      <img src="https://systemshifthq.com/images/blog/ghl-cover.png?v=2" alt="GoHighLevel Setup Guide for Home Services and HVAC Companies" width="1200" height="630" style="width:100% !important; height:480px !important; object-fit:cover; display:block;">
+    </div>
+    <section class="blog-post-hero">
+      <div class="container">
+        <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
+        <div class="blog-post-meta">
+          <a href="../blog/category/automation.html" class="blog-category">Automation</a>
+          <span class="blog-date">March 10, 2026</span>
+          <span class="blog-read-time">6 min read</span>
+        </div>
+        <h1>GoHighLevel Setup Guide for Home Services and HVAC Companies</h1>
+        <div class="blog-byline">
+          <img src="https://systemshifthq.com/images/rock-hunt.jpg" alt="Rock Hunt" class="blog-byline-avatar">
+          <span>By <strong>Rock Hunt</strong></span>
+        </div>
+        <p class="blog-desc">GoHighLevel setup guide for home services and HVAC companies. Pipelines, automations, booking calendars, and review widgets built for contractors.</p>
+        <div class="blog-tags"><span class="blog-tag">GoHighLevel</span><span class="blog-tag">HVAC</span><span class="blog-tag">home services</span><span class="blog-tag">CRM setup</span></div>
+      </div>
+    </section>
+
+    <section class="blog-content">
+      <div class="container">
+        <div class="blog-body">
+          
+<p>Your dispatcher is juggling phone calls, a whiteboard, and three sticky notes. That is not a system. That is a disaster waiting to happen.</p>
+
+<h2>The Home Services CRM Problem</h2>
+
+<p>Most CRM platforms were built for B2B sales teams. Long sales cycles. Multiple decision makers. Quarterly pipelines. That is not your world.</p>
+
+<p>Your world is a homeowner with a broken AC unit at 3 PM in July. They call three companies. The first one to pick up or text back gets the job. The other two never hear from that customer again.</p>
+
+<p>Generic CRMs do not understand this. They give you lead scoring models when you need speed-to-lead automation. They give you deal stages designed for enterprise software sales when you need "New Lead, Appointment Set, Job Completed, Review Collected."</p>
+
+<p>GoHighLevel is different because you can bend it to fit your business. But only if you set it up right. Here is exactly how to do it for a home services or HVAC company.</p>
+
+<h2>Step 1: Build Your Pipeline</h2>
+
+<p>Forget the default pipeline. Delete it. Build one that matches how your jobs actually move.</p>
+
+<p><strong>Recommended Pipeline Stages:</strong></p>
+
+<ol>
+<li><strong>New Lead</strong> - Just came in. No contact yet.</li>
+<li><strong>Contacted</strong> - You reached out. Waiting for response.</li>
+<li><strong>Appointment Scheduled</strong> - Tech visit or estimate booked.</li>
+<li><strong>Estimate Sent</strong> - Quote delivered. Ball is in their court.</li>
+<li><strong>Job Approved</strong> - Customer said yes. Scheduling the work.</li>
+<li><strong>In Progress</strong> - Tech is on-site or work is underway.</li>
+<li><strong>Completed</strong> - Job done. Payment collected.</li>
+<li><strong>Review Requested</strong> - Automated review request sent.</li>
+</ol>
+
+<p>Do not add more stages than this. Every extra stage is friction. Your techs and office staff need to move cards with one click between calls. Keep it tight.</p>
+
+<h2>Step 2: Set Up Custom Fields</h2>
+
+<p>Default CRM fields do not know what an HVAC company needs. Add these custom fields to your contact records:</p>
+
+<ul>
+<li><strong>Service Type</strong> (dropdown): HVAC Repair, HVAC Install, Plumbing, Electrical, General Maintenance</li>
+<li><strong>Equipment Type</strong> (dropdown): Central AC, Heat Pump, Furnace, Mini-Split, Boiler, Water Heater</li>
+<li><strong>Property Type</strong> (dropdown): Residential, Commercial, Multi-Family</li>
+<li><strong>Service Address</strong> (text): Separate from mailing address</li>
+<li><strong>Preferred Appointment Window</strong> (dropdown): Morning, Afternoon, Emergency/ASAP</li>
+<li><strong>Referral Source</strong> (dropdown): Google, Neighbor Referral, Yard Sign, Facebook, Repeat Customer</li>
+<li><strong>Membership Status</strong> (dropdown): None, Basic, Premium</li>
+</ul>
+
+<p>These fields power your automations later. If you skip this step, your workflows will be generic and useless. Take 15 minutes and set them up right.</p>
+
+<h2>Step 3: Build Your Automations</h2>
+
+<p>Here are the four workflows every home services company needs on day one.</p>
+
+<h3>Automation 1: Speed-to-Lead</h3>
+
+<p><strong>Trigger:</strong> New contact created from web form, Google Ads, or Facebook lead ad.</p>
+
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Immediately send SMS: "Hey [first name], thanks for reaching out to [company name]. What is the best time for us to come take a look? Reply here or book directly: [calendar link]"</li>
+<li>Wait 3 minutes.</li>
+<li>Send email with company info, services, and booking link.</li>
+<li>Create internal notification for office manager.</li>
+<li>If no reply in 4 hours, send follow-up SMS.</li>
+</ol>
+
+<p>This alone will double your conversion rate from online leads. Most of your competitors take 4-24 hours to respond. You respond in 10 seconds.</p>
+
+<h3>Automation 2: Appointment Reminders</h3>
+
+<p><strong>Trigger:</strong> Appointment created on GoHighLevel calendar.</p>
+
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Immediately send confirmation SMS and email with date, time, and tech name.</li>
+<li>24 hours before: SMS reminder with option to confirm or reschedule.</li>
+<li>2 hours before: Final SMS with tech's ETA window.</li>
+<li>If customer replies "reschedule" or "cancel," trigger rebooking workflow.</li>
+</ol>
+
+<p>No-shows cost home services companies $150-300 per truck roll. Cut no-shows by half and you save thousands per month.</p>
+
+<h3>Automation 3: Job Completion and Review Request</h3>
+
+<p><strong>Trigger:</strong> Opportunity moved to "Completed" stage.</p>
+
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Send thank-you SMS with payment receipt link.</li>
+<li>Wait 2 hours.</li>
+<li>Send review request SMS: "How did we do today? If you had a great experience, a Google review helps us keep serving neighbors like you: [review link]"</li>
+<li>Wait 3 days. If no review, send follow-up email.</li>
+<li>Move opportunity to "Review Requested" stage.</li>
+</ol>
+
+<p>Home services businesses live and die by Google reviews. Automate the ask and your review count will climb every single week without anyone remembering to do it.</p>
+
+<h3>Automation 4: Stale Lead Re-engagement</h3>
+
+<p><strong>Trigger:</strong> Contact in "Estimate Sent" or "Contacted" stage for more than 14 days.</p>
+
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Send SMS: "Hey [first name], checking in on the [service type] estimate we sent over. Any questions we can answer? Happy to update the quote if anything has changed."</li>
+<li>Wait 3 days. Send email with seasonal promotion or maintenance tip.</li>
+<li>Wait 7 days. Final outreach with limited-time discount.</li>
+<li>If no response after 30 days, move to "Lost" and tag for quarterly reactivation.</li>
+</ol>
+
+<h2>Step 4: Configure Calendar Booking</h2>
+
+<p>Set up a GoHighLevel calendar specifically for service appointments.</p>
+
+<p><strong>Settings that matter:</strong></p>
+<ul>
+<li><strong>Availability:</strong> Match your actual dispatch windows. If you run 8 AM to 5 PM, set that. Do not let people book at 7 PM.</li>
+<li><strong>Buffer time:</strong> Add 30-60 minutes between appointments for drive time.</li>
+<li><strong>Appointment types:</strong> Create separate types for "Estimate," "Repair," and "Maintenance." Each can have different durations and custom fields.</li>
+<li><strong>Confirmation required:</strong> Turn on SMS confirmation so the customer confirms before it locks onto your schedule.</li>
+<li><strong>Calendar widget:</strong> Embed this on your website, in your Google Business Profile link, and in every automation SMS.</li>
+</ul>
+
+<h2>Step 5: Install the Review Widget</h2>
+
+<p>GoHighLevel has a built-in review widget you can embed on your website. Set it up to pull Google reviews automatically. Place it on your homepage, service pages, and landing pages.</p>
+
+<p>For home services, reviews are the number one trust signal. A prospect choosing between you and a competitor will pick the one with 200 Google reviews over the one with 15 every single time.</p>
+
+<h2>Industry Tips for Contractors and HVAC</h2>
+
+<p><strong>Seasonal campaigns matter.</strong> Build email and SMS campaigns for spring AC tune-ups, fall furnace inspections, and emergency weather alerts. Schedule them quarterly in GoHighLevel and they run themselves.</p>
+
+<p><strong>Membership programs print money.</strong> Use GoHighLevel's custom fields and tags to track maintenance agreement members. Automate renewal reminders 30 days before expiration. Members spend 2-3 times more than one-time customers.</p>
+
+<p><strong>Track your referral sources.</strong> That custom "Referral Source" field is gold. Run a report every month. If 40% of your leads come from Google and 5% come from that $500 a month magazine ad, you know where to cut.</p>
+
+<p><strong>Use the mobile app.</strong> Your techs are in the field. They need to update job status from their phone. GoHighLevel's mobile app lets them move pipeline stages, add notes, and even collect payments on-site.</p>
+
+<h2>What To Do Right Now</h2>
+
+<p>Start with the pipeline and custom fields. That takes 30 minutes. Then build the speed-to-lead automation. That takes another 30 minutes. In one hour, you will have a system that responds to every lead instantly and tracks every job from first call to five-star review.</p>
+
+<p>If you want this done for you, tuned specifically for your service area and team size, <a href="/service-ghl">check out our GoHighLevel setup service</a>. We also have a dedicated <a href="/industry-hvac">HVAC industry page</a> with case studies from companies running this exact system. Or <a href="/service-crm">see our CRM services</a> for the full scope of what we build.</p>
+
+<p>-Rock</p>
+
+<p>P.S. The businesses that win in home services are not the cheapest. They are the fastest to respond and the most consistent in follow-up. If your current system cannot do that automatically, it is time for a new system.</p>
+        </div>
+        <div class="blog-cta">
+          <h3>Ready to Automate Your Business?</h3>
+          <p>Book a free strategy call and we'll map out exactly what to build first.</p>
+          <a href="../contact.html" class="btn btn-primary">Book Your Call</a>
+        </div>
+        
+        <div class="blog-author">
+          <img src="https://systemshifthq.com/images/rock-hunt.jpg" alt="Rock Hunt" class="blog-author-avatar">
+          <div>
+            <div class="blog-author-name">Rock Hunt</div>
+            <div class="blog-author-title">Founder, SystemShift HQ</div>
+            <p class="blog-author-bio">I build AI and automation systems for businesses that are tired of doing everything manually. Based in High Point, NC.</p>
+          </div>
+        </div>
+        <div class="blog-comments">
+          <h3>Join the Conversation</h3>
+          <form class="comment-form" action="https://api.leadbreeze.co/widget/form/submit" method="POST">
+            <input type="hidden" name="blog_post" value="gohighlevel-setup-guide-home-services">
+            <div class="comment-row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <textarea name="comment" placeholder="Share your thoughts..." required></textarea>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+            <p class="comment-note">Your email won't be published. Comments are reviewed before posting.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="header-logo"><img src="../images/logo-white.png" alt="SystemShift HQ"></a>
+          <p>We build AI and automation systems for businesses ready to scale without the busywork.</p>
+          <div class="footer-contact">
+            <a href="mailto:support@systemshifthq.com">support@systemshifthq.com</a>
+            <a href="tel:3365688504">336-568-8504</a>
+            <a href="#">3980 Premier Dr, High Point, NC 27265</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../blog.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact Us</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="../blog.html">Blog</a><a href="https://www.youtube.com/@rockurbusiness" target="_blank">Education</a><a href="../case-studies.html">Case Studies</a><a href="../contact.html">Book a Call</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
+        <div class="footer-col"><h4>Service Areas</h4><a href="../greensboro-automation.html">Greensboro, NC</a><a href="../high-point-automation.html">High Point, NC</a><a href="../winston-salem-automation.html">Winston-Salem, NC</a><a href="../kernersville-automation.html">Kernersville, NC</a><a href="../nc-automation.html">NC Triad Area</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SystemShift HQ. All rights reserved.</span>
+        <div class="footer-legal"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=4"></script>
+</body>
+</html>
