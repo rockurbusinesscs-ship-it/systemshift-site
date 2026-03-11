@@ -340,6 +340,10 @@ def build_post_html(meta, body_html, read_time):
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | SystemShift HQ Blog</title>
   <meta name="description" content="{description}">
@@ -966,6 +970,10 @@ def build_index_html(posts, page=1, total_pages=1):
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | AI & Automation Insights | SystemShift HQ</title>
   <meta name="description" content="Actionable insights on AI automation, CRM systems, lead generation, and scaling your business. Written by Rock at SystemShift HQ.">
@@ -1347,6 +1355,10 @@ def build_category_html(cat_name, cat_info, cat_posts):
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{cat_name} | SystemShift HQ Blog</title>
   <meta name="description" content="{cat_info.get('description', '')}">
