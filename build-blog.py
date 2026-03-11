@@ -906,6 +906,16 @@ def build_post_html(meta, body_html, read_time):
 
   <script src="../js/main.js?v=4"></script>
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="68348ac6a19eb9611a32d968"></script>
+<script>
+window.addEventListener('LC_chatWidgetLoaded', function() {{
+  var w = document.querySelector('chat-widget');
+  if (w) {{
+    w.style.setProperty('--chat-widget-primary-color', '#0FDFD8');
+    w.style.setProperty('--chat-widget-active-color', '#0BC8C2');
+    w.style.setProperty('--chat-widget-bubble-color', '#0FDFD8');
+  }}
+}});
+</script>
 </body>
 </html>'''
 
@@ -1308,6 +1318,16 @@ def build_index_html(posts, page=1, total_pages=1):
 
   <script src="js/main.js?v=4"></script>
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="68348ac6a19eb9611a32d968"></script>
+<script>
+window.addEventListener('LC_chatWidgetLoaded', function() {{
+  var w = document.querySelector('chat-widget');
+  if (w) {{
+    w.style.setProperty('--chat-widget-primary-color', '#0FDFD8');
+    w.style.setProperty('--chat-widget-active-color', '#0BC8C2');
+    w.style.setProperty('--chat-widget-bubble-color', '#0FDFD8');
+  }}
+}});
+</script>
 </body>
 </html>'''
 
@@ -1546,6 +1566,16 @@ def build_category_html(cat_name, cat_info, cat_posts):
 
   <script src="../../js/main.js"></script>
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="68348ac6a19eb9611a32d968"></script>
+<script>
+window.addEventListener('LC_chatWidgetLoaded', function() {{
+  var w = document.querySelector('chat-widget');
+  if (w) {{
+    w.style.setProperty('--chat-widget-primary-color', '#0FDFD8');
+    w.style.setProperty('--chat-widget-active-color', '#0BC8C2');
+    w.style.setProperty('--chat-widget-bubble-color', '#0FDFD8');
+  }}
+}});
+</script>
 </body>
 </html>'''
 
